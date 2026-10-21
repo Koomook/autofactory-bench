@@ -1,0 +1,17 @@
+{
+  "id": "different_rejects",
+  "parameters": {
+    "rejects": [
+      1,
+      4
+    ]
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

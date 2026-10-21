@@ -1,0 +1,15 @@
+{
+  "id": "overtake",
+  "parameters": {
+    "fill_s_1": 12.0,
+    "fill_s_2": 2.0
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

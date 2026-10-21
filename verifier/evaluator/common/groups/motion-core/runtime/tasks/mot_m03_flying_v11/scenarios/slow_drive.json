@@ -1,0 +1,26 @@
+{
+  "id": "slow_drive",
+  "initial": {
+    "s": -650,
+    "u": -200,
+    "f": 0,
+    "u_velocity": 220
+  },
+  "parameters": {
+    "s_response": 0.7
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X10": 0
+      }
+    },
+    {
+      "scan": 5,
+      "set": {
+        "X10": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "late_scrap",
+  "parameters": {
+    "fall_s": 10.0
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

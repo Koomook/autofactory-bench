@@ -1,0 +1,23 @@
+{
+  "id": "long_fast",
+  "parameters": {
+    "requested_mm": 440,
+    "feed_mm_s": 240,
+    "blade_s": 0.3,
+    "travel_m_s": 0.65
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    },
+    {
+      "scan": 1,
+      "set": {
+        "X0": 0
+      }
+    }
+  ]
+}

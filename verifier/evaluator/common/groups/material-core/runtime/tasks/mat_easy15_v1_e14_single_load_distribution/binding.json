@@ -1,0 +1,24 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "feed_left": "Y20",
+    "feed_right": "Y21"
+  },
+  "inputs": {
+    "received_left": "X20",
+    "received_right": "X21",
+    "free_left": "X22",
+    "free_right": "X23"
+  },
+  "words": {
+    "w1": "D20",
+    "left": "D21",
+    "right": "D22"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "align_x": "Y20",
+    "align_z": "Y21"
+  },
+  "inputs": {
+    "datum_x": "X20",
+    "datum_z": "X21",
+    "fingers_clear": "X22"
+  },
+  "words": {}
+}

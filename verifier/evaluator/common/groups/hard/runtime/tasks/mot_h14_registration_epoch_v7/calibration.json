@@ -1,0 +1,316 @@
+{
+  "schema_version": "public-calibration/0.1",
+  "provenance": "public-synthetic",
+  "mode": "mini_process",
+  "task_slug": "registration_epoch",
+  "lanes": 2,
+  "physics_step_ms": 2,
+  "observation_ms": 100,
+  "axes": {
+    "a": {
+      "natural_frequency_rad_s": 35,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 6000,
+      "speed_mm_s": 1100,
+      "braking_mm_s2": 6000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 30,
+      "position_quantum_mm": 0.01
+    },
+    "b": {
+      "natural_frequency_rad_s": 35,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 6000,
+      "speed_mm_s": 1100,
+      "braking_mm_s2": 6000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 30,
+      "position_quantum_mm": 0.01
+    },
+    "c": {
+      "natural_frequency_rad_s": 35,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 6000,
+      "speed_mm_s": 1100,
+      "braking_mm_s2": 6000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 30,
+      "position_quantum_mm": 0.01
+    },
+    "d": {
+      "natural_frequency_rad_s": 35,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 6000,
+      "speed_mm_s": 1100,
+      "braking_mm_s2": 6000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 30,
+      "position_quantum_mm": 0.01
+    },
+    "s3_0": {
+      "natural_frequency_rad_s": 35,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 6000,
+      "speed_mm_s": 1100,
+      "braking_mm_s2": 6000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 30,
+      "position_quantum_mm": 0.01
+    },
+    "s3_1": {
+      "natural_frequency_rad_s": 35,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 6000,
+      "speed_mm_s": 1100,
+      "braking_mm_s2": 6000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 30,
+      "position_quantum_mm": 0.01
+    },
+    "s4_0": {
+      "natural_frequency_rad_s": 35,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 6000,
+      "speed_mm_s": 1100,
+      "braking_mm_s2": 6000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 30,
+      "position_quantum_mm": 0.01
+    },
+    "s4_1": {
+      "natural_frequency_rad_s": 35,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 6000,
+      "speed_mm_s": 1100,
+      "braking_mm_s2": 6000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 30,
+      "position_quantum_mm": 0.01
+    }
+  },
+  "axis_units": {
+    "a": "mm",
+    "b": "mm",
+    "c": "mm",
+    "d": "mm",
+    "s3_0": "mm",
+    "s3_1": "mm",
+    "s4_0": "mm",
+    "s4_1": "mm"
+  },
+  "travel_ranges": {
+    "a": [
+      -4500,
+      4500
+    ],
+    "b": [
+      0,
+      180
+    ],
+    "c": [
+      0,
+      1200
+    ],
+    "d": [
+      0,
+      1200
+    ],
+    "s3_0": [
+      -950,
+      950
+    ],
+    "s3_1": [
+      -1800,
+      1800
+    ],
+    "s4_0": [
+      -950,
+      950
+    ],
+    "s4_1": [
+      -950,
+      950
+    ]
+  },
+  "command_ranges": {
+    "a": [
+      -4500,
+      4500
+    ],
+    "b": [
+      0,
+      180
+    ],
+    "c": [
+      0,
+      1200
+    ],
+    "d": [
+      0,
+      1200
+    ],
+    "s3_0": [
+      -950,
+      950
+    ],
+    "s3_1": [
+      -1800,
+      1800
+    ],
+    "s4_0": [
+      -950,
+      950
+    ],
+    "s4_1": [
+      -950,
+      950
+    ]
+  },
+  "source_mode": "brake_bank",
+  "source_dock": 732.5,
+  "home": {
+    "a": 0,
+    "b": 0,
+    "c": 150,
+    "d": 150,
+    "s3_0": -600,
+    "s3_1": -600,
+    "s4_0": -600,
+    "s4_1": -600
+  },
+  "cells": {
+    "3": {
+      "mode": "frame",
+      "source": "MOT-M08",
+      "label": "Shared reference-alignment unit",
+      "axes": [
+        "s3_0",
+        "s3_1"
+      ],
+      "home": [
+        -600,
+        -600
+      ],
+      "units": [
+        "mm",
+        "mm"
+      ]
+    },
+    "4": {
+      "mode": "capture",
+      "source": "MOT-M16",
+      "label": "Shared position-registration unit",
+      "axes": [
+        "s4_0",
+        "s4_1"
+      ],
+      "home": [
+        -600,
+        -600
+      ],
+      "units": [
+        "mm",
+        "mm"
+      ]
+    }
+  },
+  "layout": {
+    "source": {
+      "position": [
+        -2.95,
+        0.5275000000000001,
+        1.4100000000000001
+      ],
+      "spread": 0.65,
+      "foot_size": [
+        3.4,
+        0.5275000000000001,
+        2.3
+      ],
+      "rail_shift_z": 0.87,
+      "foot_offset_z": 0.2
+    },
+    "cells": {
+      "3": {
+        "mode": "frame",
+        "source": "MOT-M08",
+        "label": "Shared reference-alignment unit",
+        "position": [
+          0.6,
+          0.5700000000000001,
+          1.71
+        ],
+        "dock_point": [
+          -0.6,
+          1.03,
+          -0.55
+        ],
+        "assets": [],
+        "mount_extension_z": 0.65,
+        "foot_size": [
+          2.5,
+          0.5700000000000001,
+          1.75
+        ]
+      },
+      "4": {
+        "mode": "capture",
+        "source": "MOT-M16",
+        "label": "Shared position-registration unit",
+        "position": [
+          4.2,
+          0.5700000000000001,
+          1.71
+        ],
+        "dock_point": [
+          -0.6,
+          1.03,
+          -0.55
+        ],
+        "assets": [],
+        "mount_extension_z": 0.65,
+        "foot_size": [
+          2.5,
+          0.5700000000000001,
+          1.75
+        ]
+      }
+    },
+    "rails": [
+      -3.525,
+      -1.175,
+      1.175,
+      3.525
+    ],
+    "rail_y": 1.2603,
+    "jig_y": 1.6,
+    "source_ids": [
+      "MOT-M07",
+      "MOT-M18",
+      "MOT-M08",
+      "MOT-M16"
+    ],
+    "labels": [
+      "Shared shuttle",
+      "Paired lift units",
+      "Shared reference-alignment unit",
+      "Shared position-registration unit"
+    ],
+    "clearance_revision": 7
+  },
+  "port_x": {
+    "1": -3600.0,
+    "2": -2300.0000000000005,
+    "3": 0.0,
+    "4": 3600.0
+  },
+  "passive_axes": []
+}

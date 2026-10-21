@@ -1,0 +1,30 @@
+{
+  "feedback": {
+    "start": "X0",
+    "a_position": "D10",
+    "a_velocity": "D11",
+    "b_position": "D12",
+    "b_velocity": "D13",
+    "c_position": "D14",
+    "c_velocity": "D15",
+    "request_park": "D101",
+    "reference_sensor": "X34",
+    "configured": "X35",
+    "origin": "D90"
+  },
+  "commands": {
+    "a_target": "D20",
+    "a_rate": "D21",
+    "a_enable": "Y20",
+    "b_target": "D24",
+    "b_rate": "D25",
+    "b_enable": "Y21",
+    "c_target": "D28",
+    "c_rate": "D29",
+    "c_enable": "Y22",
+    "configure": "Y30"
+  },
+  "result": {
+    "completion": "Y2"
+  }
+}

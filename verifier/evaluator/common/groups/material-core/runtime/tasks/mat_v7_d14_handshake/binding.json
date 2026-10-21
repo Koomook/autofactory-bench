@@ -1,0 +1,24 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "forward": "Y20",
+    "back": "Y21",
+    "release": "Y22",
+    "offer": "Y23"
+  },
+  "inputs": {
+    "home": "X20",
+    "docked": "X21",
+    "released": "X22",
+    "ack": "X23",
+    "ready": "X24",
+    "received": "X25"
+  },
+  "words": {}
+}

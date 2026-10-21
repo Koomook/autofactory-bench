@@ -1,0 +1,13 @@
+{
+  "initial_buffer_mm": 150,
+  "buffer_min_mm": 80,
+  "buffer_max_mm": 900,
+  "stroke_mm": 500,
+  "stock_mm": 5000,
+  "feed_mm_s": 160,
+  "unwind_mm_s": 120,
+  "grip_seconds": 0.12,
+  "receiver_seconds": 0.18,
+  "length_tolerance_mm": 3,
+  "provenance": "Public synthetic values, not measured company values."
+}

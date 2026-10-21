@@ -1,0 +1,28 @@
+{
+  "schema_version": "virtual-binding/0.1",
+  "provenance": "public-synthetic",
+  "external": {
+    "request": "X10"
+  },
+  "feedback": {
+    "target_s": "D10",
+    "s_position": "D11",
+    "s_velocity": "D12",
+    "target_u": "D13",
+    "u_position": "D14",
+    "u_velocity": "D15",
+    "v_position": "D16",
+    "v_velocity": "D17"
+  },
+  "commands": {
+    "s_target": "D20",
+    "s_enable": "Y20",
+    "u_target": "D21",
+    "u_enable": "Y21",
+    "v_target": "D22",
+    "v_enable": "Y22"
+  },
+  "result": {
+    "completion": "Y2"
+  }
+}

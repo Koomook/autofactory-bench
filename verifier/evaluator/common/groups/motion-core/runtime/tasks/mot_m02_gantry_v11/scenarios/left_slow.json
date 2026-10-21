@@ -1,0 +1,25 @@
+{
+  "id": "left_slow",
+  "initial": {
+    "s": -550,
+    "u": -550,
+    "target": 550
+  },
+  "parameters": {
+    "s_response": 0.5
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X10": 0
+      }
+    },
+    {
+      "scan": 5,
+      "set": {
+        "X10": 1
+      }
+    }
+  ]
+}

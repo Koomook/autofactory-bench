@@ -1,0 +1,10 @@
+{
+  "contact_tolerance_m": 0.001,
+  "travel_m_s": 0.35,
+  "lift_m_s": 0.5,
+  "table_m_s": 0.025,
+  "grip_seconds": 0.12,
+  "release_seconds": 0.1,
+  "supply_m_s": 0.15,
+  "provenance": "Public synthetic values, not measured company values."
+}

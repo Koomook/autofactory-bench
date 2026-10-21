@@ -1,0 +1,26 @@
+{
+  "id": "ratio_one",
+  "initial": {
+    "s": 0,
+    "u": 15,
+    "u_velocity": 300,
+    "ratio": 1,
+    "span": 180,
+    "park": 180
+  },
+  "parameters": {},
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X10": 0
+      }
+    },
+    {
+      "scan": 5,
+      "set": {
+        "X10": 1
+      }
+    }
+  ]
+}

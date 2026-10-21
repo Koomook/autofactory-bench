@@ -1,0 +1,13 @@
+{
+  "task": "MOT-E02",
+  "revision": "0.9",
+  "previous_path": "tasks/mot_e02_unit_v04",
+  "functions": [
+    "motion.home"
+  ],
+  "dependency_relation": "Single function; no downstream function",
+  "basis": "intra_function_dependency",
+  "independent_review": false,
+  "field_validated": false,
+  "independent_ability_claim": false
+}

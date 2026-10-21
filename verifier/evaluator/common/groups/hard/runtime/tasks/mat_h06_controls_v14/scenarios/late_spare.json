@@ -1,0 +1,14 @@
+{
+  "id": "late_spare",
+  "parameters": {
+    "spare_arrival": 45.0
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

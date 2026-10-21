@@ -1,0 +1,71 @@
+{
+  "schema_version": "virtual-binding/0.1",
+  "provenance": "public-synthetic",
+  "external": {
+    "start": "X0"
+  },
+  "inputs": {
+    "pitch_available": "X10",
+    "feed_busy": "X11",
+    "at_bed": "X12",
+    "tool_busy": "X13",
+    "cut_done": "X14",
+    "clamped": "X15",
+    "held": "X16",
+    "bed_low": "X17",
+    "head_busy": "X18",
+    "exit_clear": "X19",
+    "exit_received": "X1A",
+    "recovery_available": "X1B",
+    "recovery_active": "X1C",
+    "recovery_done": "X1D",
+    "drain_ready": "X1E",
+    "all_done": "X1F",
+    "clamp_open": "X20",
+    "waste_full": "X21",
+    "edges_held": "X22",
+    "edges_cut": "X23",
+    "reel_busy": "X24",
+    "empty_core_ready": "X25",
+    "core_docked": "X26",
+    "left_threaded": "X27",
+    "right_threaded": "X28",
+    "recovery_connected": "X29"
+  },
+  "outputs": {
+    "accept_pitch": "Y10",
+    "feed": "Y11",
+    "clamp": "Y12",
+    "cut": "Y13",
+    "pickup": "Y14",
+    "release_bed": "Y15",
+    "transfer": "Y16",
+    "accept_recovery": "Y17",
+    "recover": "Y18",
+    "ack_recovery": "Y19",
+    "ack_exit": "Y1A",
+    "complete": "Y1B",
+    "edge_hold": "Y1C",
+    "cut_left": "Y1D",
+    "cut_right": "Y1E",
+    "unload_reel": "Y1F",
+    "load_core": "Y20",
+    "thread_left": "Y21",
+    "thread_right": "Y22"
+  },
+  "word_inputs": {
+    "pitch_id": "D0",
+    "attached_mask": "D1",
+    "feed_mm": "D2",
+    "stored_mm": "D3",
+    "recovered_mm": "D4",
+    "recovery_remaining": "D5",
+    "product_received": "D6"
+  },
+  "word_outputs": {
+    "cut_mask": "D200"
+  },
+  "result": {
+    "completion": "Y1B"
+  }
+}

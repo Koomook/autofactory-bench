@@ -1,0 +1,97 @@
+[
+  {
+    "id": "normal",
+    "initial": {
+      "a": 0,
+      "b": 0,
+      "c": 0,
+      "d": 0
+    },
+    "request": {
+      "depth": 65
+    },
+    "start_ms": 30,
+    "parameters": {},
+    "mark": 70,
+    "module_duration_ms": 200,
+    "past_module_count": 2
+  },
+  {
+    "id": "changed_request",
+    "initial": {
+      "a": 0,
+      "b": 0,
+      "c": 0,
+      "d": 0
+    },
+    "request": {
+      "depth": 55
+    },
+    "start_ms": 30,
+    "parameters": {},
+    "mark": 67,
+    "module_duration_ms": 260,
+    "past_module_count": 3
+  },
+  {
+    "id": "slow_response",
+    "initial": {
+      "a": 0,
+      "b": 0,
+      "c": 0,
+      "d": 0
+    },
+    "request": {
+      "depth": 65
+    },
+    "start_ms": 30,
+    "parameters": {
+      "a_response": 0.65,
+      "b_response": 0.65,
+      "c_response": 0.65,
+      "d_response": 0.65
+    },
+    "mark": 74,
+    "module_duration_ms": 320,
+    "past_module_count": 4
+  },
+  {
+    "id": "asymmetric_response",
+    "initial": {
+      "a": 0,
+      "b": 0,
+      "c": 0,
+      "d": 0
+    },
+    "request": {
+      "depth": 65
+    },
+    "start_ms": 30,
+    "parameters": {
+      "a_response": 0.7,
+      "b_response": 1.15,
+      "c_response": 0.7,
+      "d_response": 1.15
+    },
+    "mark": 81,
+    "module_duration_ms": 380,
+    "past_module_count": 5
+  },
+  {
+    "id": "different_initial",
+    "initial": {
+      "a": 2,
+      "b": 0,
+      "c": 0,
+      "d": 0
+    },
+    "request": {
+      "depth": 60
+    },
+    "start_ms": 100,
+    "parameters": {},
+    "mark": 88,
+    "module_duration_ms": 440,
+    "past_module_count": 6
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "feed": "Y20",
+    "dispatch": "Y21"
+  },
+  "inputs": {
+    "a": "X20",
+    "b": "X21",
+    "external_pending": "X22",
+    "empty": "X23",
+    "settled": "X24",
+    "dispatched": "X25"
+  },
+  "words": {}
+}

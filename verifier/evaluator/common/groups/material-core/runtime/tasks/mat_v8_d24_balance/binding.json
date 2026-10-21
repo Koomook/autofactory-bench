@@ -1,0 +1,29 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "place_left": "Y20",
+    "place_right": "Y21",
+    "depart": "Y22"
+  },
+  "inputs": {
+    "home": "X20",
+    "end": "X21",
+    "loaded": "X22",
+    "departed": "X23"
+  },
+  "words": {
+    "w1": "D20",
+    "w2": "D21",
+    "w3": "D22",
+    "w4": "D23",
+    "left": "D24",
+    "right": "D25",
+    "index": "D26"
+  }
+}

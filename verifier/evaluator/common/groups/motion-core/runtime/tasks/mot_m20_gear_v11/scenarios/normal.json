@@ -1,0 +1,26 @@
+{
+  "id": "normal",
+  "initial": {
+    "s": 0,
+    "u": 0,
+    "u_velocity": 240,
+    "ratio": 2,
+    "span": 180,
+    "park": 0
+  },
+  "parameters": {},
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X10": 0
+      }
+    },
+    {
+      "scan": 5,
+      "set": {
+        "X10": 1
+      }
+    }
+  ]
+}

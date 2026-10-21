@@ -1,0 +1,73 @@
+{
+  "schema_version": "virtual-binding/0.1",
+  "provenance": "public-synthetic",
+  "external": {
+    "start": "X0"
+  },
+  "inputs": {
+    "body_ready": "X10",
+    "no_more_bodies": "X11",
+    "insert_supply": "X12",
+    "insert_staged": "X13",
+    "load_busy": "X14",
+    "insert_busy": "X15",
+    "inspect_busy": "X16",
+    "eject_busy": "X17",
+    "moving": "X18",
+    "locked": "X19",
+    "unlocked": "X1A",
+    "eject_home": "X1B",
+    "eject_extended": "X1C",
+    "exit_clear": "X1D",
+    "exit_received": "X1E",
+    "all_done": "X1F",
+    "output_pending": "X20",
+    "insert_complete": "X21",
+    "inspection_current": "X22",
+    "eject_current": "X23",
+    "output_ng": "X24",
+    "rework_busy": "X25",
+    "rework_present": "X26",
+    "rework_clamped": "X27",
+    "insert_removed": "X28",
+    "reseated": "X29",
+    "return_ready": "X2A"
+  },
+  "outputs": {
+    "load_body": "Y10",
+    "prepare_insert": "Y11",
+    "insert": "Y12",
+    "inspect": "Y13",
+    "eject_extend": "Y14",
+    "eject_retract": "Y15",
+    "release_output": "Y16",
+    "lock": "Y17",
+    "turn": "Y18",
+    "ack_exit": "Y19",
+    "complete": "Y1A",
+    "to_rework": "Y1B",
+    "rework_clamp": "Y1C",
+    "remove_insert": "Y1D",
+    "reseat_insert": "Y1E",
+    "return_body": "Y1F"
+  },
+  "word_inputs": {
+    "load_body_id": "D0",
+    "insert_body_id": "D1",
+    "inspect_body_id": "D2",
+    "eject_body_id": "D3",
+    "insert_id": "D4",
+    "inspect_generation": "D5",
+    "inspect_result_id": "D6",
+    "inspect_result_generation": "D7",
+    "eject_generation": "D8",
+    "eject_result_generation": "D9",
+    "received": "D10"
+  },
+  "word_outputs": {
+    "generation": "D200"
+  },
+  "result": {
+    "completion": "Y1A"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "task": "MOT-M05",
+  "revision": "0.9",
+  "previous_path": "tasks/mot_v08_d18_counterbalance",
+  "functions": [
+    "motion.balance",
+    "motion.position",
+    "motion.passive_hold"
+  ],
+  "dependency_relation": "Stop at the target angle while maintaining balance → confirm brake engagement → release head drive",
+  "basis": "inter_function_dependency",
+  "independent_review": false,
+  "field_validated": false,
+  "independent_ability_claim": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "long_first",
+  "parameters": {
+    "lengths": [
+      1.0,
+      0.7,
+      0.8
+    ]
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

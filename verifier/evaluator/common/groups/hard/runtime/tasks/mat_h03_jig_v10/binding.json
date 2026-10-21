@@ -1,0 +1,61 @@
+{
+  "schema_version": "virtual-binding/0.1",
+  "provenance": "public-synthetic",
+  "external": {
+    "start": "X0"
+  },
+  "inputs": {
+    "source_ready": "X10",
+    "move_busy": "X11",
+    "load_busy": "X12",
+    "unload_busy": "X13",
+    "inspect_busy": "X14",
+    "exit_clear": "X15",
+    "exit_received": "X16",
+    "left_upper": "X17",
+    "left_lower": "X18",
+    "right_upper": "X19",
+    "right_lower": "X1A",
+    "left_busy": "X1B",
+    "right_busy": "X1C",
+    "right_entry": "X1D",
+    "right_fully": "X1E",
+    "left_fully": "X1F",
+    "all_done": "X20"
+  },
+  "outputs": {
+    "admit": "Y10",
+    "inspect": "Y11",
+    "detach": "Y12",
+    "move": "Y13",
+    "left_up": "Y14",
+    "left_down": "Y15",
+    "right_up": "Y16",
+    "right_down": "Y17",
+    "ack_exit": "Y18",
+    "complete": "Y19"
+  },
+  "word_inputs": {
+    "input_jig": "D0",
+    "inspect_jig": "D1",
+    "output_jig": "D2",
+    "right_jig": "D3",
+    "lower_jig": "D4",
+    "input_product": "D5",
+    "inspect_product": "D6",
+    "output_product": "D7",
+    "inspect_generation": "D8",
+    "result_product": "D9",
+    "result_generation": "D10",
+    "source_id": "D11",
+    "received": "D12"
+  },
+  "word_outputs": {
+    "jig": "D200",
+    "target": "D201",
+    "generation": "D202"
+  },
+  "result": {
+    "completion": "Y19"
+  }
+}

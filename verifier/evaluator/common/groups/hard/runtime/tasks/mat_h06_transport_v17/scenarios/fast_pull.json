@@ -1,0 +1,14 @@
+{
+  "id": "fast_pull",
+  "parameters": {
+    "pull_speed": 0.16
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

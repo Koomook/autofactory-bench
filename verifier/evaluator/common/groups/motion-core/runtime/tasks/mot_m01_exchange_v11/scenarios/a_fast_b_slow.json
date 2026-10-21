@@ -1,0 +1,27 @@
+{
+  "id": "a_fast_b_slow",
+  "initial": {
+    "s": -850,
+    "u": 850,
+    "v": 0,
+    "target_s": 850,
+    "target_u": -850
+  },
+  "parameters": {
+    "u_response": 0.25
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X10": 0
+      }
+    },
+    {
+      "scan": 5,
+      "set": {
+        "X10": 1
+      }
+    }
+  ]
+}

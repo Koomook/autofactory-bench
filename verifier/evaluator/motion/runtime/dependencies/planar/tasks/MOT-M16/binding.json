@@ -1,0 +1,27 @@
+{
+  "feedback": {
+    "start": "X0",
+    "a_position": "D10",
+    "a_velocity": "D11",
+    "b_position": "D12",
+    "b_velocity": "D13",
+    "request_target": "D101",
+    "request_depth": "D102",
+    "module_busy": "X34",
+    "module_done": "X35",
+    "module_position": "D94",
+    "module_count": "D95"
+  },
+  "commands": {
+    "a_target": "D20",
+    "a_rate": "D21",
+    "a_enable": "Y20",
+    "b_target": "D24",
+    "b_rate": "D25",
+    "b_enable": "Y21",
+    "module_request": "Y30"
+  },
+  "result": {
+    "completion": "Y2"
+  }
+}

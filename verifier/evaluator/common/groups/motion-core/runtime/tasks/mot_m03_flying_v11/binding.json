@@ -1,0 +1,24 @@
+{
+  "schema_version": "virtual-binding/0.1",
+  "provenance": "public-synthetic",
+  "external": {
+    "request": "X10"
+  },
+  "feedback": {
+    "s_position": "D11",
+    "s_velocity": "D12",
+    "u_position": "D13",
+    "u_velocity": "D14",
+    "fork_inserted": "X11",
+    "fork_retracted": "X12"
+  },
+  "commands": {
+    "follow_target": "D20",
+    "feedforward": "D21",
+    "follow": "Y20",
+    "extend": "Y21"
+  },
+  "result": {
+    "completion": "Y2"
+  }
+}

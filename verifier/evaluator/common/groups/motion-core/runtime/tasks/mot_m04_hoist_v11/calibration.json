@@ -1,0 +1,84 @@
+{
+  "schema_version": "public-calibration/0.1",
+  "provenance": "public-synthetic",
+  "axes": {
+    "a": {
+      "natural_frequency_rad_s": 35,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 10000,
+      "speed_mm_s": 1000,
+      "braking_mm_s2": 12000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 30,
+      "position_quantum_mm": 0.01
+    },
+    "b": {
+      "natural_frequency_rad_s": 35,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 10000,
+      "speed_mm_s": 1000,
+      "braking_mm_s2": 12000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 30,
+      "position_quantum_mm": 0.01
+    },
+    "c": {
+      "natural_frequency_rad_s": 35,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 1500,
+      "speed_mm_s": 180,
+      "braking_mm_s2": 2000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 30,
+      "position_quantum_mm": 0.01
+    }
+  },
+  "axis_units": {
+    "a": "mm",
+    "b": "mm",
+    "c": "deg"
+  },
+  "axis_labels": {
+    "a": "Wire length",
+    "b": "Trolley X",
+    "c": "Hook sway"
+  },
+  "travel_ranges": {
+    "a": [
+      600,
+      1600
+    ],
+    "b": [
+      -1400,
+      1400
+    ],
+    "c": [
+      -30,
+      30
+    ]
+  },
+  "command_ranges": {
+    "a_target": [
+      60000,
+      160000
+    ],
+    "acceleration": [
+      -400000,
+      400000
+    ]
+  },
+  "request_commands": [
+    "acceleration",
+    "hoist"
+  ],
+  "physics_step_ms": 2,
+  "ready_deadline_ms": 7340,
+  "obstruction_start_ms": 300,
+  "obstruction_end_ms": 1100,
+  "sway_damping": 0.2,
+  "clutch_acceleration": 800,
+  "crank_deceleration": 1600
+}

@@ -1,0 +1,15 @@
+{
+  "id": "reverse",
+  "parameters": {
+    "fill_s_1": 2.0,
+    "fill_s_2": 8.0
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

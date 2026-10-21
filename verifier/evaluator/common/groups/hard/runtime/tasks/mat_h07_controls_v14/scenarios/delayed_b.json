@@ -1,0 +1,14 @@
+{
+  "id": "delayed_b",
+  "parameters": {
+    "b_arrival": 5.0
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

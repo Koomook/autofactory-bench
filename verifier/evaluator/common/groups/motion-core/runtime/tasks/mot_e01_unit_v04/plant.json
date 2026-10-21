@@ -1,0 +1,95 @@
+{
+  "schema_version": "plant-spec/0.2",
+  "id": "MOT-E01",
+  "scan_ms": 10,
+  "execution_order": [
+    "MAIN"
+  ],
+  "devices": [
+    {
+      "id": "UNIT",
+      "kind": "motion_axis",
+      "role": "unit",
+      "binding_ref": "commands",
+      "calibration_ref": "calibration.json",
+      "calibration_path": "$"
+    }
+  ],
+  "interactions": [
+    {
+      "id": "LOCAL_FUNCTION",
+      "kind": "motion_easy_unit",
+      "mode": "position"
+    }
+  ],
+  "scene": {
+    "geometry_profile": "motion-easy/0.4",
+    "devices": [
+      {
+        "id": "BASE",
+        "ui": "fixture",
+        "pos": [
+          0.0,
+          0.3,
+          0.0
+        ],
+        "size": [
+          2.75,
+          0.6,
+          0.78
+        ],
+        "rot": 0.0
+      },
+      {
+        "id": "AXIS",
+        "ui": "servo",
+        "pos": [
+          0.0,
+          0.63,
+          0.0
+        ],
+        "size": [
+          2.35,
+          0.28,
+          0.52
+        ],
+        "rot": 0,
+        "motion_axis": "x",
+        "state_source": "plant.axes.s.position"
+      }
+    ],
+    "relations": [
+      {
+        "type": "mounted_on",
+        "child": "AXIS",
+        "parent": "BASE"
+      }
+    ],
+    "workpieces": [],
+    "signals": [
+      {
+        "address_ref": "result.completion",
+        "source": "command_image.result"
+      }
+    ],
+    "io_labels": {
+      "external.request": "Function request.",
+      "result.completion": "Function result retention.",
+      "feedback.target": "Request value ×0.01.",
+      "feedback.s_position": "S actual position · mm ×0.01.",
+      "feedback.s_velocity": "S actual speed · mm/s ×0.01.",
+      "commands.enable": "Function activation/retention.",
+      "commands.command": "Main command value ×0.01."
+    },
+    "observed_refs": [
+      "external.request",
+      "result.completion",
+      "feedback.target",
+      "feedback.s_position",
+      "feedback.s_velocity",
+      "commands.enable",
+      "commands.command"
+    ]
+  },
+  "workpieces": []
+}

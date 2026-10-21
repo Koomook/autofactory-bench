@@ -1,0 +1,27 @@
+{
+  "schema_version": "virtual-binding/0.1",
+  "provenance": "public-synthetic",
+  "external": {
+    "request": "X10"
+  },
+  "feedback": {
+    "a_position": "D11",
+    "a_velocity": "D12",
+    "target_a": "D10",
+    "b_position": "D13",
+    "b_velocity": "D14",
+    "target_b": "D17",
+    "brake_closed": "X11"
+  },
+  "commands": {
+    "a_target": "D20",
+    "b_target": "D21",
+    "feedforward": "D22",
+    "tilt": "Y20",
+    "balance": "Y21",
+    "brake": "Y22"
+  },
+  "result": {
+    "completion": "Y2"
+  }
+}

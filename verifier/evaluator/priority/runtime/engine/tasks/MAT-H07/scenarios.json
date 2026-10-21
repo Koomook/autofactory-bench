@@ -1,0 +1,79 @@
+[
+  {
+    "id": "nominal",
+    "parameters": {}
+  },
+  {
+    "id": "delayed_b",
+    "parameters": {
+      "b_arrival": 5.0
+    }
+  },
+  {
+    "id": "slow_receiver",
+    "parameters": {
+      "exit_delay": 5.0
+    }
+  },
+  {
+    "id": "shifted_origin",
+    "parameters": {
+      "origin_b": 0.15
+    }
+  },
+  {
+    "id": "long_first",
+    "parameters": {
+      "lengths": [
+        1.0,
+        0.7,
+        0.8
+      ]
+    }
+  },
+  {
+    "id": "slow_wind",
+    "parameters": {
+      "wind_speed": 0.07
+    }
+  },
+  {
+    "id": "pipeline_blocked_exit",
+    "parameters": {
+      "exit_delay": 38.0
+    }
+  },
+  {
+    "id": "all_cores_early",
+    "parameters": {
+      "core_arrivals": [
+        0,
+        0,
+        0
+      ],
+      "exit_delay": 38.0
+    }
+  },
+  {
+    "id": "late_core",
+    "parameters": {
+      "core_arrivals": [
+        10,
+        40,
+        65
+      ]
+    }
+  },
+  {
+    "id": "slow_tape",
+    "parameters": {
+      "tape_speed": 0.2
+    }
+  },
+  {
+    "id": "slow_core",
+    "parameters": {
+      "core_speed": 0.12
+    }
+  }
+]

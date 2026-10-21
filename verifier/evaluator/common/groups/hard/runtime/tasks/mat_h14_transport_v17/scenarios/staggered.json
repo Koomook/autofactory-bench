@@ -1,0 +1,22 @@
+{
+  "id": "staggered",
+  "parameters": {
+    "arrivals": [
+      0,
+      8,
+      9,
+      16
+    ],
+    "speed": 0.45,
+    "measure_s_pre": 1.2,
+    "measure_s_post": 1.5
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "privacy": "public-synthetic",
+  "evidence_ids": [
+    "CO-M01",
+    "CO-M04",
+    "PUB-BK-GEAR"
+  ],
+  "field_validated": false,
+  "independent_review": false,
+  "whole_cell_synthetic": true
+}

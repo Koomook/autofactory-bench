@@ -1,0 +1,25 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "down": "Y20",
+    "up": "Y21",
+    "valve": "Y22",
+    "pump": "Y23"
+  },
+  "inputs": {
+    "high": "X20",
+    "low": "X21",
+    "valve_open": "X22",
+    "valve_closed": "X23"
+  },
+  "words": {
+    "received": "D20",
+    "pumped": "D21"
+  }
+}

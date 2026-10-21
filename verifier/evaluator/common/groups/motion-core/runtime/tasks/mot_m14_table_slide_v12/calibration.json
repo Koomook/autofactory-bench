@@ -1,0 +1,47 @@
+{
+  "schema_version": "public-calibration/0.1",
+  "provenance": "public-synthetic",
+  "axes": {
+    "a": {
+      "natural_frequency_rad_s": 35,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 900,
+      "speed_mm_s": 100,
+      "braking_mm_s2": 900,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 30,
+      "position_quantum_mm": 0.01
+    },
+    "b": {
+      "natural_frequency_rad_s": 35,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 6000,
+      "speed_mm_s": 900,
+      "braking_mm_s2": 6000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 30,
+      "position_quantum_mm": 0.01
+    }
+  },
+  "axis_units": {
+    "a": "deg",
+    "b": "mm"
+  },
+  "physics_step_ms": 2,
+  "ready_deadline_ms": 7500,
+  "observation_ms": 100,
+  "clearance_limit_mm": 500,
+  "travel_ranges": {
+    "a": [
+      -2,
+      272
+    ],
+    "b": [
+      -2,
+      742
+    ]
+  },
+  "collision_scope": "Swept oriented boxes of the slide tongue/cantilever and the four table receivers; no whole-CAD collision or force/deformation model."
+}

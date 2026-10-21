@@ -1,0 +1,17 @@
+{
+  "id": "thickness",
+  "parameters": {
+    "thickness": [
+      10,
+      14
+    ]
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

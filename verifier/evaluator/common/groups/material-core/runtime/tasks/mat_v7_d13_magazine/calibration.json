@@ -1,0 +1,18 @@
+{
+  "travel_m_s": 0.75,
+  "lift_m_s": 0.4,
+  "pitch_m_s": 0.2,
+  "grip_seconds": 0.12,
+  "initial_pitch_mm": 260,
+  "initial_line_ml": 0,
+  "flow_ml_s": 30,
+  "valve_seconds": 0.12,
+  "rack_m_s": 0.2,
+  "push_per_s": 0.6,
+  "occupied_mask": 1,
+  "stale_ack": false,
+  "reset_seconds": 0.12,
+  "ready_seconds": 0.2,
+  "accept_seconds": 0.25,
+  "provenance": "Uncalibrated public synthetic parameters; not company measurements."
+}

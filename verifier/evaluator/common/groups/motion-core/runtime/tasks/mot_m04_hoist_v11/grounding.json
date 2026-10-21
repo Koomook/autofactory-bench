@@ -1,0 +1,9 @@
+{
+  "privacy": "public-synthetic",
+  "evidence_ids": [
+    "KONECRANES-SWAY"
+  ],
+  "field_validated": false,
+  "independent_review": false,
+  "whole_cell_synthetic": true
+}

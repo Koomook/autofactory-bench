@@ -1,0 +1,281 @@
+{
+  "schema_version": "plant-spec/0.2",
+  "id": "MOT-E08",
+  "scan_ms": 10,
+  "execution_order": [
+    "MAIN"
+  ],
+  "devices": [
+    {
+      "id": "UNIT",
+      "kind": "motion_axis",
+      "role": "unit",
+      "binding_ref": "commands",
+      "calibration_ref": "calibration.json",
+      "calibration_path": "$"
+    }
+  ],
+  "interactions": [
+    {
+      "id": "LOCAL_FUNCTION",
+      "kind": "motion_easy_unit",
+      "mode": "tracking"
+    }
+  ],
+  "scene": {
+    "geometry_profile": "motion-easy/0.4",
+    "devices": [
+      {
+        "id": "S_AXIS_A",
+        "ui": "servo",
+        "state_source": "plant.axes.s.position",
+        "pos": [
+          0,
+          0.63,
+          0
+        ],
+        "size": [
+          2.35,
+          0.28,
+          0.52
+        ],
+        "rot": 0.0,
+        "motion_axis": "x",
+        "easy_asset": {
+          "kind": "servo",
+          "device": "AXIS_A"
+        }
+      },
+      {
+        "id": "S_AXIS_BENCH",
+        "ui": "fixture",
+        "pos": [
+          0.0,
+          0.3,
+          0.0
+        ],
+        "size": [
+          2.75,
+          0.6,
+          0.78
+        ],
+        "rot": 0.0,
+        "easy_asset": {
+          "kind": "servo",
+          "device": "AXIS_BENCH"
+        },
+        "visual_only": true
+      },
+      {
+        "id": "U_AXIS_BENCH",
+        "ui": "fixture",
+        "pos": [
+          0,
+          0.245,
+          -1.1
+        ],
+        "size": [
+          2.75,
+          0.49,
+          0.78
+        ],
+        "rot": 0
+      },
+      {
+        "id": "U_AXIS_A",
+        "ui": "servo",
+        "pos": [
+          0,
+          0.52,
+          -1.1
+        ],
+        "size": [
+          2.35,
+          0.28,
+          0.52
+        ],
+        "rot": 0,
+        "motion_axis": "x",
+        "state_source": "plant.axes.u.position"
+      }
+    ],
+    "relations": [
+      {
+        "type": "mounted_on",
+        "child": "S_AXIS_A",
+        "parent": "S_AXIS_BENCH"
+      },
+      {
+        "type": "mounted_on",
+        "child": "U_AXIS_A",
+        "parent": "U_AXIS_BENCH"
+      }
+    ],
+    "signals": [
+      {
+        "address_ref": "result.completion",
+        "source": "command_image.result"
+      }
+    ],
+    "io_labels": {
+      "external.request": "Function request.",
+      "result.completion": "Function result retention.",
+      "feedback.target": "Request value ×0.01.",
+      "feedback.s_position": "S actual position · mm ×0.01.",
+      "feedback.s_velocity": "S actual speed · mm/s ×0.01.",
+      "feedback.u_position": "U actual position · mm ×0.01.",
+      "feedback.u_velocity": "U actual velocity · mm/s ×0.01.",
+      "commands.enable": "Function activation/retention.",
+      "commands.command": "Main command value ×0.01.",
+      "commands.aux": "Auxiliary command value ×0.01."
+    },
+    "observed_refs": [
+      "external.request",
+      "result.completion",
+      "feedback.target",
+      "feedback.s_position",
+      "feedback.s_velocity",
+      "feedback.u_position",
+      "feedback.u_velocity",
+      "commands.enable",
+      "commands.command",
+      "commands.aux"
+    ],
+    "workpieces": [],
+    "coordinate_space": "public-synthetic-normalized",
+    "assembly_connections": [
+      {
+        "child": "F_AXIS_A",
+        "parent": "S_AXIS_A",
+        "port": "servo_carriage",
+        "offset": [
+          0,
+          0.08,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "child": "F_FORK_MAST",
+        "parent": "F_AXIS_A",
+        "port": "body",
+        "offset": [
+          0.0,
+          0.56,
+          0.3
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "child": "DOCK_-1_SIDE_-1",
+        "parent": "U_AXIS_A",
+        "port": "servo_carriage",
+        "offset": [
+          -0.1429,
+          0.10999999999999999,
+          0.17
+        ]
+      },
+      {
+        "child": "DOCK_-1_CAP_-1",
+        "parent": "U_AXIS_A",
+        "port": "servo_carriage",
+        "offset": [
+          -0.105,
+          0.07550000000000001,
+          0.17
+        ]
+      },
+      {
+        "child": "DOCK_-1_SIDE_1",
+        "parent": "U_AXIS_A",
+        "port": "servo_carriage",
+        "offset": [
+          -0.0671,
+          0.10999999999999999,
+          0.17
+        ]
+      },
+      {
+        "child": "DOCK_-1_CAP_1",
+        "parent": "U_AXIS_A",
+        "port": "servo_carriage",
+        "offset": [
+          -0.105,
+          0.14449999999999996,
+          0.17
+        ]
+      },
+      {
+        "child": "DOCK_1_SIDE_-1",
+        "parent": "U_AXIS_A",
+        "port": "servo_carriage",
+        "offset": [
+          0.0671,
+          0.10999999999999999,
+          0.17
+        ]
+      },
+      {
+        "child": "DOCK_1_CAP_-1",
+        "parent": "U_AXIS_A",
+        "port": "servo_carriage",
+        "offset": [
+          0.105,
+          0.07550000000000001,
+          0.17
+        ]
+      },
+      {
+        "child": "DOCK_1_SIDE_1",
+        "parent": "U_AXIS_A",
+        "port": "servo_carriage",
+        "offset": [
+          0.1429,
+          0.10999999999999999,
+          0.17
+        ]
+      },
+      {
+        "child": "DOCK_1_CAP_1",
+        "parent": "U_AXIS_A",
+        "port": "servo_carriage",
+        "offset": [
+          0.105,
+          0.14449999999999996,
+          0.17
+        ]
+      },
+      {
+        "child": "FORK_END_REED",
+        "parent": "F_AXIS_A",
+        "port": "body",
+        "offset": [
+          0.18,
+          0.09,
+          0.1
+        ]
+      },
+      {
+        "child": "DOCK_DECK",
+        "parent": "U_AXIS_A",
+        "port": "servo_carriage",
+        "offset": [
+          0,
+          0.0348,
+          0.17
+        ]
+      }
+    ],
+    "assembly_description": "Synthetic tracking cell with an empty fork and two moving lanes mounted on parallel servo carriers"
+  },
+  "workpieces": []
+}

@@ -1,0 +1,23 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "left": "Y20",
+    "right": "Y21",
+    "feed": "Y22",
+    "clamp": "Y23"
+  },
+  "inputs": {
+    "secured": "X20"
+  },
+  "words": {
+    "edge": "D20",
+    "length": "D21",
+    "actuator": "D22"
+  }
+}

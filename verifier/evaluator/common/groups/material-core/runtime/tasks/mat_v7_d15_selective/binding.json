@@ -1,0 +1,32 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "forward": "Y20",
+    "back": "Y21",
+    "up": "Y22",
+    "down": "Y23",
+    "release1": "Y24",
+    "release2": "Y25",
+    "release3": "Y26"
+  },
+  "inputs": {
+    "home": "X20",
+    "target": "X21",
+    "high": "X22",
+    "low": "X23",
+    "holding": "X24",
+    "released": "X25",
+    "holding1": "X26",
+    "holding2": "X27",
+    "holding3": "X28"
+  },
+  "words": {
+    "pitch": "D20"
+  }
+}

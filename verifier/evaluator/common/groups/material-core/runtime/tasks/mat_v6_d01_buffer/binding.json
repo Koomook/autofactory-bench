@@ -1,0 +1,31 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "forward": "Y20",
+    "reverse": "Y21",
+    "grip_close": "Y22",
+    "grip_open": "Y23",
+    "receiver_close": "Y24",
+    "receiver_open": "Y25",
+    "unwind": "Y26"
+  },
+  "inputs": {
+    "home": "X20",
+    "stopped": "X21",
+    "grip_closed": "X22",
+    "grip_open": "X23",
+    "receiver_closed": "X24",
+    "receiver_open": "X25"
+  },
+  "words": {
+    "buffer": "D20",
+    "web": "D21",
+    "carriage": "D22"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "downstream_delay",
+  "parameters": {
+    "exit_ready_s": 105
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

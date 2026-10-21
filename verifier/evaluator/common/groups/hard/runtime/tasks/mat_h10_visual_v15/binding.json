@@ -1,0 +1,62 @@
+{
+  "schema_version": "virtual-binding/0.1",
+  "provenance": "public-synthetic",
+  "external": {
+    "start": "X0"
+  },
+  "inputs": {
+    "docked": "X10",
+    "stack_ready": "X11",
+    "upper_closed": "X12",
+    "upper_open": "X13",
+    "lower_closed": "X14",
+    "lower_open": "X15",
+    "shuttle_home": "X16",
+    "shuttle_loaded": "X17",
+    "extraction_clear": "X18",
+    "swap_busy": "X19",
+    "spare_ready": "X1A",
+    "return_ready": "X1B",
+    "empty_returned": "X1C",
+    "all_received": "X1D",
+    "a_need": "X1E",
+    "a_present": "X1F",
+    "a_cap": "X20",
+    "a_busy": "X21",
+    "a_done": "X22",
+    "a_exit_clear": "X23",
+    "b_need": "X24",
+    "b_present": "X25",
+    "b_cap": "X26",
+    "b_busy": "X27",
+    "b_done": "X28",
+    "b_exit_clear": "X29"
+  },
+  "outputs": {
+    "lower": "Y10",
+    "upper": "Y11",
+    "extract": "Y12",
+    "send": "Y13",
+    "swap": "Y14",
+    "take_empty": "Y15",
+    "assemble_a": "Y16",
+    "assemble_b": "Y17",
+    "release_a": "Y18",
+    "release_b": "Y19",
+    "complete": "Y1A"
+  },
+  "word_inputs": {
+    "mag_id": "D0",
+    "stock": "D1",
+    "generation": "D2",
+    "a_received": "D3",
+    "b_received": "D4"
+  },
+  "word_outputs": {
+    "side": "D200",
+    "request": "D201"
+  },
+  "result": {
+    "completion": "Y1A"
+  }
+}

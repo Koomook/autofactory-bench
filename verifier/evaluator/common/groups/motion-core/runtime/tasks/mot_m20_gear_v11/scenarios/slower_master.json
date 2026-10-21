@@ -1,0 +1,26 @@
+{
+  "id": "slower_master",
+  "initial": {
+    "s": 90,
+    "u": 45,
+    "u_velocity": 180,
+    "ratio": 2,
+    "span": 150,
+    "park": 90
+  },
+  "parameters": {},
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X10": 0
+      }
+    },
+    {
+      "scan": 5,
+      "set": {
+        "X10": 1
+      }
+    }
+  ]
+}

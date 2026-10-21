@@ -1,0 +1,16 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "feed": "Y20"
+  },
+  "inputs": {
+    "b": "X20"
+  },
+  "words": {}
+}

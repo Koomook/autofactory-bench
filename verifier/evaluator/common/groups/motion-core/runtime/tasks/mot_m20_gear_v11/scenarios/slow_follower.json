@@ -1,0 +1,28 @@
+{
+  "id": "slow_follower",
+  "initial": {
+    "s": 0,
+    "u": 0,
+    "u_velocity": 240,
+    "ratio": 1.5,
+    "span": 180,
+    "park": 0
+  },
+  "parameters": {
+    "s_response": 0.7
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X10": 0
+      }
+    },
+    {
+      "scan": 5,
+      "set": {
+        "X10": 1
+      }
+    }
+  ]
+}

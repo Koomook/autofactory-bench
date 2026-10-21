@@ -1,0 +1,26 @@
+{
+  "id": "shifted_phase",
+  "initial": {
+    "s": 35,
+    "u": 275,
+    "u_velocity": 240,
+    "ratio": 1.5,
+    "span": 150,
+    "park": 90
+  },
+  "parameters": {},
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X10": 0
+      }
+    },
+    {
+      "scan": 5,
+      "set": {
+        "X10": 1
+      }
+    }
+  ]
+}

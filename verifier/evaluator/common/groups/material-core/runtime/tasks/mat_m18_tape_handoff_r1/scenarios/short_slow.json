@@ -1,0 +1,23 @@
+{
+  "id": "short_slow",
+  "parameters": {
+    "requested_mm": 300,
+    "feed_mm_s": 120,
+    "blade_s": 0.65,
+    "clamp_s": 0.3
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    },
+    {
+      "scan": 1,
+      "set": {
+        "X0": 0
+      }
+    }
+  ]
+}

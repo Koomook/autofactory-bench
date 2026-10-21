@@ -1,0 +1,29 @@
+{
+  "schema_version": "public-calibration/0.1",
+  "provenance": "public-synthetic",
+  "physics_step_ms": 2,
+  "observation_ms": 100,
+  "ready_deadline_ms": 1300,
+  "position_window_mm": 0.2,
+  "home_speed_mm_s": 200,
+  "axes": {
+    "s": {
+      "natural_frequency_rad_s": 35,
+      "damping_ratio": 0.85,
+      "acceleration_mm_s2": 4000,
+      "speed_mm_s": 400,
+      "braking_mm_s2": 4000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 30,
+      "position_quantum_mm": 0.01
+    }
+  },
+  "ranges": {
+    "s": [
+      -1000,
+      1000
+    ]
+  },
+  "boundary_revision": "0.9"
+}

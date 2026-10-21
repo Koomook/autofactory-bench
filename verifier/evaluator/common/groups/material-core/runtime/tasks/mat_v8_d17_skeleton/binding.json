@@ -1,0 +1,34 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "head_vac": "Y20",
+    "scrap_vac": "Y21",
+    "up": "Y22",
+    "down": "Y23",
+    "forward": "Y24",
+    "back": "Y25",
+    "scrap_up": "Y26",
+    "scrap_down": "Y27"
+  },
+  "inputs": {
+    "head_held": "X20",
+    "scrap_held": "X21",
+    "high": "X22",
+    "low": "X23",
+    "home": "X24",
+    "source": "X25",
+    "placed": "X26",
+    "scrap_high": "X27",
+    "scrap_low": "X28"
+  },
+  "words": {
+    "height": "D20",
+    "scrap_height": "D21"
+  }
+}

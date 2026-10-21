@@ -1,0 +1,27 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "up": "Y20",
+    "down": "Y21",
+    "push": "Y22",
+    "retract": "Y23"
+  },
+  "inputs": {
+    "home": "X20",
+    "top": "X21",
+    "push_home": "X22",
+    "push_end": "X23",
+    "occupied": "X24",
+    "aligned": "X25",
+    "received": "X26"
+  },
+  "words": {
+    "rack_mm": "D20"
+  }
+}

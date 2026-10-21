@@ -1,0 +1,14 @@
+{
+  "id": "fast_flow",
+  "parameters": {
+    "flow": 16
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "full_receiver",
+  "parameters": {
+    "exit_delay": 4.0
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

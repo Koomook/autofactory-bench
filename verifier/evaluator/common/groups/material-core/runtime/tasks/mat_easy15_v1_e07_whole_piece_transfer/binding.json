@@ -1,0 +1,21 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "push": "Y20",
+    "retract": "Y21"
+  },
+  "inputs": {
+    "home": "X20",
+    "front_received": "X21",
+    "whole_received": "X22"
+  },
+  "words": {
+    "position": "D20"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "late_b",
+  "parameters": {
+    "orders_b": [
+      18.0,
+      35.0
+    ]
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

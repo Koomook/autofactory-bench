@@ -1,0 +1,13 @@
+{
+  "task": "MOT-E09",
+  "revision": "0.9",
+  "previous_path": "tasks/mot_e09_unit_v04",
+  "functions": [
+    "motion.orientation_hold"
+  ],
+  "dependency_relation": "Single function; no downstream function",
+  "basis": "intra_function_dependency",
+  "independent_review": false,
+  "field_validated": false,
+  "independent_ability_claim": false
+}

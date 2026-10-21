@@ -1,0 +1,24 @@
+{
+  "schema_version": "virtual-binding/0.1",
+  "provenance": "public-synthetic",
+  "external": {
+    "request": "X10"
+  },
+  "feedback": {
+    "target": "D10",
+    "c_position": "D11",
+    "c_velocity": "D12",
+    "a_position": "D13",
+    "a_velocity": "D14",
+    "b_position": "D15",
+    "b_velocity": "D16"
+  },
+  "commands": {
+    "enable": "Y20",
+    "command": "D20",
+    "aux": "D21"
+  },
+  "result": {
+    "completion": "Y2"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "cw": "Y20",
+    "ccw": "Y21",
+    "push": "Y22",
+    "retract": "Y23"
+  },
+  "inputs": {
+    "aligned": "X20",
+    "home": "X21",
+    "end": "X22",
+    "received": "X23"
+  },
+  "words": {
+    "reader": "D20",
+    "index": "D21"
+  }
+}

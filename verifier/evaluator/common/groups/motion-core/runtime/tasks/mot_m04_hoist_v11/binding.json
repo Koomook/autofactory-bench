@@ -1,0 +1,26 @@
+{
+  "schema_version": "virtual-binding/0.1",
+  "provenance": "public-synthetic",
+  "external": {
+    "request": "X10"
+  },
+  "feedback": {
+    "a_position": "D11",
+    "a_velocity": "D12",
+    "target_a": "D10",
+    "b_position": "D13",
+    "b_velocity": "D14",
+    "target_b": "D17",
+    "c_position": "D15",
+    "c_velocity": "D16",
+    "target_c": "D18"
+  },
+  "commands": {
+    "a_target": "D20",
+    "acceleration": "D21",
+    "hoist": "Y20"
+  },
+  "result": {
+    "completion": "Y2"
+  }
+}

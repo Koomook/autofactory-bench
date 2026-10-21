@@ -1,0 +1,14 @@
+{
+  "id": "delayed_r",
+  "parameters": {
+    "r_interval": 5.0
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

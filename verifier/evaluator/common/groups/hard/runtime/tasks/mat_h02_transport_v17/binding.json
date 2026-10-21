@@ -1,0 +1,76 @@
+{
+  "schema_version": "virtual-binding/0.1",
+  "provenance": "public-synthetic",
+  "external": {
+    "start": "X0"
+  },
+  "inputs": {
+    "source_ready": "X10",
+    "busy": "X11",
+    "fully_on": "X12",
+    "a_request": "X13",
+    "b_request": "X14",
+    "a_active": "X15",
+    "b_active": "X16",
+    "a_ready": "X17",
+    "b_ready": "X18",
+    "a_out_clear": "X19",
+    "b_out_clear": "X1A",
+    "a_received": "X1B",
+    "b_received": "X1C",
+    "all_done": "X1D",
+    "box_available": "X1E",
+    "box_at_station": "X1F",
+    "box_clamped": "X20",
+    "pack_busy": "X21",
+    "a_packed": "X22",
+    "b_packed": "X23",
+    "box_full": "X24",
+    "box_exit_clear": "X25"
+  },
+  "outputs": {
+    "dock": "Y10",
+    "load": "Y11",
+    "unload": "Y12",
+    "accept_a": "Y13",
+    "accept_b": "Y14",
+    "close_a": "Y15",
+    "close_b": "Y16",
+    "release_a": "Y17",
+    "release_b": "Y18",
+    "ack_a": "Y19",
+    "ack_b": "Y1A",
+    "complete": "Y1B",
+    "box_feed": "Y1C",
+    "box_clamp": "Y1D",
+    "pack_a": "Y1E",
+    "pack_b": "Y1F",
+    "dispatch_box": "Y20"
+  },
+  "word_inputs": {
+    "at_dock": "D0",
+    "deck_id": "D1",
+    "deck_kind": "D2",
+    "head_id": "D3",
+    "head_kind": "D4",
+    "slot0_id": "D5",
+    "slot0_kind": "D6",
+    "slot1_id": "D7",
+    "slot1_kind": "D8",
+    "a_generation": "D9",
+    "b_generation": "D10",
+    "a_next": "D11",
+    "b_next": "D12",
+    "a_count": "D13",
+    "b_count": "D14",
+    "received": "D15",
+    "box_generation": "D16"
+  },
+  "word_outputs": {
+    "target": "D200",
+    "generation": "D201"
+  },
+  "result": {
+    "completion": "Y1B"
+  }
+}

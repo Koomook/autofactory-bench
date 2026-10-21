@@ -1,0 +1,27 @@
+{
+  "feedback": {
+    "start": "X0",
+    "a_position": "D10",
+    "a_velocity": "D11",
+    "b_position": "D12",
+    "b_velocity": "D13",
+    "request_pitch": "D101",
+    "request_index": "D102",
+    "request_reach": "D103",
+    "reference_sensor": "X34",
+    "configured": "X35",
+    "origin": "D90"
+  },
+  "commands": {
+    "a_target": "D20",
+    "a_rate": "D21",
+    "a_enable": "Y20",
+    "b_target": "D24",
+    "b_rate": "D25",
+    "b_enable": "Y21",
+    "configure": "Y30"
+  },
+  "result": {
+    "completion": "Y2"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "thicker_content",
+  "parameters": {
+    "thickness": 0.034,
+    "exit_delay": 5.0
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

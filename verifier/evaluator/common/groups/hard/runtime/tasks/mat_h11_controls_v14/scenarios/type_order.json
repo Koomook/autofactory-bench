@@ -1,0 +1,19 @@
+{
+  "id": "type_order",
+  "parameters": {
+    "types": [
+      2,
+      1,
+      2,
+      1
+    ]
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "blocked_a",
+  "parameters": {
+    "exit_a": 35.0
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

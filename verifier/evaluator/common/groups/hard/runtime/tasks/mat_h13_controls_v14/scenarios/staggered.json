@@ -1,0 +1,19 @@
+{
+  "id": "staggered",
+  "parameters": {
+    "arrivals": [
+      0,
+      12,
+      30
+    ],
+    "film_rate": 160.0
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

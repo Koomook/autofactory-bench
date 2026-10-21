@@ -1,0 +1,14 @@
+{
+  "id": "blocked_exit",
+  "parameters": {
+    "exit_delay": 5.0
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

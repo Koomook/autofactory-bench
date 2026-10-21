@@ -1,0 +1,38 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10",
+    "layer1": "D11",
+    "layer2": "D12",
+    "layer3": "D13",
+    "layer4": "D14"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "grip": "Y20",
+    "left": "Y21",
+    "right": "Y22",
+    "up": "Y23",
+    "down": "Y24",
+    "table_down": "Y26",
+    "table_up": "Y27"
+  },
+  "inputs": {
+    "at_a": "X20",
+    "at_b": "X21",
+    "at_stack": "X22",
+    "high": "X23",
+    "low": "X24",
+    "holding": "X25",
+    "released": "X26",
+    "source_present": "X27",
+    "received": "X28",
+    "stopped": "X29"
+  },
+  "words": {
+    "x": "D20",
+    "stack_top": "D22"
+  }
+}

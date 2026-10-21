@@ -1,0 +1,58 @@
+{
+  "schema_version": "public-calibration/0.1",
+  "provenance": "public-synthetic",
+  "physics_step_ms": 2,
+  "observation_ms": 100,
+  "ready_deadline_ms": 6340,
+  "position_window_mm": 0.2,
+  "home_speed_mm_s": 40,
+  "axes": {
+    "s": {
+      "natural_frequency_rad_s": 45,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 30000,
+      "speed_mm_s": 2000,
+      "braking_mm_s2": 16000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 30,
+      "position_quantum_mm": 0.01
+    },
+    "u": {
+      "natural_frequency_rad_s": 45,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 30000,
+      "speed_mm_s": 2000,
+      "braking_mm_s2": 16000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 30,
+      "position_quantum_mm": 0.01
+    },
+    "v": {
+      "natural_frequency_rad_s": 45,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 30000,
+      "speed_mm_s": 2000,
+      "braking_mm_s2": 16000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 30,
+      "position_quantum_mm": 0.01
+    }
+  },
+  "ranges": {
+    "s": [
+      -1000,
+      1000
+    ],
+    "u": [
+      -1000,
+      1000
+    ],
+    "v": [
+      0,
+      864
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "privacy": "public-synthetic",
+  "evidence_ids": [
+    "CO-M01",
+    "CO-M02",
+    "CO-M05"
+  ],
+  "synthetic_interface": true,
+  "reality_validated": false,
+  "independent_review": false,
+  "limitations": "The source material supports multi-axis and position interlocks but does not directly establish a physical alternating cell with two empty heads. This configuration comes from the user request and existing synthetic assets, so further process and structural evidence is needed. Timing adjustments must not conceal physically impassable geometry."
+}

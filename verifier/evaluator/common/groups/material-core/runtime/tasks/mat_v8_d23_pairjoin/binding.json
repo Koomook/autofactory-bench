@@ -1,0 +1,25 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "take_a": "Y20",
+    "take_b": "Y21",
+    "skip_a": "Y22",
+    "skip_b": "Y23"
+  },
+  "inputs": {
+    "ready_a": "X20",
+    "ready_b": "X21",
+    "placed_a": "X22",
+    "placed_b": "X23"
+  },
+  "words": {
+    "key_a": "D20",
+    "key_b": "D21"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "slow_pickup",
+  "parameters": {
+    "requested_mm": 400,
+    "vacuum_s": 0.5,
+    "lift_m_s": 0.2,
+    "travel_m_s": 0.35
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    },
+    {
+      "scan": 1,
+      "set": {
+        "X0": 0
+      }
+    }
+  ]
+}

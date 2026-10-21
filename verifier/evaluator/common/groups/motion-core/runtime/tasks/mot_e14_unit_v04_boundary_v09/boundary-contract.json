@@ -1,0 +1,13 @@
+{
+  "task": "MOT-E14",
+  "revision": "0.9",
+  "previous_path": "tasks/mot_e14_unit_v04",
+  "functions": [
+    "motion.sway_damp"
+  ],
+  "dependency_relation": "Single function; no downstream function",
+  "basis": "intra_function_dependency",
+  "independent_review": false,
+  "field_validated": false,
+  "independent_ability_claim": false
+}

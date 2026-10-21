@@ -1,0 +1,22 @@
+{
+  "id": "staggered",
+  "parameters": {
+    "arrival_pitch": 2.0,
+    "orders_a": [
+      0,
+      18.0
+    ],
+    "orders_b": [
+      3.0,
+      21.0
+    ]
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

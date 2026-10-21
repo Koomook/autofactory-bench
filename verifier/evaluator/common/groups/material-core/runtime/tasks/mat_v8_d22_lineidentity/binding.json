@@ -1,0 +1,23 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "pump": "Y20",
+    "to_target": "Y21"
+  },
+  "inputs": {
+    "waste": "X20",
+    "target": "X21",
+    "empty": "X22",
+    "received": "X23"
+  },
+  "words": {
+    "outlet": "D20",
+    "source": "D21"
+  }
+}

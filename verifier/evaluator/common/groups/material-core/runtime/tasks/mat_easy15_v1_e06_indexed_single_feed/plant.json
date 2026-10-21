@@ -1,0 +1,1445 @@
+{
+  "schema_version": "plant-spec/0.2",
+  "scan_ms": 10,
+  "devices": [
+    {
+      "id": "CELL",
+      "role": "easy_local_cell"
+    }
+  ],
+  "interactions": [
+    {
+      "kind": "material_easy15",
+      "number": 6
+    }
+  ],
+  "scene": {
+    "geometry_profile": "material-extension/8",
+    "devices": [
+      {
+        "id": "CELL",
+        "ui": "fixture",
+        "visual_variant": "easy15-base-06",
+        "pos": [
+          0,
+          0,
+          0
+        ],
+        "size": [
+          2.8,
+          1.8,
+          1.8
+        ]
+      },
+      {
+        "id": "INDEX",
+        "ui": "fixture",
+        "visual_variant": "v8-carousel",
+        "pos": [
+          0,
+          0.76,
+          0
+        ],
+        "size": [
+          1.2,
+          0.08,
+          1.2
+        ],
+        "state_source": "plant.visual.angle"
+      },
+      {
+        "id": "PUSHER",
+        "ui": "fixture",
+        "visual_variant": "v8-carousel-pusher",
+        "pos": [
+          -0.3,
+          0.849,
+          0.0
+        ],
+        "size": [
+          0.08,
+          0.08,
+          0.12
+        ],
+        "world_position": {
+          "origin": [
+            0,
+            0.849,
+            0
+          ],
+          "terms": [
+            {
+              "source": "plant.visual.pusher_x",
+              "vector": [
+                1,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        "state_source": "plant.visual.push"
+      }
+    ],
+    "workpieces": [
+      {
+        "id": "ITEM3",
+        "owner_source": "plant.parts.ITEM3.owner",
+        "status_source": "plant.parts.ITEM3.status",
+        "owner_poses": {
+          "source": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM3.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "tool": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM3.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "target": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM3.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "sender": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM3.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "receiver": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM3.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "dropped": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM3.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "transit": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM3.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "reserve": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM3.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "tray": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM3.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "waiting": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM3.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "scrap_tool": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM3.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "falling": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM3.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM3.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "material_dimensions": [
+          0.1,
+          0.11,
+          0.1
+        ],
+        "color": "#dda74d",
+        "render_variant": "v8-can"
+      },
+      {
+        "id": "ITEM1",
+        "owner_source": "plant.parts.ITEM1.owner",
+        "status_source": "plant.parts.ITEM1.status",
+        "owner_poses": {
+          "source": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "tool": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "target": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "sender": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "receiver": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "dropped": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "transit": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "reserve": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "tray": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "waiting": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "scrap_tool": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "falling": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "material_dimensions": [
+          0.1,
+          0.11,
+          0.1
+        ],
+        "color": "#dda74d",
+        "render_variant": "v8-can"
+      },
+      {
+        "id": "ITEM2",
+        "owner_source": "plant.parts.ITEM2.owner",
+        "status_source": "plant.parts.ITEM2.status",
+        "owner_poses": {
+          "source": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM2.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "tool": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM2.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "target": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM2.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "sender": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM2.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "receiver": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM2.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "dropped": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM2.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "transit": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM2.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "reserve": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM2.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "tray": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM2.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "waiting": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM2.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "scrap_tool": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM2.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "falling": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.ITEM2.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.ITEM2.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "material_dimensions": [
+          0.1,
+          0.11,
+          0.1
+        ],
+        "color": "#dda74d",
+        "render_variant": "v8-can"
+      }
+    ],
+    "relations": [
+      {
+        "type": "mounted_on",
+        "child": "INDEX",
+        "parent": "CELL"
+      },
+      {
+        "type": "mounted_on",
+        "child": "PUSHER",
+        "parent": "CELL"
+      }
+    ],
+    "io_labels": {
+      "external.start": "start",
+      "external.request": "request",
+      "result.completion": "completion",
+      "outputs.push": "push",
+      "outputs.retract": "retract",
+      "inputs.home": "home",
+      "inputs.end": "end",
+      "inputs.received": "received"
+    },
+    "observed_refs": [
+      "external.start",
+      "external.request",
+      "result.completion",
+      "outputs.push",
+      "outputs.retract",
+      "inputs.home",
+      "inputs.end",
+      "inputs.received"
+    ],
+    "velocity_source": "plant.velocity",
+    "signals": [
+      {
+        "address_ref": "outputs.push",
+        "source": "command_image.push"
+      },
+      {
+        "address_ref": "outputs.retract",
+        "source": "command_image.retract"
+      },
+      {
+        "address_ref": "result.completion",
+        "source": "plc.bits.Y2"
+      }
+    ],
+    "assembly_view": {
+      "dist": 3.1,
+      "target": [
+        -0.25,
+        0.8,
+        0
+      ],
+      "front_sign": 1
+    }
+  }
+}

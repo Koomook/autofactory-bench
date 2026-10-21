@@ -1,0 +1,33 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "outputs": {
+    "grip": "Y20",
+    "advance": "Y21",
+    "return": "Y22",
+    "up": "Y23",
+    "down": "Y24",
+    "align_x": "Y25",
+    "align_z": "Y26"
+  },
+  "inputs": {
+    "at_source": "X20",
+    "at_target": "X21",
+    "low": "X22",
+    "high": "X23",
+    "holding": "X24",
+    "released": "X25",
+    "source_present": "X26",
+    "receiver_present": "X27",
+    "stopped": "X28",
+    "fingers_clear": "X29",
+    "z_closed": "X30",
+    "datum_x": "X31",
+    "datum_z": "X32"
+  },
+  "result": {
+    "completion": "Y2"
+  }
+}

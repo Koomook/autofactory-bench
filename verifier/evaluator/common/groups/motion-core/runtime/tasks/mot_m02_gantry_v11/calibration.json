@@ -1,0 +1,63 @@
+{
+  "schema_version": "public-calibration/0.1",
+  "provenance": "public-synthetic",
+  "physics_step_ms": 2,
+  "observation_ms": 100,
+  "ready_deadline_ms": 4640,
+  "axes": {
+    "s": {
+      "natural_frequency_rad_s": 70,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 32000,
+      "speed_mm_s": 1600,
+      "braking_mm_s2": 32000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 30,
+      "position_quantum_mm": 0.01
+    },
+    "u": {
+      "natural_frequency_rad_s": 70,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 32000,
+      "speed_mm_s": 1600,
+      "braking_mm_s2": 32000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 30,
+      "position_quantum_mm": 0.01
+    }
+  },
+  "command_ranges": {
+    "s_target": [
+      -100000,
+      100000
+    ],
+    "u_target": [
+      -100000,
+      100000
+    ]
+  },
+  "request_commands": [
+    "move"
+  ],
+  "travel_ranges": {
+    "s": [
+      -1000,
+      1000
+    ],
+    "u": [
+      -1000,
+      1000
+    ]
+  },
+  "power_delay_ms": 40,
+  "brake_open_ms": 40,
+  "brake_close_ms": 50,
+  "brake_deceleration": 20000,
+  "gravity_mm_s2": 9810,
+  "skew_limit_mm": 3,
+  "velocity_acceleration": 2000,
+  "leader_deceleration": 800,
+  "rear_deceleration": 1000
+}

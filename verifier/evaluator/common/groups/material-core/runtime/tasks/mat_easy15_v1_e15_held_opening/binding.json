@@ -1,0 +1,23 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "left_vac": "Y20",
+    "right_vac": "Y21",
+    "open": "Y22",
+    "close": "Y23"
+  },
+  "inputs": {
+    "left_held": "X20",
+    "right_held": "X21",
+    "open": "X22"
+  },
+  "words": {
+    "gap": "D20"
+  }
+}

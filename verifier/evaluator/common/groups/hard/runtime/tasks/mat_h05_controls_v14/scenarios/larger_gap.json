@@ -1,0 +1,14 @@
+{
+  "id": "larger_gap",
+  "parameters": {
+    "seat_gap": 0.012
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "outputs": {
+    "grip": "Y20",
+    "advance": "Y21",
+    "return": "Y22",
+    "up": "Y23",
+    "down": "Y24",
+    "cw": "Y25",
+    "ccw": "Y26"
+  },
+  "inputs": {
+    "at_source": "X20",
+    "at_target": "X21",
+    "low": "X22",
+    "high": "X23",
+    "holding": "X24",
+    "released": "X25",
+    "source_present": "X26",
+    "receiver_present": "X27",
+    "stopped": "X28",
+    "valid": "X31"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "words": {
+    "sample": "D20",
+    "head_angle": "D21"
+  }
+}

@@ -1,0 +1,481 @@
+{
+  "schema_version": "plant-spec/0.2",
+  "id": "MAT-V8-D25_PLANT",
+  "scan_ms": 10,
+  "devices": [
+    {
+      "id": "CELL",
+      "role": "material_extension_cell"
+    }
+  ],
+  "interactions": [
+    {
+      "kind": "material_extension_advanced",
+      "mode": "bridge"
+    }
+  ],
+  "scene": {
+    "geometry_profile": "material-extension/8",
+    "devices": [
+      {
+        "id": "CELL",
+        "ui": "fixture",
+        "visual_variant": "v8-bridge-base",
+        "pos": [
+          0,
+          0,
+          0
+        ],
+        "size": [
+          2.8,
+          1.8,
+          1.8
+        ]
+      },
+      {
+        "id": "BRIDGE",
+        "ui": "fixture",
+        "visual_variant": "v8-support-bridge",
+        "pos": [
+          0,
+          0.5,
+          0
+        ],
+        "size": [
+          0.5,
+          0.06,
+          0.4
+        ],
+        "world_position": {
+          "origin": [
+            0,
+            0.5,
+            0
+          ],
+          "terms": [
+            {
+              "source": "plant.visual.bridge",
+              "vector": [
+                0,
+                0.26,
+                0
+              ]
+            }
+          ]
+        },
+        "state_source": "plant.visual.bridge"
+      },
+      {
+        "id": "PUSHER",
+        "ui": "fixture",
+        "visual_variant": "v8-board-pusher",
+        "pos": [
+          -1.12,
+          0.805,
+          0
+        ],
+        "size": [
+          0.04,
+          0.04,
+          0.25
+        ],
+        "world_position": {
+          "origin": [
+            0,
+            0.805,
+            0
+          ],
+          "terms": [
+            {
+              "source": "plant.visual.pusher_x",
+              "vector": [
+                1,
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "workpieces": [
+      {
+        "id": "BOARD",
+        "owner_source": "plant.parts.BOARD.owner",
+        "status_source": "plant.parts.BOARD.status",
+        "owner_poses": {
+          "source": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.BOARD.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.BOARD.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.BOARD.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": null
+          },
+          "target": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.BOARD.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.BOARD.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.BOARD.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": null
+          },
+          "tool": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.BOARD.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.BOARD.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.BOARD.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": "HEAD"
+          },
+          "displaced": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.BOARD.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.BOARD.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.BOARD.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": null
+          },
+          "dropped": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.BOARD.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.BOARD.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.BOARD.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": null
+          },
+          "transit": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.BOARD.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.BOARD.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.BOARD.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": null
+          },
+          "reserve": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.BOARD.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.BOARD.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.BOARD.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": null
+          },
+          "tray": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.BOARD.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.BOARD.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.BOARD.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": null
+          }
+        },
+        "material_dimensions": [
+          0.8,
+          0.03,
+          0.24
+        ],
+        "color": "#dda74d"
+      }
+    ],
+    "relations": [
+      {
+        "type": "mounted_on",
+        "child": "BRIDGE",
+        "parent": "CELL"
+      },
+      {
+        "type": "mounted_on",
+        "child": "PUSHER",
+        "parent": "CELL"
+      }
+    ],
+    "io_labels": {
+      "external.start": "start",
+      "external.request": "request",
+      "result.completion": "completion",
+      "outputs.raise": "raise",
+      "outputs.lower": "lower",
+      "outputs.push": "push",
+      "outputs.retract": "retract",
+      "inputs.raised": "raised",
+      "inputs.lowered": "lowered",
+      "inputs.home": "home",
+      "inputs.end": "end",
+      "inputs.front_received": "front_received",
+      "inputs.whole_received": "whole_received",
+      "words.position": "position"
+    },
+    "observed_refs": [
+      "external.start",
+      "external.request",
+      "result.completion",
+      "outputs.raise",
+      "outputs.lower",
+      "outputs.push",
+      "outputs.retract",
+      "inputs.raised",
+      "inputs.lowered",
+      "inputs.home",
+      "inputs.end",
+      "inputs.front_received",
+      "inputs.whole_received",
+      "words.position"
+    ],
+    "velocity_source": "plant.velocity",
+    "signals": [
+      {
+        "address_ref": "outputs.raise",
+        "source": "command_image.raise"
+      },
+      {
+        "address_ref": "outputs.lower",
+        "source": "command_image.lower"
+      },
+      {
+        "address_ref": "outputs.push",
+        "source": "command_image.push"
+      },
+      {
+        "address_ref": "outputs.retract",
+        "source": "command_image.retract"
+      },
+      {
+        "address_ref": "result.completion",
+        "source": "plc.bits.Y2"
+      }
+    ],
+    "assembly_view": {
+      "dist": 3.6,
+      "target": [
+        0,
+        0.8,
+        0
+      ],
+      "front_sign": 1
+    }
+  }
+}

@@ -1,0 +1,683 @@
+{
+  "schema": "synthetic-tape-hardware/1",
+  "units": "m",
+  "bed_top": 0.82,
+  "pad_contact": 0.826,
+  "pad_clearance": 1.22,
+  "cut_x": -0.3,
+  "source_x": -0.18,
+  "receiver_x": 0.92,
+  "boxes": [
+    {
+      "name": "table-top",
+      "pos": [
+        -0.2,
+        0.74,
+        0
+      ],
+      "size": [
+        3.5,
+        0.08,
+        1.05
+      ],
+      "color": "#aebcc4"
+    },
+    {
+      "name": "table-leg",
+      "pos": [
+        -1.78,
+        0.35,
+        -0.43
+      ],
+      "size": [
+        0.065,
+        0.7,
+        0.065
+      ],
+      "color": "#344c59"
+    },
+    {
+      "name": "leveling-foot",
+      "pos": [
+        -1.78,
+        0.025,
+        -0.43
+      ],
+      "size": [
+        0.13,
+        0.05,
+        0.13
+      ],
+      "color": "#344c59"
+    },
+    {
+      "name": "table-leg",
+      "pos": [
+        -1.78,
+        0.35,
+        0.43
+      ],
+      "size": [
+        0.065,
+        0.7,
+        0.065
+      ],
+      "color": "#344c59"
+    },
+    {
+      "name": "leveling-foot",
+      "pos": [
+        -1.78,
+        0.025,
+        0.43
+      ],
+      "size": [
+        0.13,
+        0.05,
+        0.13
+      ],
+      "color": "#344c59"
+    },
+    {
+      "name": "table-leg",
+      "pos": [
+        1.38,
+        0.35,
+        -0.43
+      ],
+      "size": [
+        0.065,
+        0.7,
+        0.065
+      ],
+      "color": "#344c59"
+    },
+    {
+      "name": "leveling-foot",
+      "pos": [
+        1.38,
+        0.025,
+        -0.43
+      ],
+      "size": [
+        0.13,
+        0.05,
+        0.13
+      ],
+      "color": "#344c59"
+    },
+    {
+      "name": "table-leg",
+      "pos": [
+        1.38,
+        0.35,
+        0.43
+      ],
+      "size": [
+        0.065,
+        0.7,
+        0.065
+      ],
+      "color": "#344c59"
+    },
+    {
+      "name": "leveling-foot",
+      "pos": [
+        1.38,
+        0.025,
+        0.43
+      ],
+      "size": [
+        0.13,
+        0.05,
+        0.13
+      ],
+      "color": "#344c59"
+    },
+    {
+      "name": "table-stretcher",
+      "pos": [
+        -0.2,
+        0.23,
+        -0.43
+      ],
+      "size": [
+        3.1,
+        0.055,
+        0.055
+      ],
+      "color": "#aebcc4"
+    },
+    {
+      "name": "table-stretcher",
+      "pos": [
+        -0.2,
+        0.23,
+        0.43
+      ],
+      "size": [
+        3.1,
+        0.055,
+        0.055
+      ],
+      "color": "#aebcc4"
+    },
+    {
+      "name": "slotted-tape-support",
+      "pos": [
+        -0.7665,
+        0.815,
+        -0.06
+      ],
+      "size": [
+        0.907,
+        0.01,
+        0.02
+      ],
+      "color": "#aebcc4"
+    },
+    {
+      "name": "slotted-tape-support",
+      "pos": [
+        -0.0335,
+        0.815,
+        -0.06
+      ],
+      "size": [
+        0.507,
+        0.01,
+        0.02
+      ],
+      "color": "#aebcc4"
+    },
+    {
+      "name": "slotted-tape-support",
+      "pos": [
+        -0.7665,
+        0.815,
+        0.06
+      ],
+      "size": [
+        0.907,
+        0.01,
+        0.02
+      ],
+      "color": "#aebcc4"
+    },
+    {
+      "name": "slotted-tape-support",
+      "pos": [
+        -0.0335,
+        0.815,
+        0.06
+      ],
+      "size": [
+        0.507,
+        0.01,
+        0.02
+      ],
+      "color": "#aebcc4"
+    },
+    {
+      "name": "receiver-support",
+      "pos": [
+        1.035,
+        0.8,
+        0
+      ],
+      "size": [
+        0.53,
+        0.04,
+        0.24
+      ],
+      "color": "#497e91"
+    },
+    {
+      "name": "receiver-guide",
+      "pos": [
+        1.035,
+        0.836,
+        -0.11
+      ],
+      "size": [
+        0.53,
+        0.032,
+        0.012
+      ],
+      "color": "#aebcc4"
+    },
+    {
+      "name": "receiver-guide",
+      "pos": [
+        1.035,
+        0.836,
+        0.11
+      ],
+      "size": [
+        0.53,
+        0.032,
+        0.012
+      ],
+      "color": "#aebcc4"
+    },
+    {
+      "name": "receiver-end-stop",
+      "pos": [
+        0.785,
+        0.836,
+        0
+      ],
+      "size": [
+        0.012,
+        0.032,
+        0.23
+      ],
+      "color": "#aebcc4"
+    },
+    {
+      "name": "receiver-end-stop",
+      "pos": [
+        1.285,
+        0.836,
+        0
+      ],
+      "size": [
+        0.012,
+        0.032,
+        0.23
+      ],
+      "color": "#aebcc4"
+    },
+    {
+      "name": "roll-bearing-pedestal",
+      "pos": [
+        -1.6,
+        0.93,
+        -0.2
+      ],
+      "size": [
+        0.15,
+        0.3,
+        0.08
+      ],
+      "color": "#497e91"
+    },
+    {
+      "name": "feed-linear-rail",
+      "pos": [
+        -0.045,
+        0.825,
+        0.4
+      ],
+      "size": [
+        0.6,
+        0.036,
+        0.025
+      ],
+      "color": "#344c59"
+    },
+    {
+      "name": "cutter-column",
+      "pos": [
+        -0.3,
+        1.16125,
+        -0.2
+      ],
+      "size": [
+        0.075,
+        0.7625,
+        0.065
+      ],
+      "color": "#aebcc4"
+    },
+    {
+      "name": "roll-bearing-pedestal",
+      "pos": [
+        -1.6,
+        0.93,
+        0.2
+      ],
+      "size": [
+        0.15,
+        0.3,
+        0.08
+      ],
+      "color": "#497e91"
+    },
+    {
+      "name": "feed-linear-rail",
+      "pos": [
+        -0.045,
+        0.825,
+        0.2
+      ],
+      "size": [
+        0.6,
+        0.036,
+        0.025
+      ],
+      "color": "#344c59"
+    },
+    {
+      "name": "cutter-column",
+      "pos": [
+        -0.3,
+        1.16125,
+        0.2
+      ],
+      "size": [
+        0.075,
+        0.7625,
+        0.065
+      ],
+      "color": "#aebcc4"
+    },
+    {
+      "name": "cutter-crossbeam",
+      "pos": [
+        -0.3,
+        1.58,
+        0
+      ],
+      "size": [
+        0.11,
+        0.075,
+        0.49
+      ],
+      "color": "#497e91"
+    },
+    {
+      "name": "cutter-drive-housing",
+      "pos": [
+        -0.3,
+        1.69,
+        0
+      ],
+      "size": [
+        0.1,
+        0.12,
+        0.12
+      ],
+      "color": "#344c59"
+    },
+    {
+      "name": "gantry-column",
+      "pos": [
+        -0.68,
+        1.195,
+        -0.38
+      ],
+      "size": [
+        0.075,
+        0.83,
+        0.075
+      ],
+      "color": "#aebcc4"
+    },
+    {
+      "name": "gantry-column",
+      "pos": [
+        1.34,
+        1.195,
+        -0.38
+      ],
+      "size": [
+        0.075,
+        0.83,
+        0.075
+      ],
+      "color": "#aebcc4"
+    },
+    {
+      "name": "gantry-linear-beam",
+      "pos": [
+        0.33,
+        1.65,
+        -0.38
+      ],
+      "size": [
+        2.15,
+        0.08,
+        0.1
+      ],
+      "color": "#344c59"
+    },
+    {
+      "name": "gantry-servo-housing",
+      "pos": [
+        1.45,
+        1.65,
+        -0.38
+      ],
+      "size": [
+        0.14,
+        0.15,
+        0.16
+      ],
+      "color": "#497e91"
+    },
+    {
+      "name": "stock-clamp-base",
+      "pos": [
+        -0.5,
+        0.81,
+        -0.2
+      ],
+      "size": [
+        0.15,
+        0.06,
+        0.15
+      ],
+      "color": "#497e91"
+    },
+    {
+      "name": "stock-clamp-cylinder",
+      "pos": [
+        -0.5,
+        0.98,
+        -0.2
+      ],
+      "size": [
+        0.07,
+        0.24,
+        0.07
+      ],
+      "color": "#497e91"
+    },
+    {
+      "name": "feed-drive-housing",
+      "pos": [
+        -0.405,
+        0.83,
+        0.4
+      ],
+      "size": [
+        0.13,
+        0.1,
+        0.12
+      ],
+      "color": "#497e91"
+    },
+    {
+      "name": "raised-bed-spacer",
+      "pos": [
+        -1.05,
+        0.795,
+        -0.06
+      ],
+      "size": [
+        0.025,
+        0.03,
+        0.02
+      ],
+      "color": "#344b57"
+    },
+    {
+      "name": "raised-bed-spacer",
+      "pos": [
+        -1.05,
+        0.795,
+        0.06
+      ],
+      "size": [
+        0.025,
+        0.03,
+        0.02
+      ],
+      "color": "#344b57"
+    },
+    {
+      "name": "raised-bed-spacer",
+      "pos": [
+        -0.5,
+        0.795,
+        -0.06
+      ],
+      "size": [
+        0.025,
+        0.03,
+        0.02
+      ],
+      "color": "#344b57"
+    },
+    {
+      "name": "raised-bed-spacer",
+      "pos": [
+        -0.5,
+        0.795,
+        0.06
+      ],
+      "size": [
+        0.025,
+        0.03,
+        0.02
+      ],
+      "color": "#344b57"
+    },
+    {
+      "name": "raised-bed-spacer",
+      "pos": [
+        0.205,
+        0.795,
+        -0.06
+      ],
+      "size": [
+        0.025,
+        0.03,
+        0.02
+      ],
+      "color": "#344b57"
+    },
+    {
+      "name": "raised-bed-spacer",
+      "pos": [
+        0.205,
+        0.795,
+        0.06
+      ],
+      "size": [
+        0.025,
+        0.03,
+        0.02
+      ],
+      "color": "#344b57"
+    },
+    {
+      "name": "feed-rail-foot",
+      "pos": [
+        -0.33,
+        0.793,
+        0.4
+      ],
+      "size": [
+        0.03,
+        0.026,
+        0.04
+      ],
+      "color": "#344b57"
+    },
+    {
+      "name": "feed-rail-foot",
+      "pos": [
+        -0.33,
+        0.793,
+        0.2
+      ],
+      "size": [
+        0.03,
+        0.026,
+        0.04
+      ],
+      "color": "#344b57"
+    },
+    {
+      "name": "feed-rail-foot",
+      "pos": [
+        0.24,
+        0.793,
+        0.4
+      ],
+      "size": [
+        0.03,
+        0.026,
+        0.04
+      ],
+      "color": "#344b57"
+    },
+    {
+      "name": "feed-rail-foot",
+      "pos": [
+        0.24,
+        0.793,
+        0.2
+      ],
+      "size": [
+        0.03,
+        0.026,
+        0.04
+      ],
+      "color": "#344b57"
+    },
+    {
+      "name": "cutter-actuator-mount",
+      "pos": [
+        -0.3,
+        1.624,
+        0
+      ],
+      "size": [
+        0.12,
+        0.013,
+        0.14
+      ],
+      "color": "#afbec6"
+    },
+    {
+      "name": "stock-clamp-cylinder-mount",
+      "pos": [
+        -0.5,
+        0.85,
+        -0.2
+      ],
+      "size": [
+        0.09,
+        0.02,
+        0.09
+      ],
+      "color": "#344b57"
+    }
+  ],
+  "non_collision_decor": [
+    "bolts",
+    "hose",
+    "roll-flanges",
+    "indicator"
+  ],
+  "allowed_contacts": [
+    "tape on supports",
+    "grip/pad on tape",
+    "rails inside saddles",
+    "cutter in defined slot"
+  ],
+  "source_status": "Synthetic dimensions and mounting layout; no company CAD copied."
+}

@@ -1,0 +1,500 @@
+{
+  "schema_version": "plant-spec/0.2",
+  "id": "MAT-V7-D14_PLANT",
+  "scan_ms": 10,
+  "devices": [
+    {
+      "id": "MATERIAL_CELL",
+      "role": "material_extension_cell"
+    }
+  ],
+  "interactions": [
+    {
+      "kind": "material_extension_standard",
+      "mode": "handshake"
+    }
+  ],
+  "scene": {
+    "geometry_profile": "material-extension/7",
+    "devices": [
+      {
+        "id": "CELL",
+        "ui": "fixture",
+        "visual_variant": "v7-handshake-base",
+        "pos": [
+          0,
+          0,
+          0
+        ],
+        "size": [
+          2.6,
+          1.8,
+          1.6
+        ],
+        "grounded_support": true
+      },
+      {
+        "id": "SENDER",
+        "ui": "fixture",
+        "visual_variant": "v7-sender",
+        "pos": [
+          -0.65,
+          1,
+          0
+        ],
+        "size": [
+          0.24,
+          0.18,
+          0.24
+        ],
+        "world_position": {
+          "origin": [
+            0,
+            1.05,
+            0
+          ],
+          "terms": [
+            {
+              "source": "plant.visual.sender_x",
+              "vector": [
+                1,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        "state_source": "plant.visual.sender_grip"
+      },
+      {
+        "id": "RECEIVER",
+        "ui": "fixture",
+        "visual_variant": "v7-receiver",
+        "pos": [
+          0.65,
+          1.05,
+          0
+        ],
+        "size": [
+          0.25,
+          0.18,
+          0.3
+        ],
+        "state_source": "plant.visual.receiver_grip"
+      }
+    ],
+    "workpieces": [
+      {
+        "id": "P1",
+        "owner_source": "plant.parts.P1.owner",
+        "status_source": "plant.parts.P1.status",
+        "owner_poses": {
+          "source": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.P1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.P1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.P1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": null
+          },
+          "target": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.P1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.P1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.P1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": null
+          },
+          "tool": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.P1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.P1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.P1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": "SENDER"
+          },
+          "sender": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.P1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.P1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.P1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": "SENDER"
+          },
+          "receiver": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.P1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.P1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.P1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": null
+          },
+          "slot": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.P1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.P1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.P1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": null
+          },
+          "bridge": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.P1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.P1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.P1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": null
+          },
+          "dropped": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.P1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.P1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.P1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": null
+          },
+          "absent": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.P1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.P1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.P1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": null
+          }
+        },
+        "material_dimensions": [
+          0.2,
+          0.03,
+          0.2
+        ],
+        "color": "#dda74d"
+      }
+    ],
+    "relations": [
+      {
+        "type": "mounted_on",
+        "child": "SENDER",
+        "parent": "CELL"
+      },
+      {
+        "type": "mounted_on",
+        "child": "RECEIVER",
+        "parent": "CELL"
+      }
+    ],
+    "io_labels": {
+      "external.start": "start",
+      "external.request": "request",
+      "result.completion": "completion",
+      "outputs.forward": "forward",
+      "outputs.back": "back",
+      "outputs.release": "release",
+      "outputs.offer": "offer",
+      "inputs.home": "home",
+      "inputs.docked": "docked",
+      "inputs.released": "released",
+      "inputs.ack": "ack",
+      "inputs.ready": "ready",
+      "inputs.received": "received"
+    },
+    "observed_refs": [
+      "external.start",
+      "external.request",
+      "result.completion",
+      "outputs.forward",
+      "outputs.back",
+      "outputs.release",
+      "outputs.offer",
+      "inputs.home",
+      "inputs.docked",
+      "inputs.released",
+      "inputs.ack",
+      "inputs.ready",
+      "inputs.received"
+    ],
+    "velocity_source": "plant.velocity",
+    "signals": [
+      {
+        "address_ref": "outputs.forward",
+        "source": "command_image.forward"
+      },
+      {
+        "address_ref": "outputs.back",
+        "source": "command_image.back"
+      },
+      {
+        "address_ref": "outputs.release",
+        "source": "command_image.release"
+      },
+      {
+        "address_ref": "outputs.offer",
+        "source": "command_image.offer"
+      },
+      {
+        "address_ref": "result.completion",
+        "source": "plc.bits.Y2"
+      }
+    ],
+    "assembly_view": {
+      "dist": 4.1,
+      "target": [
+        0,
+        0.85,
+        0
+      ],
+      "front_sign": 1
+    }
+  }
+}

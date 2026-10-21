@@ -1,0 +1,14 @@
+{
+  "id": "shifted_origin",
+  "parameters": {
+    "origin_b": 0.15
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

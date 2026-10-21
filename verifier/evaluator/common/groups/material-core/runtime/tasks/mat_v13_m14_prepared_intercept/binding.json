@@ -1,0 +1,25 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "fire": "Y20",
+    "retract": "Y21",
+    "supply": "Y22"
+  },
+  "inputs": {
+    "home": "X20",
+    "end": "X21",
+    "received": "X22",
+    "loaded": "X23",
+    "feeder_home": "X24"
+  },
+  "words": {
+    "distance": "D20",
+    "speed": "D21"
+  }
+}

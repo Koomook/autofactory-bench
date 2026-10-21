@@ -1,0 +1,25 @@
+{
+  "id": "normal",
+  "initial": {
+    "s": -550,
+    "u": -550,
+    "target": 550
+  },
+  "parameters": {
+    "u_response": 0.6
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X10": 0
+      }
+    },
+    {
+      "scan": 5,
+      "set": {
+        "X10": 1
+      }
+    }
+  ]
+}

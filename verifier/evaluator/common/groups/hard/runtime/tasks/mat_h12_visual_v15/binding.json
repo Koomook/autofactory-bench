@@ -1,0 +1,53 @@
+{
+  "schema_version": "virtual-binding/0.1",
+  "provenance": "public-synthetic",
+  "external": {
+    "start": "X0"
+  },
+  "inputs": {
+    "bin_ready": "X10",
+    "swap_busy": "X11",
+    "spare_ready": "X12",
+    "return_ready": "X13",
+    "return_busy": "X14",
+    "all_received": "X15",
+    "a_source": "X16",
+    "a_present": "X17",
+    "a_feeding": "X18",
+    "a_busy": "X19",
+    "a_done": "X1A",
+    "a_exit_clear": "X1B",
+    "b_source": "X1C",
+    "b_present": "X1D",
+    "b_feeding": "X1E",
+    "b_busy": "X1F",
+    "b_done": "X20",
+    "b_exit_clear": "X21"
+  },
+  "outputs": {
+    "swap": "Y10",
+    "take_bin": "Y11",
+    "complete": "Y12",
+    "feed_a": "Y13",
+    "start_a": "Y14",
+    "eject_a": "Y15",
+    "feed_b": "Y16",
+    "start_b": "Y17",
+    "eject_b": "Y18"
+  },
+  "word_inputs": {
+    "occupied": "D0",
+    "pending": "D1",
+    "bin_id": "D2",
+    "capacity": "D3",
+    "received": "D4",
+    "a_batch": "D5",
+    "a_amount": "D6",
+    "b_batch": "D7",
+    "b_amount": "D8"
+  },
+  "word_outputs": {},
+  "result": {
+    "completion": "Y12"
+  }
+}

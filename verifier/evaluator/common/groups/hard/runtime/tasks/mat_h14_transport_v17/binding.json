@@ -1,0 +1,58 @@
+{
+  "schema_version": "virtual-binding/0.1",
+  "provenance": "public-synthetic",
+  "external": {
+    "start": "X0"
+  },
+  "inputs": {
+    "source_ready": "X10",
+    "pre_present": "X11",
+    "pre_busy": "X12",
+    "post_present": "X13",
+    "post_busy": "X14",
+    "pre_measuring": "X15",
+    "post_measuring": "X16",
+    "lane1_free": "X17",
+    "lane1_done": "X18",
+    "lane2_free": "X19",
+    "lane2_done": "X1A",
+    "accept_clear": "X1B",
+    "hold_clear": "X1C",
+    "all_received": "X1D",
+    "pre_supported": "X1E",
+    "pre_lowered": "X1F",
+    "post_supported": "X20",
+    "post_lowered": "X21"
+  },
+  "outputs": {
+    "feed": "Y10",
+    "measure_pre": "Y11",
+    "to_lane": "Y12",
+    "load_post": "Y13",
+    "measure_post": "Y14",
+    "dispatch": "Y15",
+    "complete": "Y16",
+    "pre_lift": "Y17",
+    "post_lift": "Y18"
+  },
+  "word_inputs": {
+    "pre_id": "D0",
+    "post_id": "D1",
+    "pre_mass": "D2",
+    "post_mass": "D3",
+    "pre_seq": "D4",
+    "post_seq": "D5",
+    "received": "D6",
+    "queue": "D7"
+  },
+  "word_outputs": {
+    "in_lane": "D200",
+    "out_lane": "D201",
+    "seq_pre": "D202",
+    "seq_post": "D203",
+    "route": "D204"
+  },
+  "result": {
+    "completion": "Y16"
+  }
+}

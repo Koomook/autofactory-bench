@@ -1,0 +1,25 @@
+{
+  "id": "slow",
+  "initial": {
+    "a": -90,
+    "b": 0,
+    "target": 90
+  },
+  "parameters": {
+    "response": 0.8
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X10": 0
+      }
+    },
+    {
+      "scan": 3,
+      "set": {
+        "X10": 1
+      }
+    }
+  ]
+}

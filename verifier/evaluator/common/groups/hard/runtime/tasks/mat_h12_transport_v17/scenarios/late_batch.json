@@ -1,0 +1,14 @@
+{
+  "id": "late_batch",
+  "parameters": {
+    "last_arrival": 18.0
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

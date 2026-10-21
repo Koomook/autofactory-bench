@@ -1,0 +1,20 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "left": "Y20",
+    "right": "Y21"
+  },
+  "inputs": {
+    "external_done": "X20"
+  },
+  "words": {
+    "edge": "D20",
+    "actuator": "D21"
+  }
+}

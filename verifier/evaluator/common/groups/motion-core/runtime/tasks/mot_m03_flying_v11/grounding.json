@@ -1,0 +1,10 @@
+{
+  "privacy": "public-synthetic",
+  "evidence_ids": [
+    "CO-M02",
+    "PUB-BK-FLY"
+  ],
+  "field_validated": false,
+  "independent_review": false,
+  "whole_cell_synthetic": true
+}

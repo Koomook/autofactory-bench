@@ -1,0 +1,29 @@
+{
+  "feedback": {
+    "start": "X0",
+    "c_position": "D10",
+    "c_velocity": "D11",
+    "d_position": "D12",
+    "d_velocity": "D13",
+    "a_home": "X1",
+    "a_end": "X2",
+    "b_home": "X3",
+    "b_end": "X4",
+    "jig_loaded": "X5"
+  },
+  "commands": {
+    "c_target": "D20",
+    "c_rate": "D21",
+    "c_enable": "Y24",
+    "d_target": "D24",
+    "d_rate": "D25",
+    "d_enable": "Y25",
+    "a_extend": "Y20",
+    "a_retract": "Y21",
+    "b_extend": "Y22",
+    "b_retract": "Y23"
+  },
+  "result": {
+    "completion": "Y2"
+  }
+}

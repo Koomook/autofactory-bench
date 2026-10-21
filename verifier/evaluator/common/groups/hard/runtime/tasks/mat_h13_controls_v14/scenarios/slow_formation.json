@@ -1,0 +1,14 @@
+{
+  "id": "slow_formation",
+  "parameters": {
+    "formation_speed": 0.25
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

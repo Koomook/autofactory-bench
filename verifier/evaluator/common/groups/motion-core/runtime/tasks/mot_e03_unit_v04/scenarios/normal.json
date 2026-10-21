@@ -1,0 +1,24 @@
+{
+  "id": "normal",
+  "initial": {
+    "s": -450,
+    "s_velocity": 800,
+    "target": 0,
+    "limit": -230
+  },
+  "parameters": {},
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X10": 0
+      }
+    },
+    {
+      "scan": 3,
+      "set": {
+        "X10": 1
+      }
+    }
+  ]
+}

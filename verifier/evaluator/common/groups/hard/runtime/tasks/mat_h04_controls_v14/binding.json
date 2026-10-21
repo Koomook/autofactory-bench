@@ -1,0 +1,64 @@
+{
+  "schema_version": "virtual-binding/0.1",
+  "provenance": "public-synthetic",
+  "external": {
+    "start": "X0"
+  },
+  "inputs": {
+    "pouch_ready": "X10",
+    "pouch_loaded": "X11",
+    "pouch_busy": "X12",
+    "pouch_docked": "X13",
+    "content_busy": "X14",
+    "content_ready": "X15",
+    "insert_busy": "X16",
+    "insert_home": "X17",
+    "insert_end": "X18",
+    "contained": "X19",
+    "left_held": "X1A",
+    "right_held": "X1B",
+    "aperture_open": "X1C",
+    "exit_clear": "X1D",
+    "exit_received": "X1E",
+    "all_done": "X1F",
+    "double_sheet": "X20",
+    "separator_busy": "X21",
+    "separator_held": "X22",
+    "sheet_single": "X23",
+    "content_aligned": "X24",
+    "align_tools_clear": "X25"
+  },
+  "outputs": {
+    "accept_pouch": "Y10",
+    "accept_content": "Y11",
+    "vacuum_left": "Y12",
+    "vacuum_right": "Y13",
+    "open": "Y14",
+    "transfer_pouch": "Y15",
+    "insert": "Y16",
+    "retract": "Y17",
+    "release": "Y18",
+    "ack_exit": "Y19",
+    "complete": "Y1A",
+    "separator_hold": "Y1B",
+    "separate": "Y1C",
+    "align_side": "Y1D",
+    "align_front": "Y1E"
+  },
+  "word_inputs": {
+    "pouch_id": "D0",
+    "next_pouch": "D1",
+    "content_id": "D2",
+    "first_content": "D3",
+    "available_mask": "D4",
+    "aperture_mm": "D5",
+    "content_thickness": "D6",
+    "received": "D7"
+  },
+  "word_outputs": {
+    "content_select": "D200"
+  },
+  "result": {
+    "completion": "Y1A"
+  }
+}

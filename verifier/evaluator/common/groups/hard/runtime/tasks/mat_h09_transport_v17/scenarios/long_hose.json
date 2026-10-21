@@ -1,0 +1,14 @@
+{
+  "id": "long_hose",
+  "parameters": {
+    "hose_seconds": 1.8
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "slow_retention",
+  "parameters": {
+    "requested_mm": 320,
+    "clamp_s": 0.35,
+    "rollback_mm_s": 60
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    },
+    {
+      "scan": 1,
+      "set": {
+        "X0": 0
+      }
+    }
+  ]
+}

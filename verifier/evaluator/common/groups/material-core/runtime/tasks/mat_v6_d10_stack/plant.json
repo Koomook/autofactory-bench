@@ -1,0 +1,1123 @@
+{
+  "schema_version": "plant-spec/0.2",
+  "id": "MAT-V6-D10_PLANT",
+  "scan_ms": 10,
+  "devices": [
+    {
+      "id": "MATERIAL_CELL",
+      "role": "material_inventory_cell"
+    }
+  ],
+  "interactions": [
+    {
+      "kind": "material_redesign",
+      "mode": "stack"
+    }
+  ],
+  "scene": {
+    "geometry_profile": "material-redesign/6",
+    "devices": [
+      {
+        "id": "CELL",
+        "ui": "fixture",
+        "visual_variant": "v6-stack-base",
+        "pos": [
+          0,
+          0.8,
+          0
+        ],
+        "size": [
+          2.2,
+          1.6,
+          1.0
+        ],
+        "grounded_support": true
+      },
+      {
+        "id": "TOOL",
+        "ui": "fixture",
+        "visual_variant": "v6-vacuum-head",
+        "pos": [
+          -0.7,
+          1.175,
+          0
+        ],
+        "size": [
+          0.24,
+          0.18,
+          0.2
+        ],
+        "world_position": {
+          "origin": [
+            0,
+            0,
+            0
+          ],
+          "terms": [
+            {
+              "source": "plant.visual.tool_x",
+              "vector": [
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "source": "plant.visual.tool_y",
+              "vector": [
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "source": "plant.visual.tool_z",
+              "vector": [
+                0,
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        "state_source": "plant.visual.grip",
+        "drive_ref": "outputs.grip",
+        "at_max_ref": "inputs.holding",
+        "at_min_ref": "inputs.released"
+      },
+      {
+        "id": "Z_LIFT",
+        "ui": "fixture",
+        "visual_variant": "v6-stack-slide",
+        "pos": [
+          -0.7,
+          1.355,
+          0
+        ],
+        "size": [
+          0.13,
+          0.5,
+          0.13
+        ],
+        "world_position": {
+          "origin": [
+            0,
+            1.355,
+            0
+          ],
+          "terms": [
+            {
+              "source": "plant.visual.tool_x",
+              "vector": [
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "source": "plant.visual.tool_z",
+              "vector": [
+                0,
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        "state_source": "plant.visual.lift_fraction"
+      },
+      {
+        "id": "STACK_TABLE",
+        "ui": "fixture",
+        "visual_variant": "v6-stack-table",
+        "pos": [
+          0,
+          0.7,
+          0
+        ],
+        "size": [
+          0.37,
+          0.05,
+          0.28
+        ],
+        "world_position": {
+          "origin": [
+            0,
+            0,
+            0
+          ],
+          "terms": [
+            {
+              "source": "plant.deck",
+              "vector": [
+                0,
+                1,
+                0
+              ]
+            }
+          ]
+        },
+        "state_source": "plant.visual.table_fraction"
+      }
+    ],
+    "workpieces": [
+      {
+        "id": "A1",
+        "owner_source": "plant.parts.A1.owner",
+        "status_source": "plant.parts.A1.status",
+        "owner_poses": {
+          "source": {
+            "held_by": null,
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.A1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.A1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.A1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "waiting": {
+            "held_by": null,
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.A1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.A1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.A1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "tool": {
+            "held_by": "TOOL",
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.A1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.A1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.A1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "stack": {
+            "held_by": null,
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.A1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.A1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.A1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "dropped": {
+            "held_by": null,
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.A1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.A1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.A1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "material_dimensions": [
+          0.26,
+          0.025,
+          0.18
+        ],
+        "rotation": {
+          "origin": [
+            0,
+            0,
+            0
+          ]
+        },
+        "color": "#e6b55d"
+      },
+      {
+        "id": "A2",
+        "owner_source": "plant.parts.A2.owner",
+        "status_source": "plant.parts.A2.status",
+        "owner_poses": {
+          "source": {
+            "held_by": null,
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.A2.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.A2.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.A2.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "waiting": {
+            "held_by": null,
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.A2.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.A2.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.A2.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "tool": {
+            "held_by": "TOOL",
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.A2.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.A2.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.A2.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "stack": {
+            "held_by": null,
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.A2.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.A2.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.A2.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "dropped": {
+            "held_by": null,
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.A2.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.A2.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.A2.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "material_dimensions": [
+          0.26,
+          0.025,
+          0.18
+        ],
+        "rotation": {
+          "origin": [
+            0,
+            0,
+            0
+          ]
+        },
+        "color": "#e6b55d"
+      },
+      {
+        "id": "B1",
+        "owner_source": "plant.parts.B1.owner",
+        "status_source": "plant.parts.B1.status",
+        "owner_poses": {
+          "source": {
+            "held_by": null,
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.B1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.B1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.B1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "waiting": {
+            "held_by": null,
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.B1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.B1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.B1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "tool": {
+            "held_by": "TOOL",
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.B1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.B1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.B1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "stack": {
+            "held_by": null,
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.B1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.B1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.B1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "dropped": {
+            "held_by": null,
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.B1.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.B1.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.B1.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "material_dimensions": [
+          0.26,
+          0.025,
+          0.18
+        ],
+        "rotation": {
+          "origin": [
+            0,
+            0,
+            0
+          ]
+        },
+        "color": "#5895be"
+      },
+      {
+        "id": "B2",
+        "owner_source": "plant.parts.B2.owner",
+        "status_source": "plant.parts.B2.status",
+        "owner_poses": {
+          "source": {
+            "held_by": null,
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.B2.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.B2.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.B2.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "waiting": {
+            "held_by": null,
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.B2.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.B2.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.B2.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "tool": {
+            "held_by": "TOOL",
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.B2.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.B2.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.B2.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "stack": {
+            "held_by": null,
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.B2.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.B2.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.B2.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          },
+          "dropped": {
+            "held_by": null,
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.B2.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.B2.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.B2.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "material_dimensions": [
+          0.26,
+          0.025,
+          0.18
+        ],
+        "rotation": {
+          "origin": [
+            0,
+            0,
+            0
+          ]
+        },
+        "color": "#5895be"
+      }
+    ],
+    "relations": [
+      {
+        "type": "mounted_on",
+        "child": "Z_LIFT",
+        "parent": "CELL"
+      },
+      {
+        "type": "mounted_on",
+        "child": "STACK_TABLE",
+        "parent": "CELL"
+      },
+      {
+        "type": "mounted_on",
+        "child": "TOOL",
+        "parent": "Z_LIFT"
+      },
+      {
+        "type": "holds",
+        "device": "TOOL",
+        "part": "A1"
+      },
+      {
+        "type": "supports",
+        "device": "CELL",
+        "part": "A1"
+      },
+      {
+        "type": "holds",
+        "device": "TOOL",
+        "part": "A2"
+      },
+      {
+        "type": "supports",
+        "device": "CELL",
+        "part": "A2"
+      },
+      {
+        "type": "holds",
+        "device": "TOOL",
+        "part": "B1"
+      },
+      {
+        "type": "supports",
+        "device": "CELL",
+        "part": "B1"
+      },
+      {
+        "type": "holds",
+        "device": "TOOL",
+        "part": "B2"
+      },
+      {
+        "type": "supports",
+        "device": "CELL",
+        "part": "B2"
+      }
+    ],
+    "io_labels": {
+      "external.start": "start",
+      "external.request": "request",
+      "external.layer1": "layer1",
+      "external.layer2": "layer2",
+      "external.layer3": "layer3",
+      "external.layer4": "layer4",
+      "result.completion": "completion",
+      "outputs.grip": "grip",
+      "outputs.left": "left",
+      "outputs.right": "right",
+      "outputs.up": "up",
+      "outputs.down": "down",
+      "outputs.table_down": "table_down",
+      "outputs.table_up": "table_up",
+      "inputs.at_a": "at_a",
+      "inputs.at_b": "at_b",
+      "inputs.at_stack": "at_stack",
+      "inputs.high": "high",
+      "inputs.low": "low",
+      "inputs.holding": "holding",
+      "inputs.released": "released",
+      "inputs.source_present": "source_present",
+      "inputs.received": "received",
+      "inputs.stopped": "stopped",
+      "words.x": "x",
+      "words.stack_top": "stack_top"
+    },
+    "observed_refs": [
+      "external.start",
+      "external.request",
+      "external.layer1",
+      "external.layer2",
+      "external.layer3",
+      "external.layer4",
+      "result.completion",
+      "outputs.grip",
+      "outputs.left",
+      "outputs.right",
+      "outputs.up",
+      "outputs.down",
+      "outputs.table_down",
+      "outputs.table_up",
+      "inputs.at_a",
+      "inputs.at_b",
+      "inputs.at_stack",
+      "inputs.high",
+      "inputs.low",
+      "inputs.holding",
+      "inputs.released",
+      "inputs.source_present",
+      "inputs.received",
+      "inputs.stopped",
+      "words.x",
+      "words.stack_top"
+    ],
+    "velocity_source": "plant.velocity",
+    "signals": [
+      {
+        "address_ref": "outputs.grip",
+        "source": "command_image.grip"
+      },
+      {
+        "address_ref": "outputs.left",
+        "source": "command_image.left"
+      },
+      {
+        "address_ref": "outputs.right",
+        "source": "command_image.right"
+      },
+      {
+        "address_ref": "outputs.up",
+        "source": "command_image.up"
+      },
+      {
+        "address_ref": "outputs.down",
+        "source": "command_image.down"
+      },
+      {
+        "address_ref": "outputs.table_down",
+        "source": "command_image.table_down"
+      },
+      {
+        "address_ref": "outputs.table_up",
+        "source": "command_image.table_up"
+      },
+      {
+        "address_ref": "result.completion",
+        "source": "plc.bits.Y2"
+      }
+    ],
+    "assembly_view": {
+      "dist": 3.7,
+      "target": [
+        -0.15,
+        0.85,
+        0
+      ],
+      "front_sign": 1
+    }
+  }
+}

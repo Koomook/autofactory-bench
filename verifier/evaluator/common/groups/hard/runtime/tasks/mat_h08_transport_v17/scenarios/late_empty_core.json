@@ -1,0 +1,14 @@
+{
+  "id": "late_empty_core",
+  "parameters": {
+    "core_arrival": 100.0
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

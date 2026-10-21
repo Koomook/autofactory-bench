@@ -1,0 +1,20 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "release": "Y20",
+    "offer": "Y21"
+  },
+  "inputs": {
+    "released": "X20",
+    "ack": "X21",
+    "ready": "X22",
+    "received": "X23"
+  },
+  "words": {}
+}

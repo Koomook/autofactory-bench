@@ -1,0 +1,75 @@
+{
+  "schema_version": "public-calibration/0.1",
+  "provenance": "public-synthetic",
+  "axes": {
+    "a": {
+      "natural_frequency_rad_s": 25,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 500,
+      "speed_mm_s": 90,
+      "braking_mm_s2": 2000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 30,
+      "position_quantum_mm": 0.01
+    },
+    "b": {
+      "natural_frequency_rad_s": 60,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 12000,
+      "speed_mm_s": 1000,
+      "braking_mm_s2": 12000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 30,
+      "position_quantum_mm": 0.01
+    }
+  },
+  "axis_units": {
+    "a": "deg",
+    "b": "mm"
+  },
+  "axis_labels": {
+    "a": "Head tilt",
+    "b": "Counterweight X"
+  },
+  "travel_ranges": {
+    "a": [
+      -75,
+      75
+    ],
+    "b": [
+      -600,
+      600
+    ]
+  },
+  "command_ranges": {
+    "a_target": [
+      -180000,
+      180000
+    ],
+    "b_target": [
+      -180000,
+      180000
+    ],
+    "feedforward": [
+      -180000,
+      180000
+    ]
+  },
+  "request_commands": [
+    "tilt",
+    "balance",
+    "brake"
+  ],
+  "physics_step_ms": 2,
+  "ready_deadline_ms": 4340,
+  "obstruction_start_ms": 300,
+  "obstruction_end_ms": 1100,
+  "sway_damping": 0.2,
+  "clutch_acceleration": 800,
+  "crank_deceleration": 1600,
+  "boundary_revision": "0.9",
+  "brake_seconds": 0.08,
+  "free_head_acceleration": 100
+}

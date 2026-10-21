@@ -1,0 +1,72 @@
+{
+  "mode": "grounded",
+  "lanes": 0,
+  "axes": {
+    "a": {
+      "natural_frequency_rad_s": 35,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 3000,
+      "speed_mm_s": 500,
+      "braking_mm_s2": 3000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 0,
+      "position_quantum_mm": 0.01
+    },
+    "b": {
+      "natural_frequency_rad_s": 35,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 3000,
+      "speed_mm_s": 500,
+      "braking_mm_s2": 3000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 0,
+      "position_quantum_mm": 0.01
+    },
+    "c": {
+      "natural_frequency_rad_s": 35,
+      "damping_ratio": 1,
+      "acceleration_mm_s2": 3000,
+      "speed_mm_s": 500,
+      "braking_mm_s2": 3000,
+      "position_window_mm": 0.2,
+      "velocity_window_mm_s": 1,
+      "settle_ms": 0,
+      "position_quantum_mm": 0.01
+    }
+  },
+  "command_ranges": {
+    "a": [
+      0,
+      350
+    ],
+    "b": [
+      0,
+      80
+    ],
+    "c": [
+      0,
+      120
+    ]
+  },
+  "travel_ranges": {
+    "a": [
+      -0.5,
+      350.5
+    ],
+    "b": [
+      -0.5,
+      80.5
+    ],
+    "c": [
+      -0.5,
+      120.5
+    ]
+  },
+  "axis_units": {
+    "a": "mm",
+    "b": "mm",
+    "c": "mm"
+  }
+}

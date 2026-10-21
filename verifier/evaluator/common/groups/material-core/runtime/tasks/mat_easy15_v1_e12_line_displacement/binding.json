@@ -1,0 +1,17 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "pump": "Y20"
+  },
+  "inputs": {},
+  "words": {
+    "outlet": "D20",
+    "source": "D21"
+  }
+}

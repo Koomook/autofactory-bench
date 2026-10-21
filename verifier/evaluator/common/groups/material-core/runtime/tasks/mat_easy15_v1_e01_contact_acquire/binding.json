@@ -1,0 +1,16 @@
+{
+  "external": {
+    "start": "X10",
+    "request": "D10"
+  },
+  "result": {
+    "completion": "Y2"
+  },
+  "outputs": {
+    "grip": "Y20"
+  },
+  "inputs": {
+    "holding": "X20"
+  },
+  "words": {}
+}

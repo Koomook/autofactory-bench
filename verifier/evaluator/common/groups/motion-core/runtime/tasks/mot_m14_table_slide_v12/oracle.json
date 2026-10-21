@@ -1,0 +1,181 @@
+{
+  "schema_version": "behavior-oracle/0.2",
+  "deadline_scans": 800,
+  "execution_end_event": "motion_medium_complete",
+  "events": {
+    "request_accepted": {
+      "kind": "plant_event",
+      "type": "request_accepted"
+    },
+    "slide_clearance_established": {
+      "kind": "plant_event",
+      "type": "slide_clearance_established"
+    },
+    "table_pose_settled": {
+      "kind": "plant_event",
+      "type": "table_pose_settled"
+    },
+    "result_asserted": {
+      "kind": "plant_event",
+      "type": "result_asserted"
+    },
+    "motion_medium_complete": {
+      "kind": "plant_event",
+      "type": "motion_medium_complete"
+    },
+    "motion_without_request": {
+      "kind": "plant_event",
+      "type": "motion_without_request"
+    },
+    "command_out_of_range": {
+      "kind": "plant_event",
+      "type": "command_out_of_range"
+    },
+    "travel_limit": {
+      "kind": "plant_event",
+      "type": "travel_limit"
+    },
+    "rotation_before_clearance": {
+      "kind": "plant_event",
+      "type": "rotation_before_clearance"
+    },
+    "rotation_clearance_lost": {
+      "kind": "plant_event",
+      "type": "rotation_clearance_lost"
+    },
+    "reapproach_before_table_stopped": {
+      "kind": "plant_event",
+      "type": "reapproach_before_table_stopped"
+    },
+    "table_slide_collision": {
+      "kind": "plant_event",
+      "type": "table_slide_collision"
+    },
+    "premature_completion": {
+      "kind": "plant_event",
+      "type": "premature_completion"
+    },
+    "result_not_held": {
+      "kind": "plant_event",
+      "type": "result_not_held"
+    },
+    "completion_deadline_missed": {
+      "kind": "plant_event",
+      "type": "completion_deadline_missed"
+    }
+  },
+  "rules": [
+    {
+      "id": "no_motion_without_request",
+      "scope": "safety",
+      "kind": "absent",
+      "event": "motion_without_request",
+      "reason": "motion_without_request"
+    },
+    {
+      "id": "no_command_out_of_range",
+      "scope": "safety",
+      "kind": "absent",
+      "event": "command_out_of_range",
+      "reason": "command_out_of_range"
+    },
+    {
+      "id": "no_travel_limit",
+      "scope": "safety",
+      "kind": "absent",
+      "event": "travel_limit",
+      "reason": "travel_limit"
+    },
+    {
+      "id": "no_rotation_before_clearance",
+      "scope": "safety",
+      "kind": "absent",
+      "event": "rotation_before_clearance",
+      "reason": "rotation_before_clearance"
+    },
+    {
+      "id": "no_rotation_clearance_lost",
+      "scope": "safety",
+      "kind": "absent",
+      "event": "rotation_clearance_lost",
+      "reason": "rotation_clearance_lost"
+    },
+    {
+      "id": "no_reapproach_before_table_stopped",
+      "scope": "safety",
+      "kind": "absent",
+      "event": "reapproach_before_table_stopped",
+      "reason": "reapproach_before_table_stopped"
+    },
+    {
+      "id": "no_table_slide_collision",
+      "scope": "safety",
+      "kind": "absent",
+      "event": "table_slide_collision",
+      "reason": "table_slide_collision"
+    },
+    {
+      "id": "no_premature_completion",
+      "scope": "safety",
+      "kind": "absent",
+      "event": "premature_completion",
+      "reason": "premature_completion"
+    },
+    {
+      "id": "no_result_not_held",
+      "scope": "safety",
+      "kind": "absent",
+      "event": "result_not_held",
+      "reason": "result_not_held"
+    },
+    {
+      "id": "no_completion_deadline_missed",
+      "scope": "safety",
+      "kind": "absent",
+      "event": "completion_deadline_missed",
+      "reason": "completion_deadline_missed"
+    },
+    {
+      "id": "request_accepted",
+      "scope": "goal",
+      "kind": "present",
+      "event": "request_accepted",
+      "reason": "request_accepted_missing"
+    },
+    {
+      "id": "result_asserted",
+      "scope": "goal",
+      "kind": "present",
+      "event": "result_asserted",
+      "reason": "result_asserted_missing"
+    },
+    {
+      "id": "motion_medium_complete",
+      "scope": "goal",
+      "kind": "present",
+      "event": "motion_medium_complete",
+      "reason": "motion_medium_complete_missing"
+    }
+  ],
+  "violation_event_types": [
+    "motion_without_request",
+    "command_out_of_range",
+    "travel_limit",
+    "rotation_before_clearance",
+    "rotation_clearance_lost",
+    "reapproach_before_table_stopped",
+    "table_slide_collision",
+    "premature_completion",
+    "result_not_held",
+    "completion_deadline_missed"
+  ],
+  "report_events": {
+    "request_scan": "request_accepted",
+    "completion_scan": "result_asserted",
+    "physical_complete_scan": "motion_medium_complete"
+  },
+  "trace_end": {
+    "events": [],
+    "padding_scans": 800
+  }
+}

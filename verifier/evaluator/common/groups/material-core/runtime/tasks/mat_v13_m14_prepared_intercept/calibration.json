@@ -1,0 +1,44 @@
+{
+  "axis_speed": 2.0,
+  "travel_speed": 0.5,
+  "grip_seconds": 0.1,
+  "separation_height": 0.12,
+  "slot_ids": [
+    3,
+    0,
+    1,
+    2
+  ],
+  "angular_speed": 1.5707963267948966,
+  "initial_phase": 1.0,
+  "receiver_speed": 0.25,
+  "push_speed": 1.0,
+  "belt_speed": 0.4,
+  "return_one": false,
+  "partial_entry": false,
+  "initial_edge": 0.006,
+  "drift_per_m": 0.06,
+  "initial_old": 12.0,
+  "valve_seconds": 0.15,
+  "flow_ml_s": 10.0,
+  "keys_a": [
+    1,
+    3,
+    5
+  ],
+  "keys_b": [
+    2,
+    3,
+    4
+  ],
+  "weights": [
+    300,
+    100,
+    300,
+    100
+  ],
+  "max_imbalance": 1,
+  "allowed_span": 0.18,
+  "provenance": "Uncalibrated synthetic parameters; no company measurements.",
+  "supply_seconds": 0.6
+}

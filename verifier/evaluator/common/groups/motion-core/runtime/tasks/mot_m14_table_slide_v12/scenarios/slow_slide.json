@@ -1,0 +1,26 @@
+{
+  "id": "slow_slide",
+  "initial": {
+    "a": 0,
+    "b": 700,
+    "target_a": 90,
+    "target_b": 700
+  },
+  "parameters": {
+    "b_response": 0.55
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X10": 0
+      }
+    },
+    {
+      "scan": 5,
+      "set": {
+        "X10": 1
+      }
+    }
+  ]
+}

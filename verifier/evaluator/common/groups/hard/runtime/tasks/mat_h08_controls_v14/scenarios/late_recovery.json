@@ -1,0 +1,19 @@
+{
+  "id": "late_recovery",
+  "parameters": {
+    "recovery_arrivals": [
+      6,
+      12,
+      18,
+      24
+    ]
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

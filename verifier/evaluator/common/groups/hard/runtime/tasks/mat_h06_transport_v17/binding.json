@@ -1,0 +1,76 @@
+{
+  "schema_version": "virtual-binding/0.1",
+  "provenance": "public-synthetic",
+  "external": {
+    "start": "X0"
+  },
+  "inputs": {
+    "batch_ready": "X10",
+    "batch_active": "X11",
+    "batch_done": "X12",
+    "a_available": "X13",
+    "b_available": "X14",
+    "a_active": "X15",
+    "b_active": "X16",
+    "piece_idle": "X17",
+    "piece_growing": "X18",
+    "piece_cut": "X19",
+    "cutter_busy": "X1A",
+    "holder_closed": "X1B",
+    "exit_clear": "X1C",
+    "exit_received": "X1D",
+    "all_done": "X1E",
+    "holder_open": "X1F",
+    "spare_available": "X20",
+    "spare_docked": "X21",
+    "spare_locked": "X22",
+    "old_end_held": "X23",
+    "new_end_held": "X24",
+    "threaded": "X25",
+    "joined": "X26",
+    "splice_needed": "X27",
+    "feed_path_clear": "X28",
+    "splice_passed": "X29"
+  },
+  "outputs": {
+    "accept_batch": "Y10",
+    "ack_batch": "Y11",
+    "accept_a": "Y12",
+    "accept_b": "Y13",
+    "start_piece": "Y14",
+    "feed": "Y15",
+    "pull": "Y16",
+    "hold": "Y17",
+    "cut": "Y18",
+    "release": "Y19",
+    "ack_exit": "Y1A",
+    "complete": "Y1B",
+    "spare_advance": "Y1C",
+    "spare_lock": "Y1D",
+    "old_end_hold": "Y1E",
+    "new_end_hold": "Y1F",
+    "thread": "Y20",
+    "splice_press": "Y21",
+    "start_waste": "Y22"
+  },
+  "word_inputs": {
+    "batch_id": "D0",
+    "batch_remaining": "D1",
+    "stored_mm": "D2",
+    "feed_encoder": "D3",
+    "pull_encoder": "D4",
+    "a_target": "D5",
+    "b_target": "D6",
+    "piece_id": "D7",
+    "piece_mm": "D8",
+    "received": "D9",
+    "safe_length_mm": "D10",
+    "waste_length_mm": "D11"
+  },
+  "word_outputs": {
+    "side": "D200"
+  },
+  "result": {
+    "completion": "Y1B"
+  }
+}

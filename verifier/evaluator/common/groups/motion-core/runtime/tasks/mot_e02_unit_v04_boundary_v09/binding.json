@@ -1,0 +1,21 @@
+{
+  "schema_version": "virtual-binding/0.1",
+  "provenance": "public-synthetic",
+  "external": {
+    "request": "X10"
+  },
+  "feedback": {
+    "s_position": "D11",
+    "s_velocity": "D12",
+    "referenced": "X11",
+    "home_busy": "X12",
+    "home_done": "X13",
+    "cam": "X14"
+  },
+  "commands": {
+    "home": "Y21"
+  },
+  "result": {
+    "completion": "Y2"
+  }
+}

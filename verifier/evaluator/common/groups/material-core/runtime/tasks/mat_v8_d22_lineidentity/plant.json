@@ -1,0 +1,195 @@
+{
+  "schema_version": "plant-spec/0.2",
+  "id": "MAT-V8-D22_PLANT",
+  "scan_ms": 10,
+  "devices": [
+    {
+      "id": "CELL",
+      "role": "material_extension_cell"
+    }
+  ],
+  "interactions": [
+    {
+      "kind": "material_extension_advanced",
+      "mode": "lineidentity"
+    }
+  ],
+  "scene": {
+    "geometry_profile": "material-extension/8",
+    "devices": [
+      {
+        "id": "CELL",
+        "ui": "fixture",
+        "visual_variant": "v8-lineidentity-base",
+        "pos": [
+          0,
+          0,
+          0
+        ],
+        "size": [
+          2.8,
+          1.8,
+          1.8
+        ]
+      },
+      {
+        "id": "VALVE",
+        "ui": "fixture",
+        "visual_variant": "v8-diverter-valve",
+        "pos": [
+          0.15,
+          1.06,
+          0
+        ],
+        "size": [
+          0.2,
+          0.17,
+          0.2
+        ],
+        "state_source": "plant.visual.valve"
+      },
+      {
+        "id": "LINE",
+        "ui": "fixture",
+        "visual_variant": "v8-content-line",
+        "pos": [
+          0,
+          0,
+          0
+        ],
+        "size": [
+          0.5,
+          0.1,
+          0.1
+        ],
+        "state_source": "plant.visual.old_ratio"
+      },
+      {
+        "id": "SUPPLY",
+        "ui": "fixture",
+        "visual_variant": "v8-liquid-level",
+        "pos": [
+          -0.8,
+          0.76,
+          0
+        ],
+        "size": [
+          0.24,
+          0.4,
+          0.24
+        ],
+        "state_source": "plant.visual.source"
+      },
+      {
+        "id": "WASTE",
+        "ui": "fixture",
+        "visual_variant": "v8-liquid-level",
+        "pos": [
+          0.4,
+          0.76,
+          0.4
+        ],
+        "size": [
+          0.24,
+          0.4,
+          0.24
+        ],
+        "state_source": "plant.visual.waste"
+      },
+      {
+        "id": "RECEIVED",
+        "ui": "fixture",
+        "visual_variant": "v8-liquid-level",
+        "pos": [
+          0.85,
+          0.76,
+          -0.2
+        ],
+        "size": [
+          0.24,
+          0.4,
+          0.24
+        ],
+        "state_source": "plant.visual.target"
+      }
+    ],
+    "workpieces": [],
+    "relations": [
+      {
+        "type": "mounted_on",
+        "child": "VALVE",
+        "parent": "CELL"
+      },
+      {
+        "type": "mounted_on",
+        "child": "LINE",
+        "parent": "CELL"
+      },
+      {
+        "type": "mounted_on",
+        "child": "SUPPLY",
+        "parent": "CELL"
+      },
+      {
+        "type": "mounted_on",
+        "child": "WASTE",
+        "parent": "CELL"
+      },
+      {
+        "type": "mounted_on",
+        "child": "RECEIVED",
+        "parent": "CELL"
+      }
+    ],
+    "io_labels": {
+      "external.start": "start",
+      "external.request": "request",
+      "result.completion": "completion",
+      "outputs.pump": "pump",
+      "outputs.to_target": "to_target",
+      "inputs.waste": "waste",
+      "inputs.target": "target",
+      "inputs.empty": "empty",
+      "inputs.received": "received",
+      "words.outlet": "outlet",
+      "words.source": "source"
+    },
+    "observed_refs": [
+      "external.start",
+      "external.request",
+      "result.completion",
+      "outputs.pump",
+      "outputs.to_target",
+      "inputs.waste",
+      "inputs.target",
+      "inputs.empty",
+      "inputs.received",
+      "words.outlet",
+      "words.source"
+    ],
+    "velocity_source": "plant.velocity",
+    "signals": [
+      {
+        "address_ref": "outputs.pump",
+        "source": "command_image.pump"
+      },
+      {
+        "address_ref": "outputs.to_target",
+        "source": "command_image.to_target"
+      },
+      {
+        "address_ref": "result.completion",
+        "source": "plc.bits.Y2"
+      }
+    ],
+    "assembly_view": {
+      "dist": 3.7,
+      "target": [
+        0,
+        0.8,
+        0
+      ],
+      "front_sign": 1
+    }
+  }
+}

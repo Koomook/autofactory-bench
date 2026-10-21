@@ -1,0 +1,19 @@
+{
+  "id": "slow_content",
+  "parameters": {
+    "content_arrivals": [
+      5,
+      6,
+      11,
+      11.5
+    ]
+  },
+  "stimulus": [
+    {
+      "scan": 0,
+      "set": {
+        "X0": 1
+      }
+    }
+  ]
+}

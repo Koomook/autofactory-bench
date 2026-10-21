@@ -1,0 +1,556 @@
+{
+  "schema_version": "plant-spec/0.2",
+  "id": "MAT-V8-D16_PLANT",
+  "scan_ms": 10,
+  "devices": [
+    {
+      "id": "CELL",
+      "role": "material_extension_cell"
+    }
+  ],
+  "interactions": [
+    {
+      "kind": "material_extension_advanced",
+      "mode": "aperture"
+    }
+  ],
+  "scene": {
+    "geometry_profile": "material-extension/8",
+    "devices": [
+      {
+        "id": "CELL",
+        "ui": "fixture",
+        "visual_variant": "v8-aperture-base",
+        "pos": [
+          0,
+          0,
+          0
+        ],
+        "size": [
+          2.8,
+          1.8,
+          1.8
+        ]
+      },
+      {
+        "id": "LEFT_PAD",
+        "ui": "fixture",
+        "visual_variant": "v8-mouth-pad",
+        "pos": [
+          0.1,
+          0.86,
+          -0.05
+        ],
+        "size": [
+          0.32,
+          0.16,
+          0.08
+        ],
+        "world_position": {
+          "origin": [
+            0.1,
+            0.86,
+            -0.045
+          ],
+          "terms": [
+            {
+              "source": "plant.visual.jaw_gap",
+              "vector": [
+                0,
+                0,
+                -0.5
+              ]
+            }
+          ]
+        },
+        "state_source": "plant.visual.left"
+      },
+      {
+        "id": "RIGHT_PAD",
+        "ui": "fixture",
+        "visual_variant": "v8-mouth-pad",
+        "pos": [
+          0.1,
+          0.86,
+          0.05
+        ],
+        "size": [
+          0.32,
+          0.16,
+          0.08
+        ],
+        "world_position": {
+          "origin": [
+            0.1,
+            0.86,
+            0.045
+          ],
+          "terms": [
+            {
+              "source": "plant.visual.jaw_gap",
+              "vector": [
+                0,
+                0,
+                0.5
+              ]
+            }
+          ]
+        },
+        "state_source": "plant.visual.right"
+      },
+      {
+        "id": "PUSHER",
+        "ui": "fixture",
+        "visual_variant": "v8-small-pusher",
+        "pos": [
+          -0.81,
+          0.84,
+          0
+        ],
+        "size": [
+          0.08,
+          0.1,
+          0.1
+        ],
+        "world_position": {
+          "origin": [
+            0,
+            0.84,
+            0
+          ],
+          "terms": [
+            {
+              "source": "plant.visual.tool_x",
+              "vector": [
+                1,
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "POUCH",
+        "ui": "fixture",
+        "visual_variant": "v8-pouch",
+        "pos": [
+          0,
+          0,
+          0
+        ],
+        "size": [
+          0.8,
+          0.25,
+          0.2
+        ],
+        "state_source": "plant.visual.gap"
+      }
+    ],
+    "workpieces": [
+      {
+        "id": "CONTENT",
+        "owner_source": "plant.parts.CONTENT.owner",
+        "status_source": "plant.parts.CONTENT.status",
+        "owner_poses": {
+          "source": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.CONTENT.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.CONTENT.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.CONTENT.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": null
+          },
+          "target": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.CONTENT.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.CONTENT.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.CONTENT.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": null
+          },
+          "tool": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.CONTENT.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.CONTENT.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.CONTENT.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": "HEAD"
+          },
+          "displaced": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.CONTENT.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.CONTENT.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.CONTENT.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": null
+          },
+          "dropped": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.CONTENT.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.CONTENT.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.CONTENT.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": null
+          },
+          "transit": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.CONTENT.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.CONTENT.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.CONTENT.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": null
+          },
+          "reserve": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.CONTENT.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.CONTENT.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.CONTENT.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": null
+          },
+          "tray": {
+            "position": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "terms": [
+                {
+                  "source": "plant.parts.CONTENT.x",
+                  "vector": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.CONTENT.y",
+                  "vector": [
+                    0,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "source": "plant.parts.CONTENT.z",
+                  "vector": [
+                    0,
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            "held_by": null
+          }
+        },
+        "material_dimensions": [
+          0.24,
+          0.12,
+          0.12
+        ],
+        "color": "#dda74d"
+      }
+    ],
+    "relations": [
+      {
+        "type": "mounted_on",
+        "child": "LEFT_PAD",
+        "parent": "CELL"
+      },
+      {
+        "type": "mounted_on",
+        "child": "RIGHT_PAD",
+        "parent": "CELL"
+      },
+      {
+        "type": "mounted_on",
+        "child": "PUSHER",
+        "parent": "CELL"
+      },
+      {
+        "type": "mounted_on",
+        "child": "POUCH",
+        "parent": "CELL"
+      }
+    ],
+    "io_labels": {
+      "external.start": "start",
+      "external.request": "request",
+      "result.completion": "completion",
+      "outputs.left_vac": "left_vac",
+      "outputs.right_vac": "right_vac",
+      "outputs.open": "open",
+      "outputs.close": "close",
+      "outputs.insert": "insert",
+      "outputs.retract": "retract",
+      "inputs.left_held": "left_held",
+      "inputs.right_held": "right_held",
+      "inputs.open": "open",
+      "inputs.home": "home",
+      "inputs.end": "end",
+      "inputs.seated": "seated",
+      "inputs.released": "released",
+      "words.gap": "gap",
+      "words.depth": "depth"
+    },
+    "observed_refs": [
+      "external.start",
+      "external.request",
+      "result.completion",
+      "outputs.left_vac",
+      "outputs.right_vac",
+      "outputs.open",
+      "outputs.close",
+      "outputs.insert",
+      "outputs.retract",
+      "inputs.left_held",
+      "inputs.right_held",
+      "inputs.open",
+      "inputs.home",
+      "inputs.end",
+      "inputs.seated",
+      "inputs.released",
+      "words.gap",
+      "words.depth"
+    ],
+    "velocity_source": "plant.velocity",
+    "signals": [
+      {
+        "address_ref": "outputs.left_vac",
+        "source": "command_image.left_vac"
+      },
+      {
+        "address_ref": "outputs.right_vac",
+        "source": "command_image.right_vac"
+      },
+      {
+        "address_ref": "outputs.open",
+        "source": "command_image.open"
+      },
+      {
+        "address_ref": "outputs.close",
+        "source": "command_image.close"
+      },
+      {
+        "address_ref": "outputs.insert",
+        "source": "command_image.insert"
+      },
+      {
+        "address_ref": "outputs.retract",
+        "source": "command_image.retract"
+      },
+      {
+        "address_ref": "result.completion",
+        "source": "plc.bits.Y2"
+      }
+    ],
+    "assembly_view": {
+      "dist": 3.1,
+      "target": [
+        0,
+        0.8,
+        0
+      ],
+      "front_sign": 1
+    }
+  }
+}
