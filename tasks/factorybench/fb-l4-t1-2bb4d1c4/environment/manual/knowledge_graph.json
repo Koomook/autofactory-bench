@@ -1,0 +1,2719 @@
+{
+ "$schema_version": "1.0",
+ "description": "FactoryBench knowledge graph: machine specs, gripper specs, dataset/task/event definitions, fault root causes, anomaly catalogue, error\u2192protocol mappings, anomaly severity ranking, and the relevance specs that drive fault-aware sub-series sampling. See SCHEMA.md for field-level documentation.",
+ "machines": [
+  {
+   "machine_id": 0,
+   "machine_model": "UR3e",
+   "manufacturer": "Universal Robots",
+   "series": "E-series",
+   "machine_type": "Collaborative robot (cobot)",
+   "weight_kg": 11,
+   "payload_kg": 3,
+   "degrees_of_freedom": 6,
+   "joint_rotation": {
+    "wrist_joints": "360_degree_rotation",
+    "end_joint": "infinite_rotation"
+   },
+   "typical_applications": [
+    "light assembly tasks",
+    "automated workbench scenarios"
+   ],
+   "control_interfaces": [
+    "UR PolyScope (teach pendant)",
+    "UrScript",
+    "TCP/IP socket connection",
+    "RTDE (Real-Time Data Exchange)"
+   ],
+   "minimum_polyscope_version_for_screwdriver": "5.4",
+   "used_in_paper_for": "Automated screwdriving anomaly detection dataset collection (AURSAD)",
+   "safety_modes": {
+    "variable": "safety_mode",
+    "description": "Safety state of the Universal Robots controller as reported via RTDE.",
+    "enum": [
+     {
+      "name": "NORMAL",
+      "value": 1,
+      "description": "Robot is operating normally within configured safety limits."
+     },
+     {
+      "name": "REDUCED",
+      "value": 2,
+      "description": "Robot is operating in reduced mode with limited speed and/or force due to safety configuration or zone activation."
+     },
+     {
+      "name": "PROTECTIVE_STOP",
+      "value": 3,
+      "description": "Protective stop triggered due to collision detection, excessive force, or safety threshold violation. Requires operator reset."
+     },
+     {
+      "name": "RECOVERY",
+      "value": 4,
+      "description": "Robot is in recovery mode following a safety event and requires manual intervention."
+     },
+     {
+      "name": "SAFEGUARD_STOP",
+      "value": 5,
+      "description": "External safeguard device (e.g., light curtain, safety door, interlock) has triggered a stop."
+     },
+     {
+      "name": "SYSTEM_EMERGENCY_STOP",
+      "value": 6,
+      "description": "Emergency stop activated from the robot control box."
+     },
+     {
+      "name": "ROBOT_EMERGENCY_STOP",
+      "value": 7,
+      "description": "Emergency stop activated from the teach pendant or robot-mounted E-stop button."
+     },
+     {
+      "name": "VIOLATION",
+      "value": 8,
+      "description": "Configured safety limits (speed, position, joint limits, etc.) have been violated."
+     },
+     {
+      "name": "FAULT",
+      "value": 9,
+      "description": "Internal safety system fault detected. System requires troubleshooting before operation can resume."
+     },
+     {
+      "name": "AUTOMATIC_MODE_SAFEGUARD_STOP",
+      "value": 12,
+      "description": "Safeguard stop triggered while the robot is operating in automatic mode."
+     },
+     {
+      "name": "SYSTEM_THREE_POSITION_ENABLING_STOP",
+      "value": 13,
+      "description": "Stop triggered due to incorrect activation of the system three-position enabling device."
+     },
+     {
+      "name": "TP_THREE_POSITION_ENABLING_STOP",
+      "value": 14,
+      "description": "Stop triggered due to incorrect activation of the teach pendant three-position enabling device."
+     },
+     {
+      "name": "IMMI_EMERGENCY_STOP",
+      "value": 15,
+      "description": "Emergency stop triggered through an IMMI (external machinery interface) safety connection."
+     },
+     {
+      "name": "IMMI_SAFEGUARD_STOP",
+      "value": 16,
+      "description": "Safeguard stop triggered through an IMMI (external machinery interface) safety connection."
+     },
+     {
+      "name": "PROFISAFE_WAITING_FOR_PARAMETERS",
+      "value": 17,
+      "description": "Robot is waiting for safety parameters via PROFIsafe communication before operation can proceed."
+     },
+     {
+      "name": "PROFISAFE_AUTOMATIC_MODE_SAFEGUARD_STOP",
+      "value": 18,
+      "description": "Safeguard stop triggered via PROFIsafe while in automatic mode."
+     },
+     {
+      "name": "PROFISAFE_SAFEGUARD_STOP",
+      "value": 19,
+      "description": "Safeguard stop triggered through PROFIsafe safety communication."
+     },
+     {
+      "name": "PROFISAFE_EMERGENCY_STOP",
+      "value": 20,
+      "description": "Emergency stop triggered through PROFIsafe safety communication."
+     },
+     {
+      "name": "SAFETY_API_SAFEGUARD_STOP",
+      "value": 22,
+      "description": "Safeguard stop triggered via the Safety API interface."
+     }
+    ]
+   },
+   "joint_modes": {
+    "variable": "joint_mode",
+    "description": "Per-joint servo control state of each UR robot joint as reported via RTDE. One value is provided for each joint (0\u00e2\u20ac\u201c5 on UR3e).",
+    "enum": [
+     {
+      "name": "RESET",
+      "value": 235,
+      "description": "Joint is in reset state following a fault or shutdown event."
+     },
+     {
+      "name": "SHUTTING_DOWN",
+      "value": 236,
+      "description": "Joint controller is in the process of shutting down."
+     },
+     {
+      "name": "BACKDRIVE",
+      "value": 238,
+      "description": "Backdrive mode active; joint can be manually moved with reduced resistance."
+     },
+     {
+      "name": "POWER_OFF",
+      "value": 239,
+      "description": "Joint motor power is disabled."
+     },
+     {
+      "name": "READY_FOR_POWER_OFF",
+      "value": 240,
+      "description": "Joint is prepared for power-off but not yet fully powered down."
+     },
+     {
+      "name": "NOT_RESPONDING",
+      "value": 245,
+      "description": "Joint controller is not responding; communication failure or internal issue."
+     },
+     {
+      "name": "MOTOR_INITIALISATION",
+      "value": 246,
+      "description": "Joint motor is undergoing initialization sequence."
+     },
+     {
+      "name": "BOOTING",
+      "value": 247,
+      "description": "Joint controller is booting."
+     },
+     {
+      "name": "BOOTLOADER",
+      "value": 249,
+      "description": "Joint is in bootloader mode (firmware loading state)."
+     },
+     {
+      "name": "VIOLATION",
+      "value": 251,
+      "description": "Joint safety or operational limits have been violated."
+     },
+     {
+      "name": "FAULT",
+      "value": 252,
+      "description": "Joint has encountered a fault condition and requires intervention."
+     },
+     {
+      "name": "RUNNING",
+      "value": 253,
+      "description": "Joint is operating normally under active control."
+     },
+     {
+      "name": "IDLE",
+      "value": 255,
+      "description": "Joint is powered and ready but not actively moving."
+     }
+    ]
+   },
+   "robot_modes": {
+    "variable": "robot_mode",
+    "description": "Overall operational state of the Universal Robots controller as reported via RTDE. This reflects the high-level lifecycle state of the robot arm and safety control system.",
+    "enum": [
+     {
+      "name": "DISCONNECTED",
+      "value": 0,
+      "description": "Connection with the safety control board is not established."
+     },
+     {
+      "name": "CONFIRM_SAFETY",
+      "value": 1,
+      "description": "Robot is validating and updating safety settings before enabling operation."
+     },
+     {
+      "name": "BOOTING",
+      "value": 2,
+      "description": "Safety control board is booting and communication with other components is being verified."
+     },
+     {
+      "name": "POWER_OFF",
+      "value": 3,
+      "description": "Robot is powered but joints are not energized. Ready to boot up the joints."
+     },
+     {
+      "name": "POWER_ON",
+      "value": 4,
+      "description": "Robot joints are in the process of booting up and being energized."
+     },
+     {
+      "name": "IDLE",
+      "value": 5,
+      "description": "Robot joints are powered and ready, but not executing motion. Can transition to RUNNING or BACKDRIVE."
+     },
+     {
+      "name": "BACKDRIVE",
+      "value": 6,
+      "description": "Robot is in backdrive mode. Brakes are selectively released to allow restricted manual movement."
+     },
+     {
+      "name": "RUNNING",
+      "value": 7,
+      "description": "Brakes are fully released and robot is ready to execute or currently executing a program. Safety mode is active and displayed in PolyScope."
+     },
+     {
+      "name": "UPDATING",
+      "value": 8,
+      "description": "Controller firmware is being updated."
+     },
+     {
+      "name": "POWERING_OFF",
+      "value": 9,
+      "description": "Robot arm is in the process of powering down."
+     },
+     {
+      "name": "ARM_BOOTING",
+      "value": 10,
+      "description": "Robot arm hardware is booting up."
+     },
+     {
+      "name": "ARM_UPDATING",
+      "value": 11,
+      "description": "Robot arm firmware is being updated."
+     }
+    ]
+   },
+   "runtime_states": {
+    "variable": "runtime_state",
+    "enum": [
+     {
+      "name": "STOPPING",
+      "value": 0
+     },
+     {
+      "name": "STOPPED",
+      "value": 1
+     },
+     {
+      "name": "PLAYING",
+      "value": 2
+     },
+     {
+      "name": "PAUSING",
+      "value": 3
+     },
+     {
+      "name": "PAUSED",
+      "value": 4
+     },
+     {
+      "name": "RESUMING",
+      "value": 5
+     }
+    ]
+   },
+   "reach_mm": 500
+  },
+  {
+   "machine_id": 1,
+   "machine_type": "CNC milling machine",
+   "manufacturer": null,
+   "model": null,
+   "origin": "University of Michigan Smart Lab experiments",
+   "machine_category": "Computer Numerical Control (CNC) milling machine",
+   "axes": [
+    {
+     "name": "X-axis",
+     "sensor_data": "position, velocity, acceleration"
+    },
+    {
+     "name": "Y-axis",
+     "sensor_data": "position, velocity, acceleration"
+    },
+    {
+     "name": "Z-axis",
+     "sensor_data": "position, velocity, acceleration"
+    }
+   ],
+   "spindle": {
+    "sensor_data": "motor readings"
+   },
+   "workpiece_material": "wax",
+   "experiment_count": 18,
+   "purpose": "Tool wear detection data collection for machine learning",
+   "data_source": "Kaggle dataset (tool-wear-detection-in-cnc-mill)",
+   "notes": "Exact CNC machine make/model not specified in dataset documentation",
+   "safety_modes": {},
+   "joint_modes": {},
+   "robot_modes": {},
+   "runtime_states": {}
+  },
+  {
+   "machine_id": 2,
+   "machine_model": "Yu 5 Industrial",
+   "manufacturer": "Agile Robots SE",
+   "series": "Yu",
+   "machine_type": "Collaborative robot (cobot)",
+   "weight_kg": 31.5,
+   "payload_kg": 5,
+   "payload_kg_at_reduced_reach": 7,
+   "payload_kg_at_reduced_reach_mm": 850,
+   "reach_mm": 1000,
+   "repeatability_mm": 0.05,
+   "degrees_of_freedom": 6,
+   "joint_position_limits_deg": {
+    "joint_1": [
+     -220,
+     220
+    ],
+    "joint_2": [
+     -310,
+     130
+    ],
+    "joint_3": [
+     -160,
+     160
+    ],
+    "joint_4": [
+     -310,
+     130
+    ],
+    "joint_5": [
+     -220,
+     220
+    ],
+    "joint_6": "continuous"
+   },
+   "joint_speed_limits_deg_s": {
+    "joint_1": 141,
+    "joint_2": 141,
+    "joint_3": 169,
+    "joint_4": 180,
+    "joint_5": 180,
+    "joint_6": 180
+   },
+   "tcp_max_linear_speed_m_s": 2.0,
+   "tcp_force_control_accuracy_N": 0.5,
+   "power_supply": "220-230 VAC, 50/60 Hz",
+   "average_power_consumption_W": 250,
+   "full_load_current_A": 6.3,
+   "ip_rating": "IP54",
+   "operating_temperature_range_C": [
+    5,
+    40
+   ],
+   "integrated_sensors": [
+    "torque sensors on all 6 axes",
+    "built-in 2D camera with dual high-power LEDs",
+    "Neural Processing Unit (NPU) for object recognition"
+   ],
+   "safety_certifications": [
+    "ISO 10218-1",
+    "ISO 13849-1 (Category 3, Performance Level d)",
+    "ISO/TS 15066",
+    "IEC 61508",
+    "T\u00c3\u0153V S\u00c3\u0153D Certificate No. Z10 116233 0004 Rev. 01"
+   ],
+   "typical_applications": [
+    "machine tending",
+    "assembly operations",
+    "pick-and-place tasks",
+    "collaborative human-robot interaction"
+   ],
+   "control_interfaces": [
+    "Ethernet (browser-based interface via Chrome)",
+    "Plug-and-play peripheral connectivity"
+   ],
+   "used_in_paper_for": "Multivariate time-series anomaly detection dataset collection (voraus-AD)",
+   "safety_modes": {},
+   "joint_modes": {},
+   "robot_modes": {}
+  },
+  {
+   "machine_id": 3,
+   "machine_model": "KR 10 R1100-2",
+   "manufacturer": "KUKA",
+   "series": "KR AGILUS-2",
+   "machine_type": "Industrial 6-axis robot arm",
+   "weight_kg": 56,
+   "payload_kg": 5,
+   "payload_kg_max": 11.1,
+   "reach_mm": 1101,
+   "repeatability_mm": 0.02,
+   "degrees_of_freedom": 6,
+   "joint_position_limits_deg": {
+    "joint_1": [
+     -170,
+     170
+    ],
+    "joint_2": [
+     -190,
+     45
+    ],
+    "joint_3": [
+     -120,
+     156
+    ],
+    "joint_4": [
+     -185,
+     185
+    ],
+    "joint_5": [
+     -120,
+     120
+    ],
+    "joint_6": [
+     -350,
+     350
+    ]
+   },
+   "joint_speed_limits_deg_s": {
+    "joint_1": 300,
+    "joint_2": 225,
+    "joint_3": 330,
+    "joint_4": 360,
+    "joint_5": 360,
+    "joint_6": 433
+   },
+   "ip_rating": "IP65",
+   "operating_temperature_range_C": [
+    0,
+    45
+   ],
+   "typical_applications": [
+    "high-speed assembly",
+    "packaging",
+    "handling",
+    "machine tending"
+   ],
+   "control_interfaces": [
+    "KUKA smartPAD (teach pendant)",
+    "KRL (KUKA Robot Language)",
+    "EtherCAT",
+    "PROFINET",
+    "EtherNet/IP"
+   ],
+   "controller": "KR C4 compact / KR C5 micro",
+   "used_in_paper_for": "Real industrial robot data recording for FactoryBench anomaly detection benchmark",
+   "safety_modes": {},
+   "joint_modes": {},
+   "robot_modes": {},
+   "runtime_states": {
+    "variable": "runtime_state",
+    "source_variable": "kuka_robot_process_state",
+    "description": "Program execution state of the KUKA KRC4/KRC5 controller ROBOT interpreter as reported via the robot data interface ($PRO_STATE1).",
+    "enum": [
+     {
+      "name": "P_FREE",
+      "value": 0,
+      "description": "No program selected; program memory is free."
+     },
+     {
+      "name": "P_RESET",
+      "value": 1,
+      "description": "Program is loaded and in reset state; initialised but not yet started."
+     },
+     {
+      "name": "P_ACTIVE",
+      "value": 2,
+      "description": "Program is actively running."
+     },
+     {
+      "name": "P_STOP",
+      "value": 3,
+      "description": "Program execution is stopped (paused); resumable without reset."
+     },
+     {
+      "name": "P_END",
+      "value": 4,
+      "description": "Program execution has reached the end; robot is stationary."
+     }
+    ]
+   }
+  }
+ ],
+ "grippers": [
+  {
+   "gripper_id": 0,
+   "gripper_model": "2FG14",
+   "manufacturer": "OnRobot",
+   "gripper_type": "2-finger electric parallel gripper",
+   "actuation": "electric",
+   "finger_count": 2,
+   "weight_kg": 1.5,
+   "payload_kg": 14,
+   "payload_kg_form_fit": 20,
+   "grip_force_range_N": [
+    40,
+    280
+   ],
+   "max_stroke_mm": 160,
+   "opening_range_mm": [
+    5,
+    117
+   ],
+   "max_gripping_speed_mm_s": 450,
+   "repeatability_mm": 0.1,
+   "ip_rating": "IP67",
+   "operating_temperature_range_C": [
+    0,
+    50
+   ],
+   "tool_flange": "ISO 9409-1-50-4-M6",
+   "communication": [
+    "Ethernet",
+    "Modbus TCP"
+   ],
+   "compatible_robots": [
+    "Universal Robots",
+    "ABB",
+    "KUKA",
+    "Fanuc",
+    "Yaskawa"
+   ],
+   "ur_integration": "URCap",
+   "features": [
+    "programmable grip force",
+    "grip detection",
+    "lost-grip detection",
+    "customizable finger design"
+   ],
+   "typical_applications": [
+    "CNC machine tending",
+    "heavy component handling",
+    "assembly tasks",
+    "pick-and-place"
+   ],
+   "used_in_paper_for": "Finger gripping for pick-and-place and peg-in-hole tasks on UR3 and KUKA KR10"
+  },
+  {
+   "gripper_id": 1,
+   "gripper_model": "Screwdriver",
+   "manufacturer": "OnRobot",
+   "gripper_type": "Electric screwdriver end-of-arm tool",
+   "actuation": "electric",
+   "weight_kg": 2.5,
+   "dimensions_mm": [
+    308,
+    86,
+    114
+   ],
+   "torque_range_Nm": [
+    0.15,
+    5.0
+   ],
+   "max_speed_rpm": 340,
+   "screw_size_range": [
+    "M1.6",
+    "M6"
+   ],
+   "max_screw_length_mm": 50,
+   "retracted_screw_length_mm": 35,
+   "bit_types": [
+    "Philips (PH1-PH3)",
+    "Slot",
+    "Torx"
+   ],
+   "bit_holder": "magnetic (Type A and Type B)",
+   "bit_extenders_mm": [
+    50,
+    100
+   ],
+   "power_supply": "24 VDC, 0.75 A",
+   "ip_rating": "IP54",
+   "esd_certified": true,
+   "operating_temperature_range_C": [
+    5,
+    50
+   ],
+   "tool_flange": "ISO 9409-1-50-4-M6",
+   "compatible_robots": [
+    "Universal Robots",
+    "ABB",
+    "KUKA",
+    "Fanuc",
+    "Yaskawa",
+    "Doosan"
+   ],
+   "ur_integration": "URCap",
+   "screw_feeder_models": [
+    "OnRobot Screw Feeder M1.6",
+    "OnRobot Screw Feeder M2-M6"
+   ],
+   "features": [
+    "programmable torque control",
+    "screw detection",
+    "screw length verification",
+    "insertion quality control",
+    "automatic safety stop on excessive axial force",
+    "screw retraction during arm motion"
+   ],
+   "typical_applications": [
+    "electronics assembly",
+    "general assembly automation",
+    "collaborative robot screwdriving",
+    "multi-variant assembly lines"
+   ],
+   "used_in_paper_for": "Automated screwdriving task on UR3"
+  },
+  {
+   "gripper_id": 2,
+   "gripper_model": null,
+   "manufacturer": "Schmalz",
+   "gripper_type": "vacuum gripper",
+   "actuation": "vacuum",
+   "equipment_note": "Schmalz vacuum generator",
+   "notes": "Exact gripper model not reported in the voraus-AD dataset documentation; only the Schmalz vacuum generator is specified.",
+   "used_in_paper_for": "Pick-and-place task on Yu 5 Industrial (voraus-AD)"
+  }
+ ],
+ "datasets": [
+  {
+   "dataset_id": "aursad",
+   "name": "AURSAD (interpolated)",
+   "description": "Automated UR3e Screwdriving Anomaly Dataset, interpolated to uniform timestep. Collected on a UR3e cobot performing automated screwdriving tasks with injected faults.",
+   "machine_id": 0,
+   "gripper_id": 1,
+   "task_id": "screwing",
+   "source": "https://github.com/AaltoPML/AURSAD",
+   "license": "MIT"
+  },
+  {
+   "dataset_id": "vorausad",
+   "name": "voraus-AD (interpolated)",
+   "description": "Voraus Anomaly Detection dataset, interpolated to uniform timestep. Collected on an Agile Robots Yu 5 Industrial arm performing pick-and-place tasks with injected faults. Joint positions are in radians.",
+   "machine_id": 2,
+   "gripper_id": 2,
+   "task_id": "pick_and_place",
+   "source": "https://github.com/vorausrobotik/voraus-ad-dataset",
+   "license": "Apache-2.0"
+  },
+  {
+   "dataset_id": "factorywave",
+   "name": "FactoryWave",
+   "description": "Real-robot recordings from a Universal Robots UR3e cobot (machine_id 0, the same machine class as AURSAD) and a KUKA KR 10 R1100-2 industrial arm (machine_id 3) covering pick-and-place, peg-in-hole, and screwing tasks, with normal, fault, counterfactual, and trajectory-optimization conditions.",
+   "machine_id": 0,
+   "gripper_id": null,
+   "task_id": "mixed",
+   "source": "https://huggingface.co/datasets/Forgis/FactoryWave",
+   "license": "Apache-2.0"
+  }
+ ],
+ "tasks": [
+  {
+   "id": "pick_and_place",
+   "name": "Pick and Place",
+   "description": "Robot picks an object from a source location and places it at a target location (bin).",
+   "phases": [
+    {
+     "id": "above_pick",
+     "label": 0,
+     "name": "Above Pick",
+     "description": "EEF moves to a waypoint directly above the object."
+    },
+    {
+     "id": "descend",
+     "label": 1,
+     "name": "Descend",
+     "description": "EEF lowers toward the object."
+    },
+    {
+     "id": "settle",
+     "label": 2,
+     "name": "Settle",
+     "description": "Brief hold to let physics settle before grasping."
+    },
+    {
+     "id": "close",
+     "label": 3,
+     "name": "Close",
+     "description": "Gripper closes around the object."
+    },
+    {
+     "id": "lift",
+     "label": 4,
+     "name": "Lift",
+     "description": "EEF lifts the grasped object off the surface."
+    },
+    {
+     "id": "move_xy",
+     "label": 5,
+     "name": "Move XY",
+     "description": "Lateral transfer toward the bin."
+    },
+    {
+     "id": "lower",
+     "label": 6,
+     "name": "Lower",
+     "description": "EEF lowers into the bin."
+    },
+    {
+     "id": "open",
+     "label": 7,
+     "name": "Open",
+     "description": "Gripper opens, object released."
+    },
+    {
+     "id": "retract",
+     "label": 8,
+     "name": "Retract",
+     "description": "EEF moves away from the bin."
+    },
+    {
+     "id": "return",
+     "label": 9,
+     "name": "Return",
+     "description": "EEF returns to home configuration."
+    }
+   ]
+  },
+  {
+   "id": "screwing",
+   "name": "Screwing",
+   "description": "Robot tightens a pre-gripped screw into a threaded hole, then loosens and retrieves it.",
+   "phases": [
+    {
+     "id": "approach",
+     "label": 0,
+     "name": "Approach",
+     "description": "EEF moves to a pre-contact waypoint above the fastener."
+    },
+    {
+     "id": "descend_to_screw",
+     "label": 1,
+     "name": "Descend",
+     "description": "EEF lowers to engage the fastener."
+    },
+    {
+     "id": "screw",
+     "label": 2,
+     "name": "Screw",
+     "description": "Continuous downward force + wrist rotation to thread."
+    },
+    {
+     "id": "disengage",
+     "label": 3,
+     "name": "Disengage",
+     "description": "Gripper opens / tool lifts off."
+    },
+    {
+     "id": "retract_after_screw",
+     "label": 4,
+     "name": "Retract",
+     "description": "EEF returns to a safe height."
+    },
+    {
+     "id": "descend_to_loosen",
+     "label": 5,
+     "name": "Descend",
+     "description": "EEF lowers to engage the fastener."
+    },
+    {
+     "id": "loosen",
+     "label": 6,
+     "name": "Loosen",
+     "description": "Loosen screw."
+    },
+    {
+     "id": "engage",
+     "label": 7,
+     "name": "Engage",
+     "description": "Gripper closes."
+    },
+    {
+     "id": "retract_home",
+     "label": 8,
+     "name": "Retract",
+     "description": "EEF returns to a home position."
+    }
+   ]
+  },
+  {
+   "id": "peg_in_hole",
+   "name": "Peg in Hole",
+   "description": "Robot inserts a pre-gripped peg into a fixture/slot, releases it, then retrieves it and returns home.",
+   "phases": [
+    {
+     "id": "above_hole_approach",
+     "label": 0,
+     "name": "Above Hole",
+     "description": "EEF moves above the hole and aligns."
+    },
+    {
+     "id": "insert",
+     "label": 1,
+     "name": "Insert",
+     "description": "EEF pushes peg downward into the hole."
+    },
+    {
+     "id": "disengage",
+     "label": 2,
+     "name": "Disengage",
+     "description": "Gripper opens."
+    },
+    {
+     "id": "above_hole_rise",
+     "label": 3,
+     "name": "Above Hole",
+     "description": "EEF rises back to the waypoint above the hole."
+    },
+    {
+     "id": "retract_after_insert",
+     "label": 4,
+     "name": "Retract",
+     "description": "EEF returns to home position."
+    },
+    {
+     "id": "above_object_descend",
+     "label": 5,
+     "name": "Above Object",
+     "description": "EEF moves above the object and aligns with object."
+    },
+    {
+     "id": "engage",
+     "label": 6,
+     "name": "Engage",
+     "description": "Gripper closes."
+    },
+    {
+     "id": "above_object_rise",
+     "label": 7,
+     "name": "Above Object",
+     "description": "EEF rises back to the waypoint above the object."
+    },
+    {
+     "id": "retract_home",
+     "label": 8,
+     "name": "Retract",
+     "description": "EEF returns to home position."
+    }
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": 6,
+   "name": "Payload Addition",
+   "description": "an increase of {x} kg to the payload",
+   "tasks": [
+    "pick_and_place"
+   ],
+   "variables": {
+    "x": "numeric"
+   }
+  },
+  {
+   "id": 11,
+   "name": "Friction Decrease Injection",
+   "description": "a decrease of {reduction_pct}% in the friction coefficient",
+   "tasks": [
+    "pick_and_place",
+    "screwing"
+   ],
+   "variables": {
+    "reduction_pct": "numeric"
+   }
+  },
+  {
+   "id": 12,
+   "name": "Motor Miscommutation Injection",
+   "description": "a commutation phase offset of {phase_offset_deg} degrees on {motor}",
+   "tasks": [
+    "pick_and_place",
+    "screwing"
+   ],
+   "variables": {
+    "motor": "string",
+    "phase_offset_deg": "numeric"
+   }
+  },
+  {
+   "id": 13,
+   "name": "Gripper Activation Failure Injection",
+   "description": "activation failure of gripper {gripper}",
+   "tasks": [
+    "pick_and_place"
+   ],
+   "variables": {
+    "gripper": "string"
+   }
+  },
+  {
+   "id": 14,
+   "name": "Gripper Release Injection",
+   "description": "mid-motion payload release by gripper {gripper}",
+   "tasks": [
+    "pick_and_place"
+   ],
+   "variables": {
+    "gripper": "string",
+    "release_time": "numeric"
+   }
+  },
+  {
+   "id": 16,
+   "name": "Collision Injection",
+   "description": "a collision with {object} ({impact_impulse} N-s impact impulse)",
+   "tasks": [
+    "pick_and_place"
+   ],
+   "variables": {
+    "object": "string",
+    "impact_impulse": "numeric",
+    "trajectory_fraction": "numeric"
+   }
+  },
+  {
+   "id": 17,
+   "name": "Foam Collision",
+   "description": "a collision with a foam cube at {trajectory_fraction} of the trajectory",
+   "tasks": [
+    "pick_and_place"
+   ],
+   "variables": {
+    "trajectory_fraction": "numeric"
+   }
+  },
+  {
+   "id": 18,
+   "name": "Cardboard Collision",
+   "description": "a collision with a cardboard box at {trajectory_fraction} of the trajectory",
+   "tasks": [
+    "pick_and_place"
+   ],
+   "variables": {
+    "trajectory_fraction": "numeric",
+    "braced": "boolean"
+   }
+  },
+  {
+   "id": 19,
+   "name": "Cable Collision",
+   "description": "a collision with a hanging cable at {trajectory_fraction} of the trajectory",
+   "tasks": [
+    "pick_and_place"
+   ],
+   "variables": {
+    "trajectory_fraction": "numeric"
+   }
+  },
+  {
+   "id": 20,
+   "name": "Peg Misalignment",
+   "description": "a {offset_type} offset of {offset_value} in the peg insertion approach",
+   "tasks": [
+    "peg_in_hole"
+   ],
+   "variables": {
+    "offset_type": "string",
+    "offset_value": "numeric"
+   }
+  }
+ ],
+ "root_causes": [
+  {
+   "fault_id": 1,
+   "task": [
+    "screwing"
+   ],
+   "root_cause": "damaged_screw_thread",
+   "description": "The screw thread itself is physically damaged, preventing proper engagement during tightening.",
+   "severity_levels": [
+    "medium",
+    "high"
+   ],
+   "injectable": false,
+   "possible_anomalies": [
+    "sustained_contact_force",
+    "gradual_current_force_temperature_rise",
+    "high_current_low_motion",
+    "persistent_tracking_error",
+    "acoustic_spike_without_force"
+   ],
+   "simulation_procedure": "Physically damage the screw thread with a file or by cross-threading before placing it in the feeder. Run the tightening cycle and observe torque signature anomaly.",
+   "datasets": [
+    "factorywave",
+    "aursad"
+   ]
+  },
+  {
+   "fault_id": 2,
+   "task": [
+    "screwing",
+    "pick_and_place"
+   ],
+   "root_cause": "extra_assembly_component",
+   "description": "An unexpected object such as a washer is present in the assembly location, altering contact geometry.",
+   "severity_levels": [
+    "low",
+    "medium",
+    "high"
+   ],
+   "injectable": false,
+   "possible_anomalies": [
+    "tcp_force_spike",
+    "sustained_contact_force",
+    "persistent_tracking_error",
+    "speed_drop_with_force_spike",
+    "protective_stop_event"
+   ],
+   "simulation_procedure": "Place an additional washer or shim in the assembly location before the tightening cycle. The robot will detect abnormal contact geometry.",
+   "datasets": [
+    "factorywave",
+    "aursad"
+   ]
+  },
+  {
+   "fault_id": 3,
+   "task": [
+    "screwing"
+   ],
+   "root_cause": "missing_screw",
+   "description": "The robot attempts tightening but no screw is present, often due to pick failure or skipped step.",
+   "severity_levels": [
+    "low",
+    "medium"
+   ],
+   "injectable": false,
+   "possible_anomalies": [
+    "gripper_close_no_force",
+    "reduced_contact_force",
+    "persistent_tracking_error",
+    "unexpected_low_current_during_tightening"
+   ],
+   "simulation_procedure": "Remove the screw from the feeder or skip the pick step so the robot attempts to tighten an empty hole.",
+   "datasets": [
+    "factorywave",
+    "aursad"
+   ]
+  },
+  {
+   "fault_id": 4,
+   "task": [
+    "screwing"
+   ],
+   "root_cause": "damaged_plate_thread",
+   "description": "The threaded hole in the plate is damaged, preventing proper screw engagement.",
+   "severity_levels": [
+    "medium",
+    "high",
+    "critical"
+   ],
+   "injectable": false,
+   "possible_anomalies": [
+    "sustained_contact_force",
+    "gradual_current_force_temperature_rise",
+    "high_current_low_motion",
+    "acoustic_spike_without_force",
+    "protective_stop_event"
+   ],
+   "simulation_procedure": "Pre-damage the threaded plate hole with an oversized tap or by cross-threading a screw manually. Confirm thread engagement fails during the tightening cycle.",
+   "datasets": [
+    "factorywave",
+    "aursad"
+   ]
+  },
+  {
+   "fault_id": 5,
+   "task": [
+    "screwing"
+   ],
+   "root_cause": "loosening_phase",
+   "description": "Robot is performing a screw loosening operation rather than tightening. This is a normal operational phase but may appear anomalous if only tightening behavior is expected.",
+   "severity_levels": [
+    "none",
+    "low"
+   ],
+   "injectable": false,
+   "possible_anomalies": [
+    "reduced_contact_force",
+    "unexpected_low_current_during_tightening",
+    "persistent_tracking_error",
+    "spurious_force_spike",
+    "spurious_current_spike"
+   ],
+   "simulation_procedure": "Program the robot to execute a loosening (counterclockwise) rotation instead of tightening. No hardware modification required.",
+   "datasets": [
+    "aursad"
+   ]
+  },
+  {
+   "fault_id": 6,
+   "root_cause": "voraus_ad_class_0_undocumented",
+   "description": "Voraus-AD dataset anomaly class 0. Semantic description pending curation.",
+   "severity_levels": [
+    "unknown"
+   ],
+   "injectable": false,
+   "possible_anomalies": [],
+   "simulation_procedure": "Pending curation.",
+   "datasets": [
+    "vorausad"
+   ],
+   "needs_documentation": true
+  },
+  {
+   "fault_id": 7,
+   "root_cause": "motor_miscommutation",
+   "description": "Motor commutation error producing inconsistent torque-forming behaviour on an affected joint, logged as max current deviation failure.",
+   "severity_levels": [
+    "medium",
+    "high"
+   ],
+   "injectable": false,
+   "possible_anomalies": [
+    "broadband_torque_noise",
+    "persistent_tracking_error",
+    "joint_current_imbalance"
+   ],
+   "simulation_procedure": "Power-cycle the controller; re-run a slow diagnostic cycle on the affected joint; inspect motor winding connections if the fault recurs.",
+   "datasets": [
+    "vorausad"
+   ]
+  },
+  {
+   "fault_id": 8,
+   "task": [
+    "pick_and_place"
+   ],
+   "root_cause": "gripper_activation_failure",
+   "description": "The vacuum gripper fails to activate and never picks up the can. The robot completes the motion but carries no payload.",
+   "severity_levels": [
+    "medium"
+   ],
+   "injectable": true,
+   "event_id": 13,
+   "possible_anomalies": [
+    "payload_torque_absence",
+    "sustained_low_torque",
+    "torque_deviation_from_nominal"
+   ],
+   "simulation_procedure": "Disconnect the vacuum line or disable the solenoid valve command in the gripper control I/O, then run a pick-and-place cycle.",
+   "datasets": [
+    "factorywave",
+    "vorausad"
+   ]
+  },
+  {
+   "fault_id": 9,
+   "task": [
+    "pick_and_place"
+   ],
+   "root_cause": "gripper_release_during_motion",
+   "description": "The vacuum gripper releases the can mid-trajectory at a random point during transport, causing an abrupt loss of payload load on the robot arm.",
+   "severity_levels": [
+    "medium"
+   ],
+   "injectable": true,
+   "event_id": 14,
+   "possible_anomalies": [
+    "abrupt_torque_drop",
+    "oscillation_around_setpoint",
+    "sustained_low_torque",
+    "torque_deviation_from_nominal"
+   ],
+   "simulation_procedure": "Inject a timed solenoid OFF pulse into the gripper control line mid-trajectory via a programmable relay or script-triggered digital output.",
+   "datasets": [
+    "factorywave",
+    "vorausad"
+   ]
+  },
+  {
+   "fault_id": 10,
+   "task": [
+    "pick_and_place"
+   ],
+   "root_cause": "additional_axis_payload",
+   "description": "A physical weight is attached to one robot axis, increasing its effective inertia and gravity loading. Affects torque demands on all joints due to the kinematic chain.",
+   "severity_levels": [
+    "low",
+    "medium",
+    "high"
+   ],
+   "injectable": true,
+   "event_id": 6,
+   "possible_anomalies": [
+    "torque_sensor_elevation",
+    "increased_computed_inertia",
+    "motor_iq_elevation",
+    "persistent_tracking_error"
+   ],
+   "related_error_codes": [
+    "C153A0",
+    "C153A1",
+    "C153A2",
+    "C153A3",
+    "C153A4",
+    "C153A5",
+    "C173A0",
+    "C173A1",
+    "C173A2",
+    "C173A3",
+    "C173A4",
+    "C173A5"
+   ],
+   "primary_error_code": "C153A0",
+   "simulation_procedure": "Attach a calibrated dead weight (e.g. 0.5-2 kg) directly to one of the robot links using a mechanical fixture, then run the standard program.",
+   "datasets": [
+    "factorywave",
+    "vorausad"
+   ]
+  },
+  {
+   "fault_id": 11,
+   "task": [
+    "pick_and_place"
+   ],
+   "root_cause": "collision_foam_object",
+   "description": "The robot contacts a soft foam block placed in the workspace. The low stiffness of foam absorbs most of the impact energy, producing a brief TCP force spike and transient torque perturbation without triggering a protective stop.",
+   "severity_levels": [
+    "low"
+   ],
+   "injectable": false,
+   "possible_anomalies": [
+    "tcp_force_spike",
+    "oscillation_around_setpoint"
+   ],
+   "related_error_codes": [
+    "C157A"
+   ],
+   "primary_error_code": "C157A",
+   "simulation_procedure": "Place a foam cube or foam block directly in the programmed trajectory of the TCP. The robot will push through or deflect it with only a brief force spike recorded.",
+   "datasets": [
+    "factorywave",
+    "vorausad"
+   ]
+  },
+  {
+   "fault_id": 12,
+   "root_cause": "voraus_ad_class_7_undocumented",
+   "description": "Voraus-AD dataset anomaly class 7. Semantic description pending curation.",
+   "severity_levels": [
+    "unknown"
+   ],
+   "injectable": false,
+   "possible_anomalies": [],
+   "simulation_procedure": "Pending curation.",
+   "datasets": [
+    "vorausad"
+   ],
+   "needs_documentation": true
+  },
+  {
+   "fault_id": 13,
+   "root_cause": "cable_routed_on_robot",
+   "description": "A cable or tether is routed along the robot arm, adding asymmetric drag and torque bias on one or more joints throughout motion.",
+   "severity_levels": [
+    "low",
+    "medium"
+   ],
+   "injectable": true,
+   "possible_anomalies": [
+    "persistent_tracking_error",
+    "sustained_contact_force",
+    "oscillation_around_setpoint"
+   ],
+   "simulation_procedure": "Reroute the cable off the robot link or add a service loop; run a test cycle and verify joint torques return to nominal.",
+   "datasets": [
+    "vorausad"
+   ]
+  },
+  {
+   "fault_id": 14,
+   "root_cause": "invalid_gripping_position",
+   "description": "The can is gripped at an unusual or offset position due to a timing error in the pick sequence, causing an asymmetric payload distribution and altered gripper-to-can contact geometry.",
+   "severity_levels": [
+    "low",
+    "medium"
+   ],
+   "injectable": true,
+   "possible_anomalies": [
+    "persistent_tracking_error",
+    "tcp_force_spike",
+    "speed_drop_with_force_spike"
+   ],
+   "simulation_procedure": "Introduce a software time delay (e.g. a sleep() call) in the URScript before the gripper activation command, so the gripper closes after the arm has already begun its lift motion, causing it to grip the can at an off-center or tilted position.",
+   "datasets": [
+    "factorywave",
+    "vorausad"
+   ]
+  },
+  {
+   "fault_id": 15,
+   "task": [
+    "pick_and_place"
+   ],
+   "root_cause": "unstable_mounting_platform",
+   "description": "The robot's mounting platform is unstable due to released wheel brakes or uneven foam placement beneath it, introducing low-frequency vibrations into the arm during motion. Conceptually related to fixture_instability (fault_id 11) but applies to the robot base rather than the workpiece.",
+   "severity_levels": [
+    "low",
+    "medium",
+    "high"
+   ],
+   "injectable": true,
+   "event_id": 15,
+   "possible_anomalies": [
+    "broadband_torque_noise",
+    "oscillation_around_setpoint",
+    "joint_current_imbalance"
+   ],
+   "related_error_codes": [
+    "C157A",
+    "C173A0",
+    "C173A1",
+    "C173A2",
+    "C173A3",
+    "C173A4",
+    "C173A5"
+   ],
+   "primary_error_code": "C173A0",
+   "simulation_procedure": "Release the wheel brakes of the robot trolley, or place calibrated foam pads of varying thickness under the base mounting plate.",
+   "datasets": [
+    "factorywave",
+    "vorausad"
+   ]
+  },
+  {
+   "fault_id": 16,
+   "root_cause": "gearbox_overload",
+   "description": "A joint gearbox is loaded beyond its rated torque, producing elevated current draw and eventual stall or protective stop.",
+   "severity_levels": [
+    "medium",
+    "high",
+    "critical"
+   ],
+   "injectable": false,
+   "possible_anomalies": [
+    "high_current_low_motion",
+    "gradual_current_force_temperature_rise",
+    "protective_stop_event"
+   ],
+   "simulation_procedure": "Stop the program; reduce payload or trajectory aggressiveness; inspect the gearbox for damage before resuming.",
+   "datasets": []
+  },
+  {
+   "fault_id": 17,
+   "root_cause": "motor_encoder_stall",
+   "description": "Motor encoder readings stall or drift, leading to position tracking failure on the affected joint.",
+   "severity_levels": [
+    "medium",
+    "high"
+   ],
+   "injectable": false,
+   "possible_anomalies": [
+    "persistent_tracking_error",
+    "high_current_low_motion",
+    "protective_stop_event"
+   ],
+   "simulation_procedure": "Power-cycle the joint; check encoder wiring and seating; replace the joint if the stall persists.",
+   "datasets": []
+  },
+  {
+   "fault_id": 19,
+   "root_cause": "joint_position_limit_violation",
+   "description": "Robot joint moved outside its configured soft or hard position limits, triggering a safety stop.",
+   "severity_levels": [
+    "medium",
+    "high"
+   ],
+   "injectable": false,
+   "possible_anomalies": [
+    "protective_stop_event",
+    "persistent_tracking_error"
+   ],
+   "related_error_codes": [
+    "C1A"
+   ],
+   "primary_error_code": "C39A3",
+   "simulation_procedure": "Program a waypoint slightly beyond the configured soft joint limit and execute the move, or manually shift a joint limit in the safety configuration to encroach on the normal trajectory.",
+   "datasets": [
+    "factorywave"
+   ]
+  },
+  {
+   "fault_id": 20,
+   "root_cause": "idle_power_overconsumption",
+   "description": "The robot draws abnormally high current while nominally idle, indicating a parasitic load or controller fault.",
+   "severity_levels": [
+    "low",
+    "medium"
+   ],
+   "injectable": false,
+   "possible_anomalies": [
+    "sustained_low_torque",
+    "joint_current_imbalance"
+   ],
+   "simulation_procedure": "Inspect for stuck brakes, shorted windings, or misconfigured standby modes; clear fault and re-verify idle current draw.",
+   "datasets": []
+  },
+  {
+   "fault_id": 22,
+   "root_cause": "tcp_frame_misconfiguration",
+   "description": "The Tool Center Point (TCP) frame or mounting orientation is configured incorrectly in PolyScope, causing the robot to detect unexpected gravitational torques consistent with wrong mounting.",
+   "severity_levels": [
+    "low",
+    "medium"
+   ],
+   "injectable": true,
+   "possible_anomalies": [
+    "protective_stop_event",
+    "persistent_tracking_error"
+   ],
+   "related_error_codes": [
+    "C156A",
+    "C155A"
+   ],
+   "primary_error_code": "C156A",
+   "simulation_procedure": "Enter an incorrect TCP offset (e.g. shift X by 100 mm) or wrong mounting angle in the Installation > TCP configuration in PolyScope, then run the program.",
+   "datasets": [
+    "factorywave"
+   ]
+  },
+  {
+   "fault_id": 23,
+   "root_cause": "payload_misconfiguration",
+   "description": "The payload mass is left at 0 kg in the robot configuration while a tool or workpiece is physically attached, causing the collision detection model to trigger on normal inertial forces.",
+   "severity_levels": [
+    "low",
+    "medium"
+   ],
+   "injectable": true,
+   "possible_anomalies": [
+    "protective_stop_event",
+    "speed_drop_with_force_spike"
+   ],
+   "related_error_codes": [
+    "C158A",
+    "C162A"
+   ],
+   "primary_error_code": "C158A",
+   "simulation_procedure": "Ensure the installation payload is set to 0 kg while a tool (e.g. gripper, 300 g) is physically mounted, then run a standard pick-and-place cycle.",
+   "datasets": [
+    "factorywave"
+   ]
+  },
+  {
+   "fault_id": 25,
+   "root_cause": "external_arm_disturbance",
+   "description": "An external force continuously pulls or pushes the robot arm during motion, such as a tethered cable, hanging weight, or operator interference, causing persistent torque anomalies.",
+   "severity_levels": [
+    "low",
+    "medium",
+    "high"
+   ],
+   "injectable": true,
+   "possible_anomalies": [
+    "tcp_force_spike",
+    "sustained_contact_force",
+    "protective_stop_event"
+   ],
+   "related_error_codes": [
+    "C111A"
+   ],
+   "primary_error_code": "C111A",
+   "simulation_procedure": "Anchor a spring or elastic band between a fixed point in the workspace (e.g. the bench frame) and the robot tool flange, with no contact along the arm links. Run the standard trajectory so the arm experiences a continuously varying external pull force at the TCP only. Alternatively, have an operator apply a steady manual push/pull force on the tool flange during motion.",
+   "datasets": [
+    "factorywave"
+   ]
+  },
+  {
+   "fault_id": 28,
+   "root_cause": "payload_cog_misconfiguration",
+   "description": "The payload center of gravity (CoG) is specified at an incorrect offset from the tool flange, causing the gravity compensation model to apply wrong torques and triggering protective stops during motion.",
+   "severity_levels": [
+    "low",
+    "medium"
+   ],
+   "injectable": true,
+   "possible_anomalies": [
+    "protective_stop_event",
+    "persistent_tracking_error"
+   ],
+   "related_error_codes": [
+    "C162A",
+    "C156A"
+   ],
+   "primary_error_code": "C162A",
+   "simulation_procedure": "Set the center of gravity offset in the payload configuration to a position far from the actual tool CoG (e.g. 150 mm offset in Z), then execute a multi-pose trajectory.",
+   "datasets": [
+    "factorywave"
+   ]
+  },
+  {
+   "fault_id": 29,
+   "task": [
+    "pick_and_place"
+   ],
+   "root_cause": "collision_hanging_cable",
+   "description": "A cable or wire hangs across the robot workspace and contacts the arm or tool during motion. The flexible cable wraps around or drags along the arm, producing a sustained asymmetric pull force and persistent torque anomaly rather than a sharp impact.",
+   "severity_levels": [
+    "low",
+    "medium"
+   ],
+   "injectable": false,
+   "possible_anomalies": [
+    "sustained_contact_force",
+    "persistent_tracking_error",
+    "oscillation_around_setpoint"
+   ],
+   "related_error_codes": [
+    "C157A",
+    "C111A"
+   ],
+   "primary_error_code": "C157A",
+   "simulation_procedure": "Suspend a loose cable or wire across the robot trajectory at arm height so it drags along the robot link or tool flange during the motion cycle.",
+   "datasets": [
+    "factorywave",
+    "vorausad"
+   ]
+  },
+  {
+   "fault_id": 30,
+   "task": [
+    "pick_and_place"
+   ],
+   "root_cause": "collision_cardboard_object",
+   "description": "The robot strikes a cardboard carton or flat-pack box placed in its path. Cardboard provides moderate resistance \u2014 the robot may displace the object or, if the carton is braced, generate enough torque deviation to trigger a protective stop.",
+   "severity_levels": [
+    "low",
+    "medium"
+   ],
+   "injectable": false,
+   "possible_anomalies": [
+    "tcp_force_spike",
+    "speed_drop_with_force_spike",
+    "protective_stop_event"
+   ],
+   "related_error_codes": [
+    "C157A",
+    "C283A26"
+   ],
+   "primary_error_code": "C157A",
+   "simulation_procedure": "Place a cardboard box (free-standing or lightly braced) in the robot trajectory. A free box will be pushed, recording a moderate spike; brace the box against a wall to increase resistance and provoke a protective stop.",
+   "datasets": [
+    "factorywave",
+    "vorausad"
+   ]
+  },
+  {
+   "fault_id": 31,
+   "task": [
+    "pick_and_place"
+   ],
+   "root_cause": "collision_rigid_object",
+   "description": "The robot collides with a hard, immovable object such as a metal fixture, tool stand, or structural element. The high contact stiffness produces an immediate large torque deviation and invariably triggers a protective stop.",
+   "severity_levels": [
+    "medium",
+    "high"
+   ],
+   "injectable": false,
+   "possible_anomalies": [
+    "tcp_force_spike",
+    "protective_stop_event"
+   ],
+   "related_error_codes": [
+    "C157A",
+    "C158A"
+   ],
+   "primary_error_code": "C157A",
+   "simulation_procedure": "Place a rigid metal block or clamp a solid fixture at a position that intersects the programmed TCP path. Run the program at normal speed; the collision will trigger an immediate protective stop.",
+   "datasets": [
+    "factorywave"
+   ]
+  },
+  {
+   "fault_id": 32,
+   "task": [
+    "machine_tending"
+   ],
+   "root_cause": "peg_insertion_misalignment",
+   "description": "The peg approaches the hole at an angular or lateral offset, causing the tip to jam against the hole rim rather than enter cleanly, producing elevated contact forces and position tracking errors.",
+   "severity_levels": [
+    "low",
+    "medium"
+   ],
+   "injectable": true,
+   "possible_anomalies": [
+    "tcp_force_spike",
+    "persistent_tracking_error",
+    "protective_stop_event"
+   ],
+   "simulation_procedure": "Introduce a small angular offset (e.g. 2-5 degrees) or lateral offset (e.g. 3-8 mm) in the insertion approach waypoint in the robot program, so the peg contacts the hole rim instead of entering cleanly.",
+   "datasets": [
+    "factorywave"
+   ]
+  },
+  {
+   "fault_id": 33,
+   "task": [
+    "machine_tending"
+   ],
+   "root_cause": "hole_obstruction",
+   "description": "A foreign object or debris is lodged inside the insertion hole, preventing full peg insertion and generating an abnormal force buildup as the peg contacts the obstruction.",
+   "severity_levels": [
+    "medium",
+    "high"
+   ],
+   "injectable": true,
+   "possible_anomalies": [
+    "sustained_contact_force",
+    "tcp_force_spike",
+    "protective_stop_event"
+   ],
+   "simulation_procedure": "Place a small object (e.g. a metal chip, rubber disc, or folded paper) inside the hole before the insertion cycle. The peg will contact the obstruction mid-insertion, producing a distinct force anomaly.",
+   "datasets": [
+    "factorywave"
+   ]
+  },
+  {
+   "fault_id": 34,
+   "task": [
+    "machine_tending"
+   ],
+   "root_cause": "incorrect_insertion_depth",
+   "description": "The insertion motion terminates at an incorrect Z depth due to a misconfigured waypoint, leaving the peg partially inserted (too shallow) or causing it to over-push against the hole bottom (too deep).",
+   "severity_levels": [
+    "low",
+    "medium"
+   ],
+   "injectable": true,
+   "possible_anomalies": [
+    "persistent_tracking_error",
+    "sustained_contact_force"
+   ],
+   "simulation_procedure": "Modify the insertion endpoint waypoint Z offset in the robot program by +/- 10-20 mm from the nominal value. Too shallow leaves the peg proud; too deep drives it against the fixture bottom.",
+   "datasets": [
+    "factorywave"
+   ]
+  },
+  {
+   "fault_id": 35,
+   "task": [
+    "machine_tending"
+   ],
+   "root_cause": "peg_surface_contamination",
+   "description": "Contamination or increased surface roughness on the peg (e.g. chalk, adhesive residue, or grit) raises insertion friction, producing stick-slip force patterns and higher-than-nominal contact force throughout the insertion stroke.",
+   "severity_levels": [
+    "low",
+    "medium"
+   ],
+   "injectable": true,
+   "possible_anomalies": [
+    "sustained_contact_force",
+    "speed_drop_with_force_spike"
+   ],
+   "simulation_procedure": "Apply a thin layer of dry chalk powder, fine abrasive paste, or low-tack adhesive to the peg surface before the insertion cycle to increase surface friction.",
+   "datasets": [
+    "factorywave"
+   ]
+  },
+  {
+   "fault_id": 36,
+   "task": [
+    "machine_tending"
+   ],
+   "root_cause": "fixture_displacement",
+   "description": "The insertion fixture has shifted laterally from its nominal position due to vibration, impact, or improper clamping, creating a positional mismatch between the programmed approach and the actual hole location.",
+   "severity_levels": [
+    "low",
+    "medium",
+    "high"
+   ],
+   "injectable": true,
+   "possible_anomalies": [
+    "tcp_force_spike",
+    "persistent_tracking_error",
+    "protective_stop_event"
+   ],
+   "simulation_procedure": "Deliberately shift the hole fixture by a controlled lateral offset (e.g. 5-15 mm) from its nominal position without updating the robot program waypoints.",
+   "datasets": [
+    "factorywave"
+   ]
+  },
+  {
+   "fault_id": 37,
+   "root_cause": "self_collision_link_interference",
+   "description": "The robot trajectory passes through a configuration where an arm link collides with the robot's own body or mounting fixture, triggering an immediate protective stop.",
+   "severity_levels": [
+    "medium",
+    "high"
+   ],
+   "injectable": true,
+   "possible_anomalies": [
+    "tcp_force_spike",
+    "protective_stop_event",
+    "persistent_tracking_error"
+   ],
+   "related_error_codes": [
+    "C157A",
+    "C158A"
+   ],
+   "primary_error_code": "C157A",
+   "simulation_procedure": "Program a waypoint that requires the arm to fold into a self-colliding configuration, or deliberately offset the mounting fixture so the standard trajectory causes a link to contact it.",
+   "datasets": [
+    "factorywave"
+   ]
+  },
+  {
+   "fault_id": 38,
+   "task": [
+    "pick_and_place"
+   ],
+   "root_cause": "missing_box",
+   "description": "The robot executes the full pick-and-place cycle but no box is present at the pick position. The gripper closes on empty air and the arm transports no payload, producing a torque and current profile consistent with an unloaded trajectory.",
+   "severity_levels": [
+    "low",
+    "medium"
+   ],
+   "injectable": true,
+   "possible_anomalies": [
+    "payload_torque_absence",
+    "sustained_low_torque",
+    "gripper_close_no_force",
+    "torque_deviation_from_nominal"
+   ],
+   "simulation_procedure": "Remove the box from the pick position before the episode starts. The robot runs the standard pick-and-place program unmodified.",
+   "datasets": [
+    "factorywave"
+   ]
+  },
+  {
+   "fault_id": 39,
+   "task": [
+    "peg_in_hole"
+   ],
+   "root_cause": "missing_peg",
+   "description": "The robot executes the full peg-in-hole cycle but no peg is gripped. The arm descends into the hole empty-handed and the insertion phase produces no contact force, resulting in an anomalously low force and torque profile during what should be a high-contact phase.",
+   "severity_levels": [
+    "low",
+    "medium"
+   ],
+   "injectable": true,
+   "possible_anomalies": [
+    "reduced_contact_force",
+    "gripper_close_no_force",
+    "sustained_low_torque",
+    "torque_deviation_from_nominal"
+   ],
+   "simulation_procedure": "Remove the peg from the gripper or skip the peg pick-up step before the episode starts. The robot runs the standard insertion program unmodified.",
+   "datasets": [
+    "factorywave"
+   ]
+  }
+ ],
+ "anomalies": [
+  {
+   "anomaly_name": "tcp_force_spike",
+   "description": "Abrupt, short-duration spike in TCP wrench (force and or torque).",
+   "relevant_features_from_schema": [
+    "true_force_{i}",
+    "est_contact_force_{i}",
+    "feedback_speed_{axis}",
+    "effort_current_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "speed_drop_with_force_spike",
+   "description": "Measured joint speeds drop abruptly at the same time as a TCP force spike (typical collision signature).",
+   "relevant_features_from_schema": [
+    "feedback_speed_{axis}",
+    "true_force_{i}",
+    "est_contact_force_{i}",
+    "protective_stop_state"
+   ]
+  },
+  {
+   "anomaly_name": "vibration_burst",
+   "description": "Short transient burst of high acceleration at the tool.",
+   "relevant_features_from_schema": [
+    "vibration_0",
+    "vibration_1",
+    "vibration_2",
+    "true_force_{i}",
+    "est_contact_force_{i}"
+   ]
+  },
+  {
+   "anomaly_name": "acoustic_spike",
+   "description": "Sudden increase in acoustic emission indicating impact, slip, chatter, or tool interaction.",
+   "relevant_features_from_schema": [
+    "acoustic_0",
+    "true_force_{i}",
+    "est_contact_force_{i}",
+    "vibration_0",
+    "vibration_1",
+    "vibration_2"
+   ]
+  },
+  {
+   "anomaly_name": "high_current_low_motion",
+   "description": "Motor current rises while measured joint speed remains low or near zero, indicating resistance or stall-like behavior.",
+   "relevant_features_from_schema": [
+    "effort_current_{axis}",
+    "feedback_speed_{axis}",
+    "feedback_pos_{axis}",
+    "setpoint_speed_{axis}",
+    "setpoint_pos_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "protective_stop_event",
+   "description": "Protective stop becomes active, often after contact or safety limit violations.",
+   "relevant_features_from_schema": [
+    "protective_stop_state",
+    "safety_mode",
+    "feedback_speed_{axis}",
+    "true_force_{i}",
+    "est_contact_force_{i}"
+   ]
+  },
+  {
+   "anomaly_name": "persistent_tracking_error",
+   "description": "Sustained deviation between commanded motion and measured motion (position and or speed).",
+   "relevant_features_from_schema": [
+    "setpoint_pos_{axis}",
+    "feedback_pos_{axis}",
+    "setpoint_speed_{axis}",
+    "feedback_speed_{axis}",
+    "effort_current_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "reduced_contact_force",
+   "description": "Measured contact force is abnormally low during a phase where contact is expected (for example, tightening without engaging).",
+   "relevant_features_from_schema": [
+    "true_force_{i}",
+    "est_contact_force_{i}",
+    "effort_current_{axis}",
+    "feedback_speed_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "unexpected_low_current_during_tightening",
+   "description": "Motor current remains unusually low during a tightening phase where torque demand is expected to rise.",
+   "relevant_features_from_schema": [
+    "effort_current_{axis}",
+    "true_force_{i}",
+    "est_contact_force_{i}",
+    "feedback_speed_{axis}",
+    "setpoint_speed_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "acoustic_spike_without_force",
+   "description": "Acoustic emission increases without a corresponding force spike, suggesting slip or chatter rather than hard contact.",
+   "relevant_features_from_schema": [
+    "acoustic_0",
+    "true_force_{i}",
+    "est_contact_force_{i}",
+    "vibration_0",
+    "vibration_1",
+    "vibration_2"
+   ]
+  },
+  {
+   "anomaly_name": "misalignment_signature",
+   "description": "Pattern consistent with off-axis insertion, often showing intermittent force pulses, micro-stalls, and small tracking errors.",
+   "relevant_features_from_schema": [
+    "true_force_{i}",
+    "est_contact_force_{i}",
+    "feedback_speed_{axis}",
+    "effort_current_{axis}",
+    "setpoint_pos_{axis}",
+    "feedback_pos_{axis}",
+    "vibration_0",
+    "vibration_1",
+    "vibration_2"
+   ]
+  },
+  {
+   "anomaly_name": "under_tightening_signature",
+   "description": "Tightening completes without reaching expected force or torque build-up, indicating insufficient engagement or premature stop.",
+   "relevant_features_from_schema": [
+    "true_force_{i}",
+    "est_contact_force_{i}",
+    "effort_current_{axis}",
+    "feedback_speed_{axis}",
+    "protective_stop_state"
+   ]
+  },
+  {
+   "anomaly_name": "spurious_speed_spike",
+   "description": "Isolated unrealistic spike in measured joint speed, typically from logging or communication artifacts.",
+   "relevant_features_from_schema": [
+    "feedback_speed_{axis}",
+    "timestamp_ms"
+   ]
+  },
+  {
+   "anomaly_name": "spurious_current_spike",
+   "description": "Isolated unrealistic spike in motor current not supported by motion or force context.",
+   "relevant_features_from_schema": [
+    "effort_current_{axis}",
+    "feedback_speed_{axis}",
+    "true_force_{i}",
+    "est_contact_force_{i}",
+    "timestamp_ms"
+   ]
+  },
+  {
+   "anomaly_name": "spurious_force_spike",
+   "description": "Isolated unrealistic spike in force sensor data inconsistent with motion, vibration, or current.",
+   "relevant_features_from_schema": [
+    "true_force_{i}",
+    "est_contact_force_{i}",
+    "feedback_speed_{axis}",
+    "vibration_0",
+    "vibration_1",
+    "vibration_2",
+    "timestamp_ms"
+   ]
+  },
+  {
+   "anomaly_name": "unexpected_safety_mode_change",
+   "description": "Safety mode changes unexpectedly, potentially due to configuration, safety limits, or controller state transitions.",
+   "relevant_features_from_schema": [
+    "safety_mode",
+    "protective_stop_state",
+    "main_voltage",
+    "feedback_speed_{axis}",
+    "true_force_{i}"
+   ]
+  },
+  {
+   "anomaly_name": "sustained_contact_force",
+   "description": "Contact forces remain elevated for an extended interval, indicating prolonged contact or high process resistance.",
+   "relevant_features_from_schema": [
+    "true_force_{i}",
+    "est_contact_force_{i}",
+    "effort_current_{axis}",
+    "feedback_speed_{axis}",
+    "joint_temp_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "gradual_current_force_temperature_rise",
+   "description": "Slow concurrent increase in motor current, TCP force, and joint temperature during continued operation.",
+   "relevant_features_from_schema": [
+    "effort_current_{axis}",
+    "true_force_{i}",
+    "est_contact_force_{i}",
+    "joint_temp_{axis}",
+    "timestamp_ms"
+   ]
+  },
+  {
+   "anomaly_name": "reduced_speed_under_high_setpoint",
+   "description": "Measured joint speed is significantly lower than commanded speed for a sustained period.",
+   "relevant_features_from_schema": [
+    "setpoint_speed_{axis}",
+    "feedback_speed_{axis}",
+    "effort_current_{axis}",
+    "main_voltage",
+    "joint_temp_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "oscillation_around_setpoint",
+   "description": "Feedback position or speed oscillates around the commanded trajectory with periodic behavior.",
+   "relevant_features_from_schema": [
+    "setpoint_pos_{axis}",
+    "feedback_pos_{axis}",
+    "setpoint_speed_{axis}",
+    "feedback_speed_{axis}",
+    "effort_current_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "position_jump_without_motion",
+   "description": "Sudden discontinuity in measured joint position without consistent supporting speed or force context.",
+   "relevant_features_from_schema": [
+    "feedback_pos_{axis}",
+    "feedback_speed_{axis}",
+    "timestamp_ms"
+   ]
+  },
+  {
+   "anomaly_name": "joint_overheating",
+   "description": "Joint temperature exceeds typical levels or rises abnormally fast, often with elevated current.",
+   "relevant_features_from_schema": [
+    "joint_temp_{axis}",
+    "effort_current_{axis}",
+    "feedback_speed_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "voltage_drop",
+   "description": "Main voltage falls below nominal range or shows abnormal dips correlated with degraded performance.",
+   "relevant_features_from_schema": [
+    "main_voltage",
+    "effort_current_{axis}",
+    "feedback_speed_{axis}",
+    "safety_mode"
+   ]
+  },
+  {
+   "anomaly_name": "force_estimation_mismatch",
+   "description": "Estimated TCP wrench and true measured TCP wrench diverge beyond normal tolerance.",
+   "relevant_features_from_schema": [
+    "est_contact_force_{i}",
+    "true_force_{i}",
+    "feedback_speed_{axis}",
+    "effort_current_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "noisy_force_signal",
+   "description": "Force sensor readings exhibit abnormal high-frequency noise or jitter relative to expected dynamics.",
+   "relevant_features_from_schema": [
+    "true_force_{i}",
+    "timestamp_ms",
+    "vibration_0",
+    "vibration_1",
+    "vibration_2",
+    "acoustic_0"
+   ]
+  },
+  {
+   "anomaly_name": "increasing_rms_vibration",
+   "description": "Vibration energy gradually increases over time, suggesting wear or loosening.",
+   "relevant_features_from_schema": [
+    "vibration_0",
+    "vibration_1",
+    "vibration_2",
+    "acoustic_0",
+    "timestamp_ms"
+   ]
+  },
+  {
+   "anomaly_name": "joint_current_imbalance",
+   "description": "One joint shows consistently abnormal current relative to other joints for similar commanded motion.",
+   "relevant_features_from_schema": [
+    "effort_current_{axis}",
+    "setpoint_speed_{axis}",
+    "feedback_speed_{axis}",
+    "setpoint_pos_{axis}",
+    "feedback_pos_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "gripper_close_no_force",
+   "description": "Gripper is commanded closed but contact force signatures indicate no object engagement.",
+   "relevant_features_from_schema": [
+    "gripper_command",
+    "true_force_{i}",
+    "est_contact_force_{i}",
+    "acoustic_0",
+    "vibration_0",
+    "vibration_1",
+    "vibration_2"
+   ]
+  },
+  {
+   "anomaly_name": "torque_sensor_elevation",
+   "description": "Torque sensor readings at one or more axes are persistently elevated above the expected profile for the commanded motion, indicating increased mechanical resistance or external loading.",
+   "relevant_features_from_schema": [
+    "torque_sensor_a_{axis}",
+    "torque_sensor_b_{axis}",
+    "motor_torque_{axis}",
+    "motor_iq_{axis}",
+    "target_torque_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "motor_iq_elevation",
+   "description": "The torque-forming current component Iq at one or more axes is elevated above the expected level for the given commanded motion, indicating increased mechanical load or friction.",
+   "relevant_features_from_schema": [
+    "motor_iq_{axis}",
+    "torque_sensor_a_{axis}",
+    "target_velocity_{axis}",
+    "joint_velocity_{axis}",
+    "power_motor_el_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "motor_electrical_power_elevation",
+   "description": "Electrical power consumption at one or more axes is elevated without a proportional increase in mechanical output power, indicating reduced motor efficiency.",
+   "relevant_features_from_schema": [
+    "power_motor_el_{axis}",
+    "power_motor_mech_{axis}",
+    "motor_iq_{axis}",
+    "motor_id_{axis}",
+    "motor_voltage_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "motor_id_elevation",
+   "description": "The magnetizing current component Id at one or more axes is elevated, indicating a shift in the commutation phase that reduces torque-forming efficiency without necessarily increasing measured torque.",
+   "relevant_features_from_schema": [
+    "motor_id_{axis}",
+    "motor_iq_{axis}",
+    "power_motor_el_{axis}",
+    "motor_voltage_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "iq_id_ratio_anomaly",
+   "description": "The ratio between the torque-forming current Iq and the magnetizing current Id deviates from the expected value, indicating commutation misalignment. In normal operation Id should be near zero; elevation relative to Iq is the key signature.",
+   "relevant_features_from_schema": [
+    "motor_iq_{axis}",
+    "motor_id_{axis}",
+    "motor_torque_{axis}",
+    "power_motor_el_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "increased_computed_inertia",
+   "description": "Computed inertia at one or more axes is elevated above the nominal range for the current joint configuration, indicating an unexpected additional mass in the kinematic chain.",
+   "relevant_features_from_schema": [
+    "computed_inertia_{axis}",
+    "computed_torque_{axis}",
+    "target_acceleration_{axis}",
+    "torque_sensor_a_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "payload_torque_absence",
+   "description": "Torque profiles during the transport phase show no evidence of payload loading. Expected gravity and inertia contributions from the carried object are absent across all axes.",
+   "relevant_features_from_schema": [
+    "torque_sensor_a_{axis}",
+    "torque_sensor_b_{axis}",
+    "computed_torque_{axis}",
+    "motor_torque_{axis}",
+    "motor_iq_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "abrupt_torque_drop",
+   "description": "A sudden sharp decrease in torque sensor readings at one or more axes occurring mid-motion, indicating an abrupt loss of payload or contact force.",
+   "relevant_features_from_schema": [
+    "torque_sensor_a_{axis}",
+    "torque_sensor_b_{axis}",
+    "motor_torque_{axis}",
+    "joint_velocity_{axis}",
+    "computed_torque_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "sustained_low_torque",
+   "description": "Torque sensor readings remain consistently below the expected level for a given motion phase over an extended period, indicating absence of expected payload or contact load.",
+   "relevant_features_from_schema": [
+    "torque_sensor_a_{axis}",
+    "torque_sensor_b_{axis}",
+    "motor_torque_{axis}",
+    "computed_torque_{axis}",
+    "target_torque_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "torque_deviation_from_nominal",
+   "description": "Torque profiles across one or more axes deviate from the expected distribution for the commanded motion. Deviation may be positive or negative depending on whether the payload is heavier or lighter than nominal.",
+   "relevant_features_from_schema": [
+    "torque_sensor_a_{axis}",
+    "torque_sensor_b_{axis}",
+    "motor_torque_{axis}",
+    "computed_torque_{axis}",
+    "target_torque_{axis}",
+    "motor_iq_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "pose_dependent_torque_anomaly",
+   "description": "Torque elevation at affected axes that varies with joint angle configuration rather than being constant, indicating a load whose effect depends on arm pose such as a cable applying varying tension as the arm moves.",
+   "relevant_features_from_schema": [
+    "torque_sensor_a_{axis}",
+    "torque_sensor_b_{axis}",
+    "joint_position_{axis}",
+    "motor_iq_{axis}",
+    "computed_torque_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "torque_profile_temporal_shift",
+   "description": "The expected torque patterns for each motion phase occur at different times than nominal, indicating that the robot is executing an atypical joint trajectory due to an unusual approach or gripping configuration.",
+   "relevant_features_from_schema": [
+    "torque_sensor_a_{axis}",
+    "torque_sensor_b_{axis}",
+    "joint_position_{axis}",
+    "target_position_{axis}",
+    "motor_iq_{axis}"
+   ]
+  },
+  {
+   "anomaly_name": "broadband_torque_noise",
+   "description": "Torque sensor and joint velocity signals exhibit elevated noise across all frequency bands, consistent with mechanical vibrations transmitted from an unstable mounting surface into the robot structure.",
+   "relevant_features_from_schema": [
+    "torque_sensor_a_{axis}",
+    "torque_sensor_b_{axis}",
+    "joint_velocity_{axis}",
+    "motor_velocity_{axis}",
+    "motor_iq_{axis}"
+   ]
+  }
+ ],
+ "root_cause_error_mapping": [
+  {
+   "fault_id": 1,
+   "root_cause": "damaged_screw_thread",
+   "ur3_error_code": null,
+   "ur3_error_name": null,
+   "ur3_description": "The screw thread is physically damaged, preventing proper engagement during tightening and producing an abnormal torque signature.",
+   "ur3_protocol": "Retract the screwdriver immediately to avoid cross-threading the plate hole. Discard the damaged screw and replace it with a new one from the feeder. Inspect the plate hole for any thread damage caused by the failed engagement attempt. Verify the torque signature returns to nominal on a slow test cycle before resuming production."
+  },
+  {
+   "fault_id": 2,
+   "root_cause": "extra_assembly_component",
+   "ur3_error_code": null,
+   "ur3_error_name": null,
+   "ur3_description": "An unexpected object such as a washer is present in the assembly location, altering contact geometry and tightening dynamics.",
+   "ur3_protocol": "Retract before applying further tightening force. Remove the unexpected component from the assembly location and verify the mating surface is clean and unobstructed. Check upstream assembly steps to identify how the extra component was introduced. Resume the tightening cycle and confirm the torque profile matches nominal."
+  },
+  {
+   "fault_id": 3,
+   "root_cause": "missing_screw",
+   "ur3_error_code": null,
+   "ur3_error_name": null,
+   "ur3_description": "The robot attempts tightening but no screw is present, typically due to a pick failure or skipped step in the sequence.",
+   "ur3_protocol": "Halt the tightening motion and return to the pick position. Inspect the feeder to confirm screw availability and that the pick was successful before the next attempt. Check the gripper activation log to determine whether the pick step was skipped or failed silently. Retry the full pick-and-tighten sequence from the start."
+  },
+  {
+   "fault_id": 4,
+   "root_cause": "damaged_plate_thread",
+   "ur3_error_code": null,
+   "ur3_error_name": null,
+   "ur3_description": "The threaded hole in the plate is damaged, preventing proper screw engagement and risking cross-threading or stripping.",
+   "ur3_protocol": "Retract the screw immediately without applying further torque. Inspect the plate hole visually and with a thread gauge to assess the extent of damage. If the thread is salvageable, re-tap the hole with the correct tap size before retrying. If the damage is beyond repair, replace the plate. Do not attempt re-insertion until the hole thread is confirmed good."
+  },
+  {
+   "fault_id": 5,
+   "root_cause": "loosening_phase",
+   "ur3_error_code": null,
+   "ur3_error_name": null,
+   "ur3_description": "The robot is performing a screw-loosening operation rather than tightening, producing a distinct counterclockwise torque signature that may appear anomalous if only tightening is expected.",
+   "ur3_protocol": "Verify the current task phase in the program and confirm whether a loosening step is expected at this point in the sequence. If the loosening is unintended, halt the cycle, check the program logic for incorrect phase ordering, and restart from the correct step. If loosening is expected, no corrective action is required beyond confirming the screw disengages cleanly."
+  },
+  {
+   "fault_id": 7,
+   "root_cause": "motor_miscommutation",
+   "ur3_error_code": "C 39 A 1",
+   "ur3_error_name": "Max current deviation failure",
+   "ur3_description": null,
+   "ur3_protocol": "a) Stop the robot program and power-cycle the controller to reset the motor commutation state. b) Re-run a slow-speed diagnostic cycle on the affected joint to verify correct torque-forming efficiency. c) If the fault recurs after power-cycling, inspect the motor winding connections and commutation configuration in the servo drive. d) If the fault persists across multiple power cycles, replace the affected joint."
+  },
+  {
+   "fault_id": 8,
+   "root_cause": "gripper_activation_failure",
+   "ur3_error_code": null,
+   "ur3_error_name": null,
+   "ur3_description": "The vacuum gripper failed to activate at the pick phase, leaving the robot carrying no payload through the full transport trajectory.",
+   "ur3_protocol": "a) Check vacuum supply pressure at the source and verify the solenoid valve receives its activation signal via the I/O monitor. b) Inspect the vacuum line and fittings for leaks, kinks, or disconnections. c) Test the solenoid valve in isolation (manual I/O trigger) to confirm it opens and closes correctly. d) If the valve is functional, inspect the gripper cup for cracks or deformation that prevent suction from forming. e) Clear the fault, re-home the robot, and verify gripper activation on a slow test pick before resuming normal cycles."
+  },
+  {
+   "fault_id": 9,
+   "root_cause": "gripper_release_during_motion",
+   "ur3_error_code": null,
+   "ur3_error_name": null,
+   "ur3_description": "The vacuum gripper released the object mid-trajectory, causing an abrupt loss of payload and leaving the dropped object in an unknown location within the workspace.",
+   "ur3_protocol": "a) Stop the robot and locate the dropped object before resuming: it may have landed in the trajectory of the return motion. b) Check the I/O log to determine whether the solenoid OFF signal was commanded or spurious. c) Inspect the vacuum line for intermittent connections or pressure drops under dynamic loading. d) If the release was spurious, check for electrical noise on the gripper control line and verify connector seating. e) If not, check policy used. d) Re-home the robot, confirm gripper hold force on a static test before resuming transport cycles."
+  },
+  {
+   "fault_id": 10,
+   "root_cause": "additional_axis_payload",
+   "ur3_error_code": "C 153 A 0",
+   "ur3_error_name": "Protective Stop: Too high dynamics",
+   "ur3_description": "Check payload, center of gravity and acceleration settings. Log screen may contain additional information.",
+   "ur3_protocol": "a) Stop the robot and update the payload configuration to include the additional axis weight. b) Set the correct center of gravity offset for the modified arm configuration in the installation settings. c) Review and reduce motion accelerations and speeds to account for the increased effective inertia. d) Run a slow-speed test cycle to verify the dynamic loads stay within the robot's rated limits before resuming normal operation."
+  },
+  {
+   "fault_id": 11,
+   "root_cause": "collision_foam_object",
+   "ur3_error_code": "C 157 A",
+   "ur3_error_name": "Protective Stop: Collision detected by joint",
+   "ur3_description": "A soft object in the trajectory produced a transient TCP force spike. Foam typically does not trigger a protective stop but may at higher speeds or densities.",
+   "ur3_protocol": "a) Inspect the workspace and remove any soft obstructions from the programmed trajectory. b) If a protective stop occurred, acknowledge it in the robot controller interface and verify the arm posture is nominal before resuming. c) Reduce speed if repeated false-positive collision detections occur."
+  },
+  {
+   "fault_id": 13,
+   "root_cause": "cable_routed_on_robot",
+   "ur3_error_code": "C 173 A 1",
+   "ur3_error_name": "Robot motion causes too high joint torques on Shoulder",
+   "ur3_description": null,
+   "ur3_protocol": "a) Stop the robot and inspect all cable routing along the arm links. b) Re-route the cable to eliminate pose-dependent friction and excess loading on the affected joints, ensuring sufficient slack at all extreme configurations. c) Secure the cable with appropriate management clips so it does not drag or tension during motion. d) Reduce motion accelerations if re-routing is not immediately possible. e) Run a slow-speed test cycle monitoring joint torques to confirm loading returns to nominal before resuming normal operation."
+  },
+  {
+   "fault_id": 14,
+   "root_cause": "invalid_gripping_position",
+   "ur3_error_code": null,
+   "ur3_error_name": null,
+   "ur3_description": "The gripper closed at an off-center or tilted position due to a timing error in the pick sequence, resulting in asymmetric payload distribution throughout the transport phase.",
+   "ur3_protocol": "a) If the object is visibly misaligned or at risk of dropping, stop the robot and re-place the object at the nominal pick position before continuing. b) Review the pick sequence timing: identify and correct any sleep() delays or I/O latency that caused the gripper to close late. c) Verify gripper activation is synchronised with the arm being fully settled at the pick waypoint (zero velocity). d) Perform a slow-speed test pick and visually confirm symmetric grip before resuming normal cycles."
+  },
+  {
+   "fault_id": 15,
+   "root_cause": "unstable_mounting_platform",
+   "ur3_error_code": "C 173 A 0",
+   "ur3_error_name": "Robot motion causes too high joint torques on Base",
+   "ur3_description": null,
+   "ur3_protocol": "a) Stop the robot immediately and stabilise the mounting platform by locking all wheel brakes or re-securing the base fixture. b) Verify base rigidity across all planned robot configurations before resuming. c) Reduce motion speeds and accelerations until the mounting is confirmed stable. d) Inspect the robot base and mounting interface for mechanical damage caused by the vibration. e) Run a slow-speed test cycle to confirm joint torques return to nominal values."
+  },
+  {
+   "fault_id": 16,
+   "root_cause": "gearbox_overload",
+   "ur3_error_code": "C 70 A",
+   "ur3_error_name": "Close to gearbox shear limit",
+   "ur3_description": "Acceleration/deceleration too high. Mechanical problem in gear related to encoder mounting.",
+   "ur3_protocol": "a) Reduce acceleration and deceleration values in the motion program to lower peak gearbox loads. b) Power-cycle the controller to clear the fault state. c) Run a slow-speed test cycle to verify the joint operates without torque overload. d) If the fault recurs across multiple cycles, inspect the gearbox for mechanical damage and replace the joint if necessary."
+  },
+  {
+   "fault_id": 17,
+   "root_cause": "motor_encoder_stall",
+   "ur3_error_code": "C 85 A",
+   "ur3_error_name": "Motor encoder error",
+   "ur3_description": "The motor is receiving current commands but the encoder reports no position change, indicating the joint shaft is mechanically stalled or seized.",
+   "ur3_protocol": "a) Do NOT attempt to power through the stall: cut motor current immediately to avoid gearbox or winding damage. b) Identify and remove any mechanical obstruction before re-energising the joint. c) Power down and manually check the affected joint for free rotation across its full range. d) Inspect the encoder connector and cable for damage or loose seating that may have caused a false stall reading. e) Power-cycle the controller to clear the fault state. f) If the stall recurs with no external obstruction, the joint motor or gearbox is likely damaged: replace the joint."
+  },
+  {
+   "fault_id": 19,
+   "root_cause": "joint_position_limit_violation",
+   "ur3_error_code": "C 39 A 3",
+   "ur3_error_name": "Max motor-encoder speed exceeded",
+   "ur3_description": null,
+   "ur3_protocol": "a) Power-cycle the controller to clear the fault state. b) Review the motion program and verify all waypoints and blends stay within the configured joint position and speed limits. c) Reduce trajectory speeds or adjust the problematic waypoint. d) Run a slow-speed test cycle to confirm the joint operates within limits. e) If the violation recurs after program correction, inspect the joint encoder and replace the joint if necessary."
+  },
+  {
+   "fault_id": 20,
+   "root_cause": "idle_power_overconsumption",
+   "ur3_error_code": "C 61 A",
+   "ur3_error_name": "Idle power consumption too high",
+   "ur3_description": "The system is drawing more power than expected while idle.",
+   "ur3_protocol": "a) Check the braking resistor / energy dissipation unit cables and connections for loose or damaged contacts. b) Inspect the braking resistor for signs of overheating or physical damage. c) Check whether joint brakes are engaging correctly and not dragging while the robot is idle. d) Replace the braking resistor if damage is confirmed."
+  },
+  {
+   "fault_id": 21,
+   "root_cause": "singularity_passage",
+   "ur3_error_code": "C 154 A",
+   "ur3_error_name": "Protective Stop: Position in singularity",
+   "ur3_description": "Robot cannot move linear near a singularity.",
+   "ur3_protocol": "a) Avoid commanding linear (Cartesian) motion through or near the singularity configuration. b) Replace the problematic linear move with a joint-space motion command to bypass the singularity. c) Alternatively, re-plan the approach and departure waypoints so the straight-line path does not pass near the singularity."
+  },
+  {
+   "fault_id": 22,
+   "root_cause": "tcp_frame_misconfiguration",
+   "ur3_error_code": "C 156 A",
+   "ur3_error_name": "Protective Stop: Wrong payload or mounting detected, or something is pushing the robot when entering Free drive mode",
+   "ur3_description": "The robot may move unexpectedly due to wrong settings.",
+   "ur3_protocol": "Verify that the TCP configuration and mounting in the used installation is correct."
+  },
+  {
+   "fault_id": 23,
+   "root_cause": "payload_misconfiguration",
+   "ur3_error_code": "C 158 A",
+   "ur3_error_name": "Protective Stop: Collision detected by joint",
+   "ur3_description": "The joint torque model detected an unexpected resistive force consistent with a physical collision while the payload is specified as 0 kg, making the collision threshold very sensitive.",
+   "ur3_protocol": "a) Set the correct payload mass and center of gravity in the installation settings. b) Clear any obstruction from the workspace. c) Verify acceleration and speed settings are appropriate for the mounted tool."
+  },
+  {
+   "fault_id": 24,
+   "root_cause": "safety_plane_violation",
+   "ur3_error_code": "C 152 A",
+   "ur3_error_name": "Protective Stop: Position close to safety plane limits",
+   "ur3_description": "The robot TCP or a body link has approached or crossed a configured safety plane boundary defined in the safety configuration.",
+   "ur3_protocol": "a) Review safety plane positions in the safety configuration. b) Modify the robot program to keep all motion within the defined safety zones. c) Check that the correct safety configuration is active."
+  },
+  {
+   "fault_id": 25,
+   "root_cause": "external_arm_disturbance",
+   "ur3_error_code": "C 111 A",
+   "ur3_error_name": "Something is pulling the robot",
+   "ur3_description": null,
+   "ur3_protocol": "Check TCP configuration, payload and mounting settings."
+  },
+  {
+   "fault_id": 26,
+   "root_cause": "magnetic_encoder_misalignment",
+   "ur3_error_code": "C 74 A 1",
+   "ur3_error_name": "Invalid decode: Read head misalignment, ring damaged or external magnetic field present",
+   "ur3_description": "Magnetic encoder error (absolute encoder). Argument = sum of C 74 errors.",
+   "ur3_protocol": "Check grounding and shielding for EMC problems."
+  },
+  {
+   "fault_id": 27,
+   "root_cause": "motor_phase_fault",
+   "ur3_error_code": "C 71 A 12",
+   "ur3_error_name": "Phase 3 or multiple phases is unconnected or not working",
+   "ur3_description": "The wire is (1) damaged, (2) has been disconnected from the PCB, or (3) defect PCB.",
+   "ur3_protocol": "a) Check joint for damaged or loose connections. b) Replace the joint."
+  },
+  {
+   "fault_id": 28,
+   "root_cause": "payload_cog_misconfiguration",
+   "ur3_error_code": "C 162 A",
+   "ur3_error_name": "Protective stop likely caused by incorrectly specified payload mass and/or center of gravity",
+   "ur3_description": "Specifying an incorrect payload mass and/or center of gravity may cause poor robot performance and/or protective stops.",
+   "ur3_protocol": "Make sure the specified payload mass and center of gravity are correct."
+  },
+  {
+   "fault_id": 29,
+   "root_cause": "collision_hanging_cable",
+   "ur3_error_code": "C 157 A",
+   "ur3_error_name": "Protective Stop: Collision detected by joint",
+   "ur3_description": "A cable or wire dragging along the arm during motion produced a sustained asymmetric force on the joints, triggering the collision detection model.",
+   "ur3_protocol": "a) Power down and inspect the arm and tool flange for entangled cables or wires before resuming. b) Clear the workspace above and around the robot trajectory of any hanging cables. c) If a protective stop occurred, acknowledge it in the robot controller interface and perform a slow-speed test run to confirm the obstruction is fully removed."
+  },
+  {
+   "fault_id": 30,
+   "root_cause": "collision_cardboard_object",
+   "ur3_error_code": "C 157 A",
+   "ur3_error_name": "Protective Stop: Collision detected by joint",
+   "ur3_description": "The robot struck a cardboard object in its path. A free-standing box may be displaced without triggering a stop; a braced box generates enough resistive torque to trigger a protective stop.",
+   "ur3_protocol": "a) Remove the cardboard obstruction from the trajectory. b) Inspect the TCP and wrist links for any displacement or damage from the impact. c) If a protective stop occurred, acknowledge it in the robot controller interface, verify the arm posture, and perform a slow-speed test run before resuming normal operation."
+  },
+  {
+   "fault_id": 31,
+   "root_cause": "collision_rigid_object",
+   "ur3_error_code": "C 157 A",
+   "ur3_error_name": "Protective Stop: Collision detected by joint",
+   "ur3_description": "The robot collided with a hard, immovable object. The high contact stiffness produces an immediate large torque deviation that invariably triggers a protective stop.",
+   "ur3_protocol": "a) Do NOT resume motion before removing the rigid obstacle from the workspace. b) Physically inspect the TCP, tool flange, and all arm links for structural damage or loose fasteners. c) If no damage is found, acknowledge the protective stop, perform a slow-speed dry run across the full trajectory, and confirm clearance before restoring normal speed."
+  },
+  {
+   "fault_id": 32,
+   "root_cause": "peg_insertion_misalignment",
+   "ur3_error_code": null,
+   "ur3_error_name": null,
+   "ur3_description": "The peg approached the hole at an angular or lateral offset, causing the tip to jam against the hole rim rather than enter cleanly, producing elevated contact forces and position tracking errors.",
+   "ur3_protocol": "a) Retract the peg fully before attempting re-insertion. b) Inspect the peg tip for deformation from rim contact. c) Verify the approach waypoint alignment: correct any angular offset (target < 1\u00b0) and lateral offset (target < 1 mm) relative to the hole axis. d) Perform a slow-speed test insertion to confirm clean entry before restoring normal speed."
+  },
+  {
+   "fault_id": 33,
+   "root_cause": "hole_obstruction",
+   "ur3_error_code": null,
+   "ur3_error_name": null,
+   "ur3_description": "A foreign object or debris lodged inside the insertion hole prevented full peg insertion, generating abnormal force buildup as the peg contacted the obstruction mid-stroke.",
+   "ur3_protocol": "a) Retract the peg immediately to avoid bending or overloading the wrist. b) Visually inspect the hole and remove any debris or foreign object with appropriate tooling (compressed air, tweezers). c) Verify the hole is fully clear before re-attempting insertion. d) If force anomalies persist after clearing, inspect the hole walls for damage caused by the obstructed insertion."
+  },
+  {
+   "fault_id": 34,
+   "root_cause": "incorrect_insertion_depth",
+   "ur3_error_code": null,
+   "ur3_error_name": null,
+   "ur3_description": "The insertion motion terminated at an incorrect Z depth due to a misconfigured endpoint, leaving the peg partially inserted (too shallow) or over-pushing against the hole bottom (too deep).",
+   "ur3_protocol": "a) If over-insertion occurred, retract carefully to avoid bending the peg against the hole bottom. b) Verify the insertion endpoint Z value against the nominal depth specification and correct the offset. c) Check the peg and hole bottom for damage if over-push force was significant. d) Perform a slow-speed test insertion to confirm correct final depth before resuming normal operation."
+  },
+  {
+   "fault_id": 35,
+   "root_cause": "peg_surface_contamination",
+   "ur3_error_code": null,
+   "ur3_error_name": null,
+   "ur3_description": "Contamination or increased surface roughness on the peg raised insertion friction, producing stick-slip force patterns and higher-than-nominal contact force throughout the insertion stroke.",
+   "ur3_protocol": "a) Retract the peg and clean the peg surface thoroughly (isopropyl alcohol or appropriate solvent depending on contaminant type). b) Inspect the hole interior for transferred contamination that could affect subsequent insertions. c) Verify insertion force returns to nominal on a slow-speed test run before resuming. d) Identify the contamination source and implement a prevention measure if recurrent."
+  },
+  {
+   "fault_id": 36,
+   "root_cause": "fixture_displacement",
+   "ur3_error_code": null,
+   "ur3_error_name": null,
+   "ur3_description": "The insertion fixture shifted laterally from its nominal position, creating a mismatch between the programmed approach and the actual hole location.",
+   "ur3_protocol": "a) Retract the peg before adjusting the fixture to avoid lateral forces on the wrist during repositioning. b) Re-align the fixture to its nominal position using reference marks or a calibration tool and re-clamp securely. c) If the fixture cannot be repositioned exactly, update the approach waypoint or path to match the new fixture position. d) Perform a slow-speed approach to verify alignment before resuming normal insertion cycles."
+  },
+  {
+   "fault_id": 37,
+   "root_cause": "self_collision_link_interference",
+   "ur3_error_code": "C 157 A",
+   "ur3_error_name": "Protective Stop: Collision detected by joint",
+   "ur3_description": "The programmed trajectory drove the arm into a self-colliding configuration where a link contacted the robot's own body or mounting fixture, triggering an immediate protective stop.",
+   "ur3_protocol": "a) Do NOT jog the robot blindly: identify the self-colliding configuration from the joint state at stop time before moving any joint. b) Manually back out the arm to a safe posture using reduced-speed gravity-compensation (backdrive) mode or slow jog. c) Inspect all links and the mounting fixture for damage. d) Review and correct the motion that caused the self-colliding configuration (whether by adjusting waypoints, modifying trajectory generator parameters, or replanning the path) to ensure the arm stays clear of itself and the mounting fixture across the full motion range."
+  },
+  {
+   "fault_id": 38,
+   "root_cause": "missing_box",
+   "ur3_error_code": null,
+   "ur3_error_name": null,
+   "ur3_description": "The robot executed the full pick-and-place cycle but no box was present at the pick position. The gripper closed on empty air and the arm transported no payload.",
+   "ur3_protocol": "a) Halt the cycle and verify the pick position is loaded with the correct object before retrying. b) Check the upstream supply or operator workflow to determine why the object was absent. c) If automatic object detection is available, enable a pick-confirmation check (e.g. vacuum level or force threshold) so the robot aborts early when no object is gripped rather than completing an empty transport cycle."
+  },
+  {
+   "fault_id": 39,
+   "root_cause": "missing_peg",
+   "ur3_error_code": null,
+   "ur3_error_name": null,
+   "ur3_description": "The robot executed the full peg-in-hole cycle but no peg was gripped. The arm descended into the hole empty-handed and the insertion phase produced no contact force.",
+   "ur3_protocol": "a) Halt the cycle and verify the peg is available and correctly positioned for gripping before retrying. b) Check the gripper closure force or sensor feedback to confirm whether the peg was lost during pick or was never present. c) Inspect the peg supply fixture for misalignment or depletion. d) If automatic grip detection is available, enable a grip-confirmation check so the robot aborts before attempting insertion with an empty gripper."
+  }
+ ],
+ "anomaly_ranking": {
+  "ranking_least_to_most_severe": [
+   {
+    "rank": 1,
+    "fault_id": 5,
+    "root_cause": "loosening_phase",
+    "severity": "negligible",
+    "justification": "Not actually a fault. A normal operational mode (disassembly, rework) that only looks anomalous to a monitor configured for tightening. Fix the monitor, not the process. Zero impact on safety, quality, or throughput."
+   },
+   {
+    "rank": 2,
+    "fault_id": 11,
+    "root_cause": "collision_foam_object",
+    "severity": "very low",
+    "justification": "Foam deflects on contact. Brief force spike, no protective stop, no damage. The only real concern is what the foam block is doing in the workspace in the first place \u2014 housekeeping issue, not a production issue."
+   },
+   {
+    "rank": 3,
+    "fault_id": 29,
+    "root_cause": "collision_hanging_cable",
+    "severity": "low",
+    "justification": "A cable dragging on the arm is benign for a single cycle. Real cost is long-term: cable wear, insulation damage, eventual short or signal loss. Fix during next scheduled maintenance window."
+   },
+   {
+    "rank": 4,
+    "fault_id": 30,
+    "root_cause": "collision_cardboard_object",
+    "severity": "low",
+    "justification": "A free-standing box gets pushed; a braced one triggers a stop. Either way, minimal damage risk. The anomaly itself is mild, and workspace cleanliness concerns are better tracked through a housekeeping KPI than flagged as a production fault."
+   },
+   {
+    "rank": 5,
+    "fault_id": 34,
+    "root_cause": "incorrect_insertion_depth",
+    "severity": "low",
+    "justification": "Waypoint error, software-fixable in minutes. Over-deep wastes some joint life; shallow creates a latent defect but typically gets caught at next-stage inspection. Low immediate risk."
+   },
+   {
+    "rank": 6,
+    "fault_id": 35,
+    "root_cause": "peg_surface_contamination",
+    "severity": "low",
+    "justification": "Higher friction, stick-slip behavior, insertion usually completes. Indicates contamination control weakness upstream but each individual cycle is low-consequence."
+   },
+   {
+    "rank": 7,
+    "fault_id": 22,
+    "root_cause": "tcp_frame_misconfiguration",
+    "severity": "low-medium",
+    "justification": "Self-limiting fault \u2014 the robot's own safety system catches it via a protective stop before damage occurs. Typically caught during commissioning or after a tool change. Low damage risk, moderate throughput hit while it's diagnosed."
+   },
+   {
+    "rank": 8,
+    "fault_id": 23,
+    "root_cause": "payload_misconfiguration",
+    "severity": "low-medium",
+    "justification": "Same category as TCP misconfiguration: the safety system catches it. Nuisance stops, throughput loss, but the robot stops before hurting itself or anything else. Trivial fix once diagnosed."
+   },
+   {
+    "rank": 9,
+    "fault_id": 28,
+    "root_cause": "payload_cog_misconfiguration",
+    "severity": "low-medium",
+    "justification": "Self-limiting via protective stops. Slightly worse than zero-payload because it can pass at some poses and fail at others, making it harder to diagnose."
+   },
+   {
+    "rank": 10,
+    "fault_id": 38,
+    "root_cause": "missing_box",
+    "severity": "medium",
+    "justification": "No hardware damage, but the cycle still completes and desyncs downstream stations. Empty carriers confuse buffers and can cause downstream starvation. Upstream feed problem that needs fixing at source, not just detection."
+   },
+   {
+    "rank": 11,
+    "fault_id": 3,
+    "root_cause": "missing_screw",
+    "severity": "medium",
+    "justification": "Quality escape risk. A unit leaves the station missing a fastener \u2014 if downstream inspection doesn't catch it, a defective product ships. No equipment risk but real customer and warranty exposure."
+   },
+   {
+    "rank": 12,
+    "fault_id": 39,
+    "root_cause": "missing_peg",
+    "severity": "medium",
+    "justification": "Similar to a missing fastener but with one subtlety: assemblies missing a peg are usually more visible downstream than missing screws. Slightly easier to catch, which is why it ranks just above missing_screw despite the similar mechanism."
+   },
+   {
+    "rank": 13,
+    "fault_id": 8,
+    "root_cause": "gripper_activation_failure",
+    "severity": "medium",
+    "justification": "Fingers fail to close \u2014 empty cycle, no drop. Mechanical or electrical fault in the end effector that will recur until serviced. Throughput loss plus maintenance demand, but no safety or damage concern."
+   },
+   {
+    "rank": 14,
+    "fault_id": 32,
+    "root_cause": "peg_insertion_misalignment",
+    "severity": "medium",
+    "justification": "Jamming at the hole rim damages both peg tip and hole edge. Burrs accumulate, tolerances degrade, eventually good parts start failing insertion. Cumulative tooling wear is the real cost."
+   },
+   {
+    "rank": 15,
+    "fault_id": 14,
+    "root_cause": "invalid_gripping_position",
+    "severity": "medium",
+    "justification": "Off-center finger grip means reduced contact area, slip risk during acceleration, and possible can deformation. With rigid cans, deformation itself becomes a quality defect (dented product)."
+   },
+   {
+    "rank": 16,
+    "fault_id": 10,
+    "root_cause": "additional_axis_payload",
+    "severity": "medium-high",
+    "justification": "Unmodeled mass on a link causes continuous over-torque on every cycle. Joint gearboxes and motors wear faster; eventually thermal faults or gearbox failure. Expensive repair if not caught early."
+   },
+   {
+    "rank": 18,
+    "fault_id": 2,
+    "root_cause": "extra_assembly_component",
+    "severity": "medium-high",
+    "justification": "A stray washer in an assembly is a shipped defect with field-failure potential \u2014 loose clamping force, vibration issues, eventual fastener loosening. A silent defect that can pass visual checks and escape is worse than a visible one that fails inspection."
+   },
+   {
+    "rank": 19,
+    "fault_id": 15,
+    "root_cause": "unstable_mounting_platform",
+    "severity": "high",
+    "justification": "Vibration in the base contaminates every operation. Every pick, every insertion, every screw-down gets a little worse. Hard to diagnose because it looks like many small problems instead of one big one. Systematic precision loss across the entire station."
+   },
+   {
+    "rank": 20,
+    "fault_id": 9,
+    "root_cause": "gripper_release_during_motion",
+    "severity": "high",
+    "justification": "Safety starts to dominate at this point in the ranking. A can dropped mid-trajectory \u2014 especially a full one under high acceleration \u2014 can hit a worker, damage equipment beneath the path, or ricochet unpredictably. Product loss is the least of the concerns."
+   },
+   {
+    "rank": 21,
+    "fault_id": 36,
+    "root_cause": "fixture_displacement",
+    "severity": "high",
+    "justification": "A shifted fixture means every insertion is slightly wrong. Scrap rate climbs systematically until detected. Worse, the mismatch can generate hard collisions between peg and rim, damaging tooling. Often discovered only via quality audit, after significant loss."
+   },
+   {
+    "rank": 22,
+    "fault_id": 33,
+    "root_cause": "hole_obstruction",
+    "severity": "high",
+    "justification": "Debris in the hole means forced insertion against resistance. Damages peg tip, scores hole wall, and often requires scrapping the workpiece. Points to a contamination control failure affecting many holes, not just this one."
+   },
+   {
+    "rank": 23,
+    "fault_id": 1,
+    "root_cause": "damaged_screw_thread",
+    "severity": "high",
+    "justification": "A cross-threaded fastener looks tight but isn't. Torque reading may even appear normal. Joint fails in service \u2014 in transport, under vibration, under thermal cycling. Classic latent defect that causes field failures and warranty claims."
+   },
+   {
+    "rank": 24,
+    "fault_id": 19,
+    "root_cause": "joint_position_limit_violation",
+    "severity": "high",
+    "justification": "The robot stopped itself, so direct damage is limited. But reaching a joint limit means either the program is wrong or the kinematics model is wrong \u2014 both are serious, and both can progress to worse failures (self-collision, mechanical damage) if the root cause isn't addressed."
+   },
+   {
+    "rank": 25,
+    "fault_id": 25,
+    "root_cause": "external_arm_disturbance",
+    "severity": "high",
+    "justification": "If the disturbance is an operator pushing on the arm, this is a direct human-contact incident and demands a safety investigation, not just a process adjustment. Even if it's just a tethered cable, the scenario means something is touching a moving robot that shouldn't be."
+   },
+   {
+    "rank": 26,
+    "fault_id": 37,
+    "root_cause": "self_collision_link_interference",
+    "severity": "very high",
+    "justification": "Robot damaging itself. Joint gearboxes, link castings, and tooling all at risk. Repair costs are high and downtime is long. Root cause is a fundamental planning error that must be fully resolved before any production resumes."
+   },
+   {
+    "rank": 27,
+    "fault_id": 31,
+    "root_cause": "collision_rigid_object",
+    "severity": "very high",
+    "justification": "Hard impact at full program speed. Major damage potential to joint gearboxes (the expensive parts), end effector, and whatever was hit. If a person were ever in that 'rigid object' position, this becomes a fatality scenario. Also reveals a failure in workspace safeguarding."
+   },
+   {
+    "rank": 28,
+    "fault_id": 4,
+    "root_cause": "damaged_plate_thread",
+    "severity": "critical",
+    "justification": "The plate is often the expensive part of the assembly \u2014 scrapping it hurts. But the real reason this ranks highest: a cross-threaded structural joint that passes torque-based quality checks and ships is a safety-critical latent failure. In an engine, chassis, pressure vessel, or structural application, this is how serious incidents happen years later."
+   }
+  ]
+ }
+}

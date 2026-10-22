@@ -1,0 +1,20 @@
+{
+ "fp0": "feedback_pos_0",
+ "fp1": "feedback_pos_1",
+ "fp2": "feedback_pos_2",
+ "fp3": "feedback_pos_3",
+ "fp4": "feedback_pos_4",
+ "fp5": "feedback_pos_5",
+ "fs0": "feedback_speed_0",
+ "fs1": "feedback_speed_1",
+ "fs2": "feedback_speed_2",
+ "fs3": "feedback_speed_3",
+ "fs4": "feedback_speed_4",
+ "fs5": "feedback_speed_5",
+ "st0": "setpoint_tcp_0",
+ "st1": "setpoint_tcp_1",
+ "st2": "setpoint_tcp_2",
+ "st3": "setpoint_tcp_3",
+ "st4": "setpoint_tcp_4",
+ "st5": "setpoint_tcp_5"
+}
