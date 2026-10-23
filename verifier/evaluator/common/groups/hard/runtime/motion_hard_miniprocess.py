@@ -313,9 +313,9 @@ class MiniProcessPlant(MotionHardPlant):
   n=ceil(dt_ms/2);dt=dt_ms/n/1000
   for sub in range(n):
    before={a:(d.x,d.v) for a,d in self.drives.items()};self.advance_axes(dt,sub)
-   if self.slug=='support_handover':
-    command=bool(self.raw.get('brake'));self.brake=clamp(self.brake+(1 if command else -1)*dt/.08,0,1)
-    if command and any(abs(self.v(a))>1 for a in 'cd'):self.emit('moving_brake')
+   # EF D1: the common brake state follows Y30 in every task (feedback X52/X53); only H10 judges/feels it.
+   command=bool(self.raw.get('brake'));self.brake=clamp(self.brake+(1 if command else -1)*dt/.08,0,1)
+   if self.slug=='support_handover' and command and any(abs(self.v(a))>1 for a in 'cd'):self.emit('moving_brake')
    if self.c['source_mode']=='level' and abs(self.x('c')-self.x('d'))>80:self.emit('support_tilt_exceeded')
    if self.x('b')>40:
     if abs(self.v('a'))>1:self.emit('fork_travel_collision')
